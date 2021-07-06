@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d80e9da7c5b14c859b5a5933e62f3e48" Name="Diagram1">
+        <EntityTypeShape EntityType="LandeWebModel.Address" Width="1.5" PointX="30.75" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Aksesuar" Width="1.5" PointX="5.25" PointY="85.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.aksesuarDeger" Width="1.5" PointX="7.5" PointY="94.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.AksesuarGrubu" Width="1.5" PointX="3" PointY="82.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Analysis" Width="1.5" PointX="5.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.AuditDataItemPersistent" Width="1.5" PointX="37.5" PointY="71.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.AuditedObjectWeakReference" Width="1.5" PointX="35.25" PointY="75.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.AydinlatmaMetni" Width="1.5" PointX="3" PointY="93.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Banner" Width="1.5" PointX="5.25" PointY="99.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.BasicUser" Width="1.5" PointX="7.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Boyut" Width="1.5" PointX="3" PointY="88.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.CerezPolitikasi" Width="1.5" PointX="3" PointY="106.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Country" Width="1.5" PointX="28.5" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Currency" Width="1.5" PointX="17.25" PointY="74.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.DashboardData" Width="1.5" PointX="15.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Degerler" Width="1.5" PointX="25.5" PointY="94.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.DegerTipleri" Width="1.5" PointX="23.25" PointY="102.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Departmanlar" Width="1.5" PointX="40.5" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.DigerDokumanlar" Width="1.5" PointX="16.5" PointY="86.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.EmailListesi" Width="1.5" PointX="5.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Event" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ExtendedSecurityRole" Width="1.5" PointX="35.25" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.FileData" Width="1.5" PointX="14.25" PointY="76.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.FiyatListesi" Width="1.5" PointX="19.5" PointY="87.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Fotograflar" Width="1.5" PointX="22.5" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.GizlilikPolitikasi" Width="1.5" PointX="3" PointY="110.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Haberler" Width="1.5" PointX="7.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.HakkimizdaAltGrup" Width="1.5" PointX="16" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.HakkimizdaVeAltBilgi" Width="1.5" PointX="13.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.HCategory" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.HeaderFooter" Width="1.5" PointX="17.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.IDGeneratorTable" Width="1.5" PointX="17.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.IK_VizyonPolitika" Width="1.5" PointX="3" PointY="113.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Iletisim" Width="1.5" PointX="17.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KaliteDokumanlari" Width="1.5" PointX="19.5" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KapakOpsiyonDoc" Width="1.5" PointX="10.5" PointY="82.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KapakOpsiyonlari" Width="1.5" PointX="8.25" PointY="87.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Kataloglar" Width="1.5" PointX="19.5" PointY="94.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KataloglarSayfasi" Width="1.5" PointX="17.25" PointY="104.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KlasorDokumanlari" Width="1.5" PointX="28.5" PointY="77.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Klasorler" Width="1.5" PointX="26.25" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KpiDefinition" Width="1.5" PointX="8" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KpiHistoryItem" Width="1.5" PointX="8" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KpiInstance" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KpiScorecard" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KpiScorecardScorecards_KpiInstanceIndicators" Width="1.5" PointX="11" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.KurumsalLogoKullanimi" Width="1.5" PointX="16.5" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Logolar" Width="1.5" PointX="21.75" PointY="72.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Material" Width="1.5" PointX="18.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.MediaDataObject" Width="1.5" PointX="33" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ModelDifference" Width="1.5" PointX="12.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ModelDifferenceAspect" Width="1.5" PointX="15" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.MontajKlavuzlari" Width="1.5" PointX="16.5" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Note" Width="1.5" PointX="18.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.OnayBekleyenDokumanlar" Width="1.5" PointX="45" PointY="65.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Organization" Width="1.5" PointX="35.25" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.OtoKodTanim" Width="1.5" PointX="12.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Ozellikler" Width="1.5" PointX="23.25" PointY="106.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Parcalar" Width="1.5" PointX="11.25" PointY="87.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Party" Width="1.5" PointX="33" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyMemberPermissionsObject" Width="1.5" PointX="37.5" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyNavigationPermissionsObject" Width="1.5" PointX="35.25" PointY="42.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyObjectPermissionsObject" Width="1.5" PointX="37.5" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyRole" Width="1.5" PointX="33" PointY="44.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyTypePermissionsObject" Width="1.5" PointX="35.25" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyUser" Width="1.5" PointX="33" PointY="52.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PermissionPolicyUserUsers_PermissionPolicyRoleRoles" Width="1.5" PointX="35.25" PointY="52.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PersistentPermission" Width="1.5" PointX="35.25" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Person" Width="1.5" PointX="35.25" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PhoneNumber" Width="1.5" PointX="35.25" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PhoneType" Width="1.5" PointX="18.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PropertyBag" Width="1.5" PointX="33" PointY="74.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PropertyBagDescriptor" Width="1.5" PointX="33" PointY="81.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PropertyDescriptor" Width="1.5" PointX="33" PointY="77.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PropertyDescriptorPropertyDescriptors_PropertyBagDescriptorPropertyBags" Width="1.5" PointX="35.25" PointY="78.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.PropertyValue" Width="1.5" PointX="35.25" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Reklamlar" Width="1.5" PointX="14.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Renk" Width="1.5" PointX="12" PointY="94.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ReportData" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ReportDataV2" Width="1.5" PointX="2.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Resource" Width="1.5" PointX="10.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ResourceResources_EventEvents" Width="1.5" PointX="13" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Revizeler" Width="1.5" PointX="27.75" PointY="86.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.RevizeNedenleri" Width="1.5" PointX="25.5" PointY="100.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.RichTextMailMergeData" Width="1.5" PointX="4.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Role" Width="1.5" PointX="35.25" PointY="59.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.RoleBase" Width="1.5" PointX="33" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemMemberPermissionsObject" Width="1.5" PointX="42.5" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemObjectPermissionsObject" Width="1.5" PointX="42.5" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemRole" Width="1.5" PointX="33" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles" Width="1.5" PointX="35.25" PointY="62.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemTypePermissionsObject" Width="1.5" PointX="40.25" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemUser" Width="1.5" PointX="33" PointY="66.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SecuritySystemUserUsers_SecuritySystemRoleRoles" Width="1.5" PointX="35.25" PointY="66.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Sertifikalar" Width="1.5" PointX="16.5" PointY="95" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.ServerPrefix" Width="1.5" PointX="19.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.SimpleUser" Width="1.5" PointX="9.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.State" Width="1.5" PointX="19.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.sysdiagrams" Width="1.5" PointX="19.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Taglar" Width="1.5" PointX="30.75" PointY="86" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Task" Width="1.5" PointX="35.25" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.TeknikCizimler" Width="1.5" PointX="22.5" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.TeknikSartname" Width="1.5" PointX="25.5" PointY="86.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Update" Width="1.5" PointX="19.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UretimDokumanlari" Width="1.5" PointX="22.5" PointY="95" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Urun_TeknikSartname" Width="1.5" PointX="27.75" PointY="83.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UrunAilesi" Width="1.5" PointX="0.75" PointY="75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UrunDegerler" Width="1.5" PointX="30.75" PointY="96.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UrunGrubu" Width="1.5" PointX="3" PointY="98" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Urunler" Width="1.5" PointX="14.25" PointY="84" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Urunlerurunler_Aksesuaraksesuar" Width="1.5" PointX="25.5" PointY="83.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UrunSerisi" Width="1.5" PointX="8.25" PointY="78.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.User" Width="1.5" PointX="37.5" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UserMid2" Width="1.5" PointX="38.25" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.UserUsers_RoleRoles" Width="1.5" PointX="39.75" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.VideolarSayfasi" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.WebFotograf" Width="1.5" PointX="27.75" PointY="95.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XPObjectType" Width="1.5" PointX="30.75" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoInstanceKey" Width="1.5" PointX="20.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoRunningWorkflowInstanceInfo" Width="1.5" PointX="20.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoStartWorkflowRequest" Width="1.5" PointX="16.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoState" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoStateAppearance" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoStateMachine" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoTrackingRecord" Width="1.5" PointX="6.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoTransition" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoUserActivityVersion" Width="1.5" PointX="21.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoWorkflowDefinition" Width="1.5" PointX="21.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoWorkflowInstance" Width="1.5" PointX="21.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XpoWorkflowInstanceControlCommandRequest" Width="1.5" PointX="21.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XPWeakReference" Width="1.5" PointX="33" PointY="69.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.XtraReportData" Width="1.5" PointX="18.75" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Yetkilendirme" Width="1.5" PointX="42.75" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.YonetimKadrosu" Width="1.5" PointX="16" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.YoutubeVideo" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LandeWebModel.Yukseklik" Width="1.5" PointX="12" PointY="97.625" IsExpanded="true" />
+        <AssociationConnector Association="LandeWebModel.FK_Address_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Party_Address1" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Party_Address2" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_AksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_boyut" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Aksesuar_yukseklik" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_aksesuarDeger_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_FiyatListesi_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_Aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikSartname_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunlerurunler_Aksesuaraksesuar_aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_WebFotograf_Aksesuar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_aksesuarDeger_degerler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_AksesuarGrup" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_aksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_aksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_aksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_aksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_aksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_WebFotograf_AksesuarGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_AuditDataItemPersistent_AuditedObject" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_AuditDataItemPersistent_NewObject" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_AuditDataItemPersistent_OldObject" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_AuditedObjectWeakReference_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_AydinlatmaMetni" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_CerezPolitikasi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_GizlilikPolitikasi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_IK_VizyonPolitika" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_UrunGrup" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Banner_UrunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunler_boyut" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_FiyatListesi_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Degerler_DegerTipi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Degerler_ozellikler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Degerler_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UrunDegerler_degerler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Departmanlar_DepartmanMuduru" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UserMid2_departmanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Yetkilendirme_departmanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_DigerDokumanlar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_digerDokumanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_digerDokumanlar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Event_RecurrencePattern" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_ResourceResources_EventEvents_Events" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_ExtendedSecurityRole_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_FiyatListesi_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_FiyatListesi_fileData" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KapakOpsiyonDoc_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KlasorDokumanlari_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KurumsalLogoKullanimi_ENKatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KurumsalLogoKullanimi_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KurumsalLogoKullanimi_Katalog" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_OnayBekleyenDokumanlar_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_RevizeDokuman" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_YeniDokuman" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikSartname_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_File" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_FiyatListesi_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_FiyatListesi_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_kapakOpsiyonlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Fotograflar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_fotograflar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_fotograflar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_WebFotograf_KaliteliFotografOid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_HakkimizdaAltGrup_Hakkimizda" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_YonetimKadrosu_Hakkimizda" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_HCategory_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KaliteDokumanlari_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Logolar_kaliteDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_kaliteDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_kaliteDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KapakOpsiyonDoc_KapakOpsiyonlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KapakOpsiyonlari_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KapakOpsiyonlari_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KapakOpsiyonlari_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KapakOpsiyonlari_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_kapakOpsiyonlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_kataloglarSayfa" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Kataloglar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KlasorDokumanlari_klasorler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_klasorDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_klasorDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Klasorler_parentKlasor" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KpiDefinition_KpiInstance" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KpiInstance_KpiDefinition" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KpiHistoryItem_KpiInstance" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KpiScorecardScorecards_KpiInstanceIndicators_Indicators" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_KpiScorecardScorecards_KpiInstanceIndicators_Scorecards" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MediaDataObject_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_ModelDifferenceAspect_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_MontajKlavuzlari_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_MontajKlavuzlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_montajKlavuzlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_OnayBekleyenDokumanlar_UserMid2" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_OnayBekleyenDokumanlar_yetkilendirme" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Organization_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Parcalar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Parcalar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Parcalar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Parcalar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_parcalar" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Party_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Person_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PhoneNumber_Party" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Task_AssignedTo" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyMemberPermissionsObject_TypePermissionObject" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyNavigationPermissionsObject_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyObjectPermissionsObject_TypePermissionObject" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyRole_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyTypePermissionsObject_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyUserUsers_PermissionPolicyRoleRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyUser_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PermissionPolicyUserUsers_PermissionPolicyRoleRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UserMid2_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PersistentPermission_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_User_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PropertyValue_Bag" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PropertyDescriptorPropertyDescriptors_PropertyBagDescriptorPropertyBags_PropertyBags" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PropertyDescriptorPropertyDescriptors_PropertyBagDescriptorPropertyBags_PropertyDescriptors" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PropertyValue_Descriptor" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_PropertyValue_WeakReference" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunler_renk" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_ResourceResources_EventEvents_Resources" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_RevizeNedenleri" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_sertifikaDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_teknikCizimler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_teknikSartname" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Revizeler_uretimDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Role_Oid" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UserUsers_RoleRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_RoleBase_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemMemberPermissionsObject_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemObjectPermissionsObject_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemRole_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles_ChildRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles_ParentRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemTypePermissionsObject_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemUserUsers_SecuritySystemRoleRoles_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemTypePermissionsObject_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemUser_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_SecuritySystemUserUsers_SecuritySystemRoleRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Sertifikalar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_sertifikaDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_teknikCizimler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_teknikSartname" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_uretimDokumanlari" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Taglar_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikCizimler_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikSartname_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikSartname_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikSartname_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_TeknikSartname_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urun_TeknikSartname_TeknikSarnameler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UretimDokumanlari_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urun_TeknikSartname_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UrunGrubu_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunler_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UrunSerisi_urunAilesi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UrunDegerler_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunler_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UrunSerisi_urunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_WebFotograf_UrunGrubu" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunler_urunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunler_yukseklik" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Urunlerurunler_Aksesuaraksesuar_urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_WebFotograf_Urun" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_WebFotograf_UrunSerisi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_UserUsers_RoleRoles_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_Yetkilendirme_yetkili" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_YoutubeVideo_videolarSayfasi" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XPWeakReference_ObjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XPWeakReference_TargetType" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XpoState_StateMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XpoStateAppearance_State" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XpoStateMachine_StartState" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XpoTransition_SourceState" ManuallyRouted="false" />
+        <AssociationConnector Association="LandeWebModel.FK_XpoTransition_TargetState" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

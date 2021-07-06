@@ -1,0 +1,146 @@
+﻿@{
+    var video = (List<LandeWebProjectV1.Models.YoutubeVideo>)ViewData["VideoList"]; // Cast the list
+    var dil = ViewBag.dil;
+}
+
+
+
+@switch (dil)
+{
+    case "tr":
+        if (video != null)
+        {
+            int videoSayisi = 1;
+
+            <div class="image-w3-features-module text-above" style="background-color: #eeeeee">
+                <div class="image-w3-features-module-header-text">
+                    @*<h2>EXPLORE</h2>
+                        <p style="text-align: center;">Find what you need by navigating through our product offering, browsing our application-focused solutions or designing a system tailored to your project specifications.</p>*@
+                </div>
+                <div class="image-w3-features-module-inner text-above">
+                    <div class="container-fluid align-items-center" style="display: flex; background-color: #303841">
+
+                        <div id="aBtnGroup" class="btn-group flex-wrap" style="display:flex; width:100%; justify-content:center; ">
+                            @foreach (var item in video)
+                            {
+                                if (videoSayisi < 4)
+                                {
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 " style="">
+                                        <div style="height: 300px; color: white; text-align: center; display:flex;">
+                                            <button type="button" class="btn  zoom" data-toggle="modal" data-target="#modalYT"
+                                                    value="@item.Value">
+                                                <img class="img-responsive" src="@item.ResimLinki" alt="#" style="max-height:100%; max-width:100%; display:inline;">
+                                            </button>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                                videoSayisi++;
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        break;
+    case "en":
+        if (video != null)
+        {
+            int videoSayisi = 1;
+
+            <div class="image-w3-features-module text-above" style="background-color: #eeeeee">
+                <div class="image-w3-features-module-header-text">
+                    @*<h2>EXPLORE</h2>
+                        <p style="text-align: center;">Find what you need by navigating through our product offering, browsing our application-focused solutions or designing a system tailored to your project specifications.</p>*@
+                </div>
+                <div class="image-w3-features-module-inner text-above">
+                    <div class="container-fluid align-items-center" style="display: flex; background-color: #303841">
+
+                        <div id="aBtnGroup" class="btn-group flex-wrap" style="display:flex; width:100%; justify-content:center; ">
+                            @foreach (var item in video)
+                            {
+                                if (videoSayisi < 4)
+                                {
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 " style="">
+                                        <div style="height: 300px; color: white; text-align: center; display:flex;">
+                                            <button type="button" class="btn  zoom" data-toggle="modal" data-target="#modalYT"
+                                                    value="@item.Value">
+                                                <img class="img-responsive" src="@item.ResimLinki" alt="#" style="max-height:100%; max-width:100%; display:inline;">
+                                            </button>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                                videoSayisi++;
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        }
+        break;
+    default:
+        break;
+}
+
+
+
+<div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-body mb-0 p-0" style="background-color:black;">
+
+                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                    <iframe id="video" width="560" height="315" src=""
+                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $('#aBtnGroup button').on('click', function () {
+        var thisBtn = $(this);
+        thisBtn.addClass('active').siblings().removeClass('active');
+        var btnText = thisBtn.text();
+        var btnValue = thisBtn.val();
+        console.log(btnText + ' - ' + btnValue);
+
+        document.getElementById('video').src = "https://www.youtube.com/embed/" + btnValue;
+    });
+    $("#modalYT").on('hidden.bs.modal', function (e) {
+        $("#modalYT iframe").attr("src", $("#modalYT iframe").attr("src"));
+    });
+
+</script>
+<style>
+    .zoom {
+        padding: 10px;
+        transition: transform .2s;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+        .zoom:hover {
+            transform: scale(1.1);
+        }
+</style>

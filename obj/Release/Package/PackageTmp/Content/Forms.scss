@@ -1,0 +1,322 @@
+﻿﻿#hh1, #hh2 {
+    display: none;
+}
+
+//sales force thank you page.
+.featuredpage-page {
+    .content {
+        background-color: #eee;
+
+        .main-content-body {
+            .container {
+                margin-top: -100px;
+                padding-top: 100px;
+                min-height: 100vh;
+                background-color: white;
+                //max-width: $container-desktop;
+                @media (min-width: $screen-lg-min) {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+
+                @media (min-width: $screen-sm-min) {
+                    padding-bottom: 50px;
+                }
+
+                & > .row {
+                    padding-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+//sales force (new) form
+.salesforceform-page, .salesforceformgate-page {
+    .content {
+        .sfdc-email-error {
+            padding: 6px 12px;
+            color: red;
+        }
+
+        #sfdc-wrapper {
+            background-color: #eee;
+            margin-top: -100px;
+            padding-top: 100px;
+            min-height: 100vh;
+            //max-width: $container-desktop;
+            @media (min-width: $screen-lg-min) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                padding-bottom: 50px;
+            }
+
+            & > .row {
+                padding-top: 30px;
+            }
+        }
+    }
+
+    #sfdc-wrapper {
+        .container {
+            #sfdc-form-wrapper {
+                box-shadow: 0 0 6px rgba(black, 0.25);
+                background-color: white;
+
+                .sfdc-form-no-padding {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                #sfdc-form {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+
+                    .sfdc-field {
+                        padding-bottom: 10px;
+                    }
+
+                    #submit-button {
+                        margin-bottom: 10px;
+                    }
+
+                    input[type=checkbox], input[type=radio] {
+                        margin: 4px 4px 0 0;
+                    }
+
+                    #sfdc-form-footer {
+                        padding-bottom: 20px;
+                    }
+
+                    .sfdc-field-err {
+                        padding-top: 10px;
+                        color: red;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .row-negative {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+
+            background-position: right top;
+            background-size: 50% auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .salesforce-container {
+        background-color: $container-background-color;
+        margin: 0;
+
+        .salesforce-container-inner {
+            background-color: #fff;
+            max-width: 970px;
+            margin: 0 auto;
+
+            .salesforce-header {
+                h2 {
+                    font: $h1-font;
+                    color: $brand-color;
+                }
+            }
+
+            .salesforce-messages {
+                .salesforce-error-message {
+                    background-color: $error-background-color;
+                    border: $error-border;
+                    color: $error-font-color;
+                    border-radius: 5px;
+                    padding: 5px;
+                    margin: 5px 0;
+                }
+            }
+
+            .salesforce-title {
+                color: $brand-color;
+                padding: 15px 0;
+                padding-top: 0;
+            }
+
+            .sfdc-field {
+                padding: 10px 0;
+
+                .sfdc-label {
+                    color: $brand-color;
+                    margin: 10px 0;
+                }
+
+                input, textarea, select {
+                    margin-top: 5px;
+                }
+
+                input[type=file] {
+                    color: $brand-color;
+                }
+            }
+
+            label {
+                color: $brand-color;
+                margin: 10px 0;
+                display: inline;
+
+                a {
+                    color: $interaction-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            input[type=checkbox] {
+                margin-right: 10px;
+            }
+
+            .salesforce-terms-text-header {
+                font: $h4-font;
+                padding: 10px 0;
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 1px solid $brand-color;
+                color: $brand-color;
+                text-align: center;
+            }
+
+            .salesforce-terms-text-subtext {
+                padding-bottom: 20px;
+                font-size: 10px;
+                color: $brand-color;
+                border-bottom: 1px solid $brand-color;
+                margin-bottom: 20px;
+            }
+
+            .salesforce-recaptcha {
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                div {
+                    div {
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            .salesforce-submit {
+                margin: 20px 0;
+
+                #submit-button-literature, #submit-button {
+                    text-align: center;
+                    background-color: $interaction-color;
+                    color: white;
+                    transition: background-color ease-in-out .15s;
+                    border: 0;
+                    border-radius: 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $brand-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.salesforce-bottom {
+    padding: 0;
+}
+
+.literature-right {
+    @media(min-width: $screen-sm-min) {
+        padding-top: 100px;
+    }
+}
+//salesforce (old) form.
+.sfdcformtemplate-page {
+    .content {
+        background-color: #eee;
+
+        .salesforce-form-old-container {
+            background-color: #fff;
+            margin-top: -100px;
+            padding-top: 100px;
+            min-height: 100vh;
+            box-shadow: 0 0 6px rgba(black, 0.25);
+            //max-width: $container-desktop;
+            @media (min-width: $screen-lg-min) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                padding-bottom: 50px;
+            }
+
+            @media(max-width: $screen-xs-max) {
+                margin-top: 0;
+                padding-top: 0;
+            }
+
+            & > .row {
+                padding-top: 30px;
+            }
+
+            .salesforce-form-old-inner {
+                padding-top: 20px;
+            }
+
+            input[type=text], select, textarea {
+                width: 100%;
+                height: 34px;
+                padding: 6px 12px;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
+
+            textarea {
+                height: 68px;
+            }
+
+            #sfdc-content {
+                width: 100%;
+
+                @media(min-width: $screen-lg-min) {
+                    padding-top: 50px;
+                }
+            }
+        }
+    }
+}
+
+.salesforceform-page {
+    label.required-error {
+        color: #DD0000;
+    }
+
+    div#sfdcerr {
+        color: #DD0000;
+        display: none;
+    }
+
+    div.p {
+        margin: 10px 0px;
+    }
+
+    div.sfdcform label {
+        margin-right: 10px;
+    }
+
+    div.sfdcform input {
+        margin-bottom: 5px;
+    }
+}

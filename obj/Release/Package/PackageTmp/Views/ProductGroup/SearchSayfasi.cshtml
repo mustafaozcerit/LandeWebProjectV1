@@ -1,0 +1,666 @@
+﻿
+@{
+    ViewBag.Title = "SearchSayfasi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@foreach (var item in ViewBag.dene)
+{
+    <h6>@item.StokAdi</h6>
+}
+
+<div class="search-main-container">
+
+    <div class="search-overlay ">
+        <div class="loading-inner">
+            <div class="loading-spinner">
+                <div class="spinner-new">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+            <div class="loading-text">
+                Loading
+            </div>
+        </div>
+    </div>
+
+    @*<aside class="search-sidebar">
+    <aside class="search-sidebar">
+        <div class="sidebar-filter">
+            <div class="sidebar-filters">
+                <div class="sidebar-filter-header sidebar-header primary">
+                    Filter Results By
+                </div>
+                <div class="sidebar-filter-all sidebar-header secondary default primary">
+                    <span class="title">
+                        Expand/Collapse All
+                    </span>
+                    <span class="arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.33 76.83" class="svg replaced-svg">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #666;
+                                    }
+                                </style>
+                            </defs>
+                            <title>Asset 6</title>
+                            <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="69.49 76.83 43.17 50.51 16.84 76.83 0 76.83 43.17 33.67 86.33 76.83 69.49 76.83"></polygon><polygon class="cls-1" points="69.49 43.17 43.17 16.84 16.84 43.17 0 43.17 43.17 0 86.33 43.17 69.49 43.17"></polygon></g></g>
+                        </svg>
+                    </span>
+                </div>
+
+
+
+                <div class="sidebar-facet-group active  ">
+                    <div class="sidebar-facet-title sidebar-header tertiary active  " data-title="rohs_compliant" data-display="ROHS Compliant?">
+                        <span class="title">
+                            <span class="title-inner">
+                                ROHS Compliant?
+                            </span>
+                        </span>
+                        <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.33 43.17" class="svg replaced-svg">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #666;
+                                        }
+                                    </style>
+                                </defs>
+                                <title>Asset 10</title>
+                                <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="69.49 43.17 43.17 16.84 16.84 43.17 0 43.17 43.17 0 86.33 43.17 69.49 43.17"></polygon></g></g>
+                            </svg>
+                        </span>
+                    </div>
+                    <ul class="sidebar-facets ">
+                        <li data-rawvalue="false" data-name="false" data-formattedname="No" data-link="link_e14fdbdb-4346-44b9-8430-b847df9b43cd" class=" active">
+                            <label for="link_e14fdbdb-4346-44b9-8430-b847df9b43cd">
+                                No (1177)
+                                <input class="facet-checkbox" id="link_e14fdbdb-4346-44b9-8430-b847df9b43cd" type="checkbox" name="false" value="false" data-link="link_e14fdbdb-4346-44b9-8430-b847df9b43cd" data-name="false" data-formattedname="No">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                        <li data-rawvalue="true" data-name="true" data-formattedname="Yes" data-link="link_94f34206-f125-4088-88bd-b0c9d4ab9735" class=" active">
+                            <label for="link_94f34206-f125-4088-88bd-b0c9d4ab9735">
+                                Yes (217)
+                                <input class="facet-checkbox" id="link_94f34206-f125-4088-88bd-b0c9d4ab9735" type="checkbox" name="true" value="true" data-link="link_94f34206-f125-4088-88bd-b0c9d4ab9735" data-name="true" data-formattedname="Yes">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="facet-category-load-more">
+                    <div class="facet-category-load-more-inner">
+                        <span>
+                            More
+                        </span>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="12" viewBox="0 0 23 12" class="svg replaced-svg">
+                                <metadata>
+                                    <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+                                    <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+                                        <rdf:rdf xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                                            <rdf:description rdf:about=""></rdf:description>
+                                        </rdf:rdf>
+                                    </x:xmpmeta>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <?xpacket end="w"?>
+                                </metadata>
+                                <image id="Vector_Smart_Object_copy" data-name="Vector Smart Object copy" width="23" height="12" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAMCAMAAAC+5dbKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAn1BMVEU3wc6AgIA3wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc43wc4AAADZhaBkAAAAM3RSTlMAAMGmBgqowNu8D8LcHL4MFc/X1skfytMq5A43669C858DUvqNAeMkYv17sodnq1eh8kd09X8sAAAAAWJLR0Q0qbHp/QAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+IFAwkdEk4JFmwAAACPSURBVBjTZcxrE4FQGATgfTmhnOogkntyy539//9NMSXZTzvPziwaTYVqJIvVaqND26q506WGq+n5P2567LuAO2DgVHyoOTKSNRNmpfRxRG8iucMEDIthOuNcycfhBO/HLIslV7EUDt+jzod1ws1Wvg7L5m6PQ8qjSNWhTozOTC+oOdSVTG74c8T3xxOlvwCSPwsf7RhTuwAAAABJRU5ErkJggg=="></image>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="mobile-facet-gradient"></div>
+                <div class="mobile-facet-utilities">
+                    <div class="mobile-facet-clear-all">
+                        Clear All
+                    </div>
+                    <div class="mobile-facet-done">
+                        Done
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="search-body">
+        <input class="search-type-definer" type="hidden" data-searchtype="product">
+        <ul class="search-types">
+            <li class="active" data-searchtype="product">
+                Products <span class="quantity">(1406)</span>
+            </li>
+            <li class="" data-searchtype="page">
+                Pages <span class="quantity">(70)</span>
+            </li>
+            <li class="" data-searchtype="resource">
+                Downloads <span class="quantity">(49)</span>
+            </li>
+        </ul>
+        <div class="mobile-filter-and-results">
+            <div class="mobile-filter-expand">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="12" viewBox="0 0 20 12" class="svg replaced-svg">
+                    <metadata>
+                        <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+                        <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+                            <rdf:rdf xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                                <rdf:description rdf:about=""></rdf:description>
+                            </rdf:rdf>
+                        </x:xmpmeta>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <?xpacket end="w"?>
+                    </metadata>
+                    <image id="Artwork_75" data-name="Artwork 75" width="20" height="12" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAMAAABV0m3JAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAVFBMVEUAAABJVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF5JVF4AAADw4pYGAAAAGnRSTlMAYPozGjCYcfNDsJJ1BQ0nof4YznS/SovxEqCpg/kAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4gUCDjEUI6ipFwAAAFhJREFUCNd9zskOgDAIBNBBixb3feH/P9TWE42N7wAJB2aAgIoSCcfMldZsOHj98BAiarQlQ94XnQo+esafYcwcp3mJS2wErbrFoGwlZ2vzrkcsnzqvO8wH+QsGbMq2/CgAAAAASUVORK5CYII="></image>
+                </svg>
+                <span>
+                    Filter
+                </span>
+            </div>
+            <div class="mobile-results-quantity">
+                <span>
+                    1406 items
+                </span>
+            </div>
+        </div>
+
+        <div class="search-view ">
+            <div class="search-view-inner" style="">
+                <span>View</span>
+                <ul class="search-view-types">
+                    <li class="active grid-view-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="grid-view-squares" width="18.81" height="19" viewBox="0 0 18.81 19" class="svg replaced-svg">
+                            <metadata>
+                                <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+                                <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+                                    <rdf:rdf xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                                        <rdf:description rdf:about=""></rdf:description>
+                                    </rdf:rdf>
+                                </x:xmpmeta>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <?xpacket end="w"?>
+                            </metadata>
+                            <defs>
+                            </defs>
+                            <path id="Rectangle_1415_copy_4" data-name="Rectangle 1415 copy 4" class="cls-1" d="M4591,497h8.28v8.36H4591V497Z" transform="translate(-4591 -497)"></path>
+                            <path id="Rectangle_1415_copy_4-2" data-name="Rectangle 1415 copy 4" class="cls-1" d="M4591,507.639h8.28V516H4591v-8.362Z" transform="translate(-4591 -497)"></path>
+                            <path id="Rectangle_1415_copy_4-3" data-name="Rectangle 1415 copy 4" class="cls-1" d="M4601.54,497h8.28v8.36h-8.28V497Z" transform="translate(-4591 -497)"></path>
+                            <path id="Rectangle_1415_copy_4-4" data-name="Rectangle 1415 copy 4" class="cls-1" d="M4601.54,507.639h8.28V516h-8.28v-8.362Z" transform="translate(-4591 -497)"></path>
+                        </svg>
+                    </li>
+                    <li class="list-view-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="list-view" width="24" height="19" viewBox="0 0 24 19" class="svg replaced-svg">
+                            <metadata>
+                                <?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+                                <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c140 79.160451, 2017/05/06-01:08:21        ">
+                                    <rdf:rdf xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                                        <rdf:description rdf:about=""></rdf:description>
+                                    </rdf:rdf>
+                                </x:xmpmeta>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <?xpacket end="w"?>
+                            </metadata>
+                            <defs>
+                            </defs>
+                            <rect id="Rectangle_1415_copy_3" data-name="Rectangle 1415 copy 3" class="cls-1" width="24" height="8.375"></rect>
+                            <rect id="Rectangle_1415_copy_3-2" data-name="Rectangle 1415 copy 3" class="cls-1" y="10.625" width="24" height="8.375"></rect>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="applied-filters">
+            <div class="applied-filters-header">
+                <span class="applied-filters-prefix">
+                    Applied Filters
+                </span>
+                <a href="https://www.middleatlantic.com/search.aspx?q=racks&amp;searchtype=product#" class="applied-filters-clear-all" onclick="event.preventDefault();">
+                    Clear All
+                </a>
+            </div>
+            <div class="applied-filters-body">
+
+            </div>
+        </div>
+        <div class="search-results">
+            <div class="search-results-inner ">
+
+                <article class="search-result ecomm-product-wrapper" data-id="ec5433e5-ac54-414e-96f1-54df7149feb4">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/rear-doors/rdc-series-cable-entry-rear-doors/erk-rdc44.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/BGR-RDC45-APP1.jpg" alt="Wiremold Evolution Ceiling Box Projector Mount Template">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Cable-Entry Rear Door, 38 RU BGR Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Provides a large cable passage for easy access without fishing
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    ERK-RDC44
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="175acfb2-0c3c-4c58-b6d9-42ea58c095fa">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/rear-doors/rdc-series-cable-entry-rear-doors/erk-rdc40.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/BGR-RDC45-APP1.jpg" alt="Wiremold Evolution Ceiling Box Projector Mount Template">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Cable-Entry Rear Door, 40 RU ERK Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Provides a large cable passage for easy access without fishing
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    ERK-RDC40
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="dbafcfc2-e12b-464b-aa2d-ce8a760f4584">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/accessories/lever-lock-system/lever-lock-series-adapter-brackets/ll-rfr.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/LL-RFR-DRWG.jpg" alt="LL-RFR-DRWG">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Lever Lock Bracket, RFR Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Bracket kit allows use of select Lever Lock™ accessories in RFR racks
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    LL-RFR
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="1639d3d4-7446-453e-8fb9-ffbd2222947e">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/fd-series-solid-front-doors/fd28-40.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Solid Front Door.jpg" alt="Solid Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Solid Front Door, 40 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Solid Front Door, Fits 28" Wide, 40 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    FD28-40
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="41b1b948-786c-4e6a-945e-ed7ade669c5a">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/fd-series-solid-front-doors/fd28-24.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Solid Front Door.jpg" alt="Solid Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Solid Front Door, 24 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Solid Front Door, Fits 28" Wide, 24 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    FD28-24
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="7db1e71a-66b0-47e3-b771-6276fe8fc6ff">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/fd-series-solid-front-doors/fd28-46.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Solid Front Door.jpg" alt="Solid Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Solid Front Door, 46 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Solid Front Door, Fits 28" Wide, 46 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    FD28-46
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="07131d45-f340-48fa-8eaa-542cc97bf643">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/pfd-series-plexi-front-doors/pfd28-24.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Plexi Front Door.jpg" alt="Plexi Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Plexi Front Door, 24 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Plexi Front Door, Fits 28" Wide 24 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    PFD28-24
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="b9254b6a-e84b-4bb9-a56b-00d785c3f995">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/pfd-series-plexi-front-doors/pfd28-40.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Plexi Front Door.jpg" alt="Plexi Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Plexi Front Door, 40 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Plexi Front Door, Fits 28" Wide 40 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    PFD28-40
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="a43f8572-e3e2-497b-99ac-673380dae985">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/pfd-series-plexi-front-doors/pfd28-46.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Plexi Front Door.jpg" alt="Plexi Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Plexi Front Door, 46 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Plexi Front Door, Fits 28" Wide 46 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    PFD28-46
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="e3df4b0c-f95c-4ebf-befc-88e12fa0e334">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/lvfd-series-64-percent-open-area-vented-front-doors/lvfd28-46.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Vented Front Door.jpg" alt="Vented Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Vented Front Door, 46 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Vented Front Door, 64% Open Area, Fits 28" Wide 46 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    LVFD28-46
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="98acd0eb-0c16-4326-9084-b1d8e754d344">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/lvfd-series-64-percent-open-area-vented-front-doors/lvfd28-24.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Vented Front Door.jpg" alt="Vented Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Vented Front Door, 24 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Vented Front Door, 64% Open Area, Fits 28" Wide 24 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    LVFD28-24
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article><article class="search-result ecomm-product-wrapper" data-id="8b83d1aa-3202-4aa7-af26-7f4b76c5cd71">
+                    <a class="search-result-outer" href="https://www.middleatlantic.com/products/racks-enclosures/front-doors/lvfd-series-64-percent-open-area-vented-front-doors/lvfd28-40.aspx">
+                        <div class="search-result-inner">
+                            <div class="search-result-image">
+                                <img src="./Search for _racks_ _ Middle Atlantic_files/Vented Front Door.jpg" alt="Vented Front Door">
+                            </div>
+                            <div class="search-result-text">
+                                <div class="search-result-title" style="height: 43px;">
+                                    Vented Front Door, 40 Space SR Series Racks
+                                </div>
+                                <div class="search-result-description" style="height: 51px;">
+                                    Vented Front Door, 64% Open Area, Fits 28" Wide 40 Space SR Series Racks, Black Finish
+                                </div>
+                                <div class="search-result-number" style="height: 17px;">
+                                    LVFD28-40
+                                </div>
+                                <div class="search-result-options">
+
+                                </div>
+                                <div class="search-result-rating">
+                                </div>
+                                <div class="search-result-price-atc" style="height: 20px;">
+                                    <div class="search-result-price" style="height: 0px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>*@
+        <div class="load-more-container">
+            <div class="load-more" data-page="1" data-results="12" data-totalresults="1406">Load More</div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,311 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+
+@{
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "TR":
+            ViewBag.Title = "Ürünler";
+            break;
+        case "ENG":
+            ViewBag.Title = "Products";
+            break;
+        default:
+            ViewBag.Title = "Products";
+            break;
+    }
+
+
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var product = (List<LandeWebProjectV1.Models.Urunler>)ViewData["Products"]; // Cast the list
+}
+@{
+    var Boyut = (List<System.Web.Mvc.SelectListItem>)ViewData["Boyut"]; // Cast the list
+
+    var Yuksek = (List<System.Web.Mvc.SelectListItem>)ViewData["Yukseklik"];
+
+    var renk = (List<System.Web.Mvc.SelectListItem>)ViewData["Renk"];
+
+
+}
+<script>
+    $(function(){
+        $("#boyut").change(function (e) {
+            var val = $(this).val();
+            var b = document.getElementById("yukseklik");
+            var yuksek = b.options[b.selectedIndex].value;
+            var a = document.getElementById("renk");
+            var renk = a.options[a.selectedIndex].value;
+            $("#productFilter").load('@(Url.Action("ProductFilter"))?boyut=' + val + '&yukseklik=' + yuksek + '&renk=' + renk);
+        });
+    });
+    $(function () {
+        $("#yukseklik").change(function (e) {
+            var val = $(this).val();
+            var b = document.getElementById("boyut");
+            var boy = b.options[b.selectedIndex].value;
+            var a = document.getElementById("renk");
+            var renk = a.options[a.selectedIndex].value;
+
+            $("#productFilter").load('@(Url.Action("ProductFilter"))?boyut=' + boy + '&yukseklik=' + val + '&renk=' + renk);
+        });
+    });
+    $(function () {
+        $("#renk").change(function () {
+            var val = $(this).val();
+            var b = document.getElementById("boyut");
+            var boy = b.options[b.selectedIndex].value;
+            var a = document.getElementById("yukseklik");
+            var yuksek = a.options[a.selectedIndex].value;
+
+            $("#productFilter").load('@(Url.Action("ProductFilter"))?boyut=' + boy + '&yukseklik=' + yuksek + '&renk=' + val);
+        });
+    });
+
+</script>
+@switch (dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+
+                <div class="map-category-page map-series container-fluid">
+                    <div class="map-category-page-inner map-series-page-inner">
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr">
+                                    Anasayfa
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr/kabinetler">
+                                    Kabinetler
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                @foreach (var item2 in Model.productGrup)
+                                {
+                                    <a href="~/@item2.grupUrl">@item2.grupAdi</a>
+                                }
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                @foreach (var item2 in Model.productSeri)
+                                {
+                                    <a href="~/@item2.seriUrl">@item2.seriAdi</a>
+                                }
+                                <a href="/products/racks-enclosures/gangable-floor-standing-enclosures/bgr-series-23-in-wide-enclosure.aspx">
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                        </div>
+
+                        <div class="open-html-module">
+                            <div class="container-fluid" style="padding:0;">
+                                <center>
+                                    @foreach (var item in Model.bannerModels)
+                                    {
+                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                                    }
+                                    @*<img src="~/Images/AVRACKNEWRAIL970x250steps.gif" style="text-align: left; width: 100%; vertical-align: top;" /><br />*@
+                                </center>
+                            </div>
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                @Model.SayfaLinkBaslik
+                            </h2>
+                        </div>
+                        <div class="product-detail-overview-text">
+                            @Model.SayfaAciklama
+                        </div>
+                        <br />
+                    </div>
+
+
+
+                    <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: white; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; ">
+
+                    </div>
+
+                    <div class="map-category-page map-series container-fluid">
+                        <div class="map-category-page-inner map-series-page-inner">
+                            <div class="map-series-page-body row">
+                                <div class="map-series-page-body-left col-sm-12 col-lg-3 col-xs-12">
+                                    <div class="map-series-page-search">
+                                        <div class="map-series-search-title">
+                                            Filtrele
+                                        </div>
+                                        <div class="map-series-search-filters">
+
+                                            @Html.DropDownList("Boyut", (IEnumerable<SelectListItem>)ViewData["Boyut"], new { @class = "filter-dropdownlist", @id = "boyut" })
+                                        </div>
+                                        <div class="map-series-search-filters">
+
+                                            @Html.DropDownList("Yükseklik", (IEnumerable<SelectListItem>)ViewData["Yukseklik"], new { @class = "filter-dropdownlist", @id = "yukseklik" })
+                                        </div>
+                                        <div class="map-series-search-filters">
+
+                                            @Html.DropDownList("Renk", (IEnumerable<SelectListItem>)ViewData["Renk"], new { @class = "filter-dropdownlist", @id = "renk" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="map-series-page-body-right col-sm-12 col-lg-9 col-xs-12" id="productFilter">
+                                    @Html.Partial("ProductFilter")
+
+                                    <div class="map-series-page-load-more">Daha Fazla Göster</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+
+                <div class="map-category-page map-series container-fluid">
+                    <div class="map-category-page-inner map-series-page-inner">
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr">
+                                    Homepage
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/en/cabinets">
+                                    Cabinets
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="">
+                                    @foreach (var item2 in Model.productGrup)
+                                    {
+                                        <a href="~/@item2.grupUrl">@item2.grupAdi</a>
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                @foreach (var item2 in Model.productSeri)
+                                {
+                                    <a href="~/@item2.seriUrl">@item2.seriAdi</a>
+                                }
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                        </div>
+
+                        <div class="open-html-module">
+                            <div class="container-fluid" style="padding:0;">
+                                <center>
+                                    @foreach (var item in Model.bannerModels)
+                                    {
+                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.fotografEng)" style="height:auto; width:100%" />
+                                    }
+                                    @*<img src="~/Images/AVRACKNEWRAIL970x250steps.gif" style="text-align: left; width: 100%; vertical-align: top;" /><br />*@
+                                </center>
+                            </div>
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                @Model.SayfaLinkBaslik
+                            </h2>
+                        </div>
+                        <div class="product-detail-overview-text">
+                            @Model.SayfaAciklama
+                        </div>
+                        <br />
+                    </div>
+
+
+
+                    <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: white; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; ">
+
+                    </div>
+
+                    <div class="map-category-page map-series container-fluid">
+                        <div class="map-category-page-inner map-series-page-inner">
+                            <div class="map-series-page-body row">
+                                <div class="map-series-page-body-left col-sm-12 col-lg-3 col-xs-12">
+                                    <div class="map-series-page-search">
+                                        <div class="map-series-search-title">
+                                            FILTERS
+                                        </div>
+                                        <div class="map-series-search-filters">
+
+                                            @Html.DropDownList("Size", (IEnumerable<SelectListItem>)ViewData["Boyut"], new { @id = "boyut", @style = "border-color:#cccccc;padding:10px" })
+                                        </div>
+                                        <div class="map-series-search-filters">
+
+                                            @Html.DropDownList("Height", (IEnumerable<SelectListItem>)ViewData["Yukseklik"], new { @id = "yukseklik", @style = "border-color:#cccccc;padding:10px" })
+                                        </div>
+                                        <div class="map-series-search-filters">
+
+                                            @Html.DropDownList("Color", (IEnumerable<SelectListItem>)ViewData["Renk"], new { @id = "renk", @style = "border-color:#cccccc;padding:10px" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="map-series-page-body-right col-sm-12 col-lg-9 col-xs-12" id="productFilter">
+                                    @Html.Action("ProductFilter")
+
+                                    <div class="map-series-page-load-more">Load More</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+<style>
+    option {
+        max-width: 190px;
+        width: 190px;
+    }
+
+    select {
+        max-width: 190px !important;
+        width: 190px !important;
+    }
+</style>

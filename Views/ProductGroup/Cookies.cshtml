@@ -1,0 +1,93 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "Cookies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "Çerez Politikası";
+            break;
+        case "en":
+            ViewBag.Title = "Cookies Policy";
+            break;
+        default:
+            ViewBag.Title = "Cookies Policy";
+            break;
+    }
+}
+
+@switch (ViewBag.dil)
+{
+    case "tr":
+        <form id="contentForm" method="POST">
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+                    
+                    <h3>
+                        @Model.genelBilgiler.Baslik
+                    </h3>
+
+                    @foreach (var item in Model.genelBilgiler.Aciklama1)
+                    {
+                        <p style="margin-bottom:20px">@item</p>
+                    }
+
+                </div>
+            </div>
+            <br /><br />
+        </form>
+        break;
+    case "en":
+        <form id="contentForm" method="POST">
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+
+                    <h3>
+                        @Model.genelBilgiler.Baslik
+                    </h3>
+
+                    @foreach (var item in Model.genelBilgiler.Aciklama1)
+                    {
+                        <p style="margin-bottom:20px">@item</p>
+                    }
+
+                </div>
+            </div>
+            <br /><br />
+        </form>
+        break;
+    default:
+        break;
+}
+@*<form id="contentForm" method="POST">
+        <div class="open-html-module">
+            <div class="container-fluid" style="padding-bottom: 0;">
+                <h3>ÇEREZ POLİTİKASI</h3>
+                <p>
+                    Çerez, bir web sitesindeki dolaşımınıza ilişkin verileri giriş yaptığınız cihazınızda depolayan küçük bir metin dosyasıdır. <br /><br />
+                    Çerez Politikası’nın Amacı; bir internet sitesinin düzgün bir şekilde çalışması, kullanıcı deneyiminin iyileştirilmesi, sitenin geliştirilmesi ve optimize edilmesi, daha uygun, ilgi alanına dayalı reklam sunulması, ziyaretçiler için ilgi çekici ve kişiselleştirilmiş bir web sitesi/uygulama ve reklam portföyü oluşturulmasıdır. Çerez aynı zamanda belirttiğiniz tercihleri (dil, ülke, vb.) sitemizi ziyaretiniz sırasında ve gelecekteki ziyaretlerinizde hatırlamak için kullanılır.<br /><br />
+                    İşbu Politika uyarınca, bu web sitesi tarafından ana bilgi depolama yöntemi olarak kullanılan “Çerezler” ile tarayıcının “Yerel Depolama” alanı aynı amaç için kullanılır. Bu bölümde yer verilen tüm bilgiler aynı zamanda anılan “Yerel Depolama” için de uygulanır. Kullandığımız Çerezlerde adresiniz, şifreniz, kredi ya da banka kartı bilgileriniz ve benzeri özel nitelikli kişisel bilgileriniz depolanmaz.<br /><br />
+                    Bu web sitesinde Çerez kullanımından nasıl kaçınabilirim? Yukarıda açıklanan sınırlamaları da dikkate alarak bu web sitesinde Çerez kullanmak istemiyorsanız, öncelikle tarayıcınızda Çerez kullanımını devre dışı bırakmanız, ardından bu web sitesiyle ilişkili olarak tarayıcınızda kaydedilmiş Çerezleri silmeniz gerekmektedir. Çerezlerin kullanımını önlemek için bu seçeneği istediğiniz zaman kullanabilirsiniz.<br /><br />
+                    Çerezlerin kullanımını nasıl devre dışı bırakır ve engellerim? Yukarıda belirtilen adımları izleyerek istediğiniz bir anda tarayıcınızın ayarlarını değiştirip bu web sitesinde kullanılan Çerezleri kısıtlayabilir, engelleyebilir ya da silebilirsiniz. Her tarayıcıda ayarlar farklı olsa da Çerezler genellikle “Tercihler” ya da “Araçlar” menüsünde yer alır. Tarayıcınızda Çerezleri ayarlamak hakkında daha fazla bilgi için tarayıcının “Yardım” menüsüne bakın.
+                </p>
+            </div>
+        </div>
+        <br /><br />
+    </form>*@

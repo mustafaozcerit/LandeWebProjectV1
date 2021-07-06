@@ -1,0 +1,235 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+
+@{
+    ViewBag.Title = "Catalogue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    //var katalog = (list<landewebprojectv1.models.kataloglar>)viewdata["kataloglist"];
+    //var baslik = (list<landewebprojectv1.models.kataloglarsayfasi>)viewdata["katalogbaslik"];
+    var dil = ViewBag.dil;
+}
+<link href="~/Content/Katalog-Card.css" rel="stylesheet" />
+
+
+<script>
+    //var $cell = $('.card');
+
+    ////open and close card when clicked on card
+    //$cell.find('.js-expander').click(function () {
+
+    //    var $thisCell = $(this).closest('.card');
+
+    //    if ($thisCell.hasClass('is-collapsed')) {
+    //        $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+    //        $thisCell.removeClass('is-collapsed').addClass('is-expanded');
+
+    //        if ($cell.not($thisCell).hasClass('is-inactive')) {
+    //            //do nothing
+    //        } else {
+    //            $cell.not($thisCell).addClass('is-inactive');
+    //        }
+
+    //    } else {
+    //        $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    //        $cell.not($thisCell).removeClass('is-inactive');
+    //    }
+    //});
+
+    ////close card when click on cross
+    //$cell.find('.js-collapser').click(function () {
+
+    //    var $thisCell = $(this).closest('.card');
+
+    //    $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+    //    $cell.not($thisCell).removeClass('is-inactive');
+
+    //});
+</script>
+
+
+@switch (dil)
+{
+    case "tr":
+        <div class="map-category-page map-series container-fluid">
+            <div class="map-category-page-inner map-series-page-inner">
+
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/tr">
+                            Anasayfa
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/tr/kataloglar">
+                            Kataloglar
+                        </a>
+                    </div>
+
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                </div>
+
+                <div class="map-category-page-title">
+                    <h2>
+                        KATALOGLAR
+                    </h2>
+                </div>
+
+                <div class="cards row">
+
+                    <div class="col" style="display: flex; flex-wrap: wrap; padding:0;">
+                        @foreach (var Baslikitem in Model.katalogBaslikModels)
+                        {
+                            <H2 class="col-lg-12"><strong>@Baslikitem.Baslik</strong></H2>
+                            foreach (var katalogitem in Model.katalogModels)
+                            {
+                                if (Baslikitem.Oid.ToString() == katalogitem.Oid)
+                                {
+                                    Guid newGuid = Guid.Parse(katalogitem.uRL);
+
+                                    <a class="col-lg-3 col-md-4 col-xs-12" href="@Url.Action("ShowPDF" ,"ProductGroup", new { oid = newGuid , doc = "katalog"})" target="_blank">
+                                        <div class="card">
+                                            <div class="card__inner [ js-expander ]">
+                                                <span>
+                                                    @if (katalogitem.fotograf != null)
+                                                    {
+                                                        newGuid = Guid.Parse(katalogitem.Oid);
+                                                        @*<a href="@Url.Action("DownloadCatalogue","ProductGroup", new { oid = newGuid })">*@
+                                                        <img src="data:image;base64,@System.Convert.ToBase64String(katalogitem.fotograf)" class='img-responsive' style="display:unset;height:260px" />
+                                                        @*</a>*@
+                                                    }
+                                                </span>
+                                                <i class="fa fa-folder-o"></i>
+                                            </div>
+                                            <div class="card__expander" style="margin-top:15px">
+                                                <i class="fa fa-close [ js-collapser ]"></i>
+                                            </div>
+                                            <div class="aciklama" style="padding: 20px 0;margin-top: 20px; margin-bottom: 10px; text-align: center; height: 75px">
+                                                @if (katalogitem.katalogAdi != null)
+                                                {
+                                                    <p style="margin:0;">@Html.DisplayFor(x => katalogitem.katalogAdi)</p>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                }
+
+                            }
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        break;
+    case "en":
+        <div class="map-category-page map-series container-fluid">
+            <div class="map-category-page-inner map-series-page-inner">
+
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/en">
+                            Home Page
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/en/catalogue">
+                            Catalogue
+                        </a>
+                    </div>
+
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                </div>
+
+                <div class="map-category-page-title">
+                    <h2>
+                        Catalogue
+                    </h2>
+                </div>
+                <div class="cards row">
+
+                    <div class="col" style="display: flex; flex-wrap: wrap; padding:0;">
+                        @foreach (var Baslikitem in Model.katalogBaslikModels)
+                        {
+                            <H2 class="col-lg-12"><strong>@Baslikitem.Baslikeng</strong></H2>
+                            foreach (var katalogitem in Model.katalogModels)
+                            {
+                                if (Baslikitem.Oid.ToString() == katalogitem.Oid)
+                                {
+                                    Guid newGuid = Guid.Parse(katalogitem.uRL);
+                                    <a class="col-lg-3 col-md-4 col-xs-12" href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "katalog"})" target="_blank">
+                                        <div class="card">
+                                            <div class="card__inner [ js-expander ]">
+                                                <span>
+                                                    @if (katalogitem.fotograf != null)
+                                                    {
+                                                        @*<a href="@Url.Action("DownloadCatalogue","ProductGroup", new { oid = item.Oid })">*@
+                                                        <img src="data:image;base64,@System.Convert.ToBase64String(katalogitem.fotograf)" class='img-responsive' style="display:unset;height:260px" />
+                                                        @*</a>*@
+                                                    }
+                                                </span>
+                                                <i class="fa fa-folder-o"></i>
+                                            </div>
+                                            <div class="card__expander" style="margin-top:15px">
+                                                <i class="fa fa-close [ js-collapser ]"></i>
+                                            </div>
+                                            <div class="aciklama" style="padding: 20px 0;margin-top: 20px; margin-bottom: 10px; text-align: center; height: 75px">
+                                                @if (katalogitem.EngWebDokumanAdi != null)
+                                                {
+                                                    <p style="margin:0;">@Html.DisplayFor(x => katalogitem.EngWebDokumanAdi)</p>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                }
+
+                            }
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        break;
+    default:
+        break;
+}
+
+<style>
+    /*    a {
+        padding: 0px !important;
+    }*/
+
+    .card {
+        border: 2px groove;
+        border-color: transparent;
+        border-radius: 10px;
+    }
+
+        .card:hover {
+            border: 2px groove !important;
+            border-color: #d8e2e2 !important;
+            border-radius: 10px !important;
+            background-color: transparent !important;
+        }
+</style>

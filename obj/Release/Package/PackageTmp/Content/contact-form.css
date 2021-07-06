@@ -1,0 +1,110 @@
+﻿.contact {
+    padding: 130px 0;
+}
+
+    .contact .heading h2 {
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+    }
+
+        .contact .heading h2 span {
+            color: #12679a;
+        }
+
+    .contact .heading p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #999999;
+        margin: 20px 0 60px;
+        padding: 0;
+    }
+
+    .contact .form-control {
+        padding: 25px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        background: #fbfbfb;
+        border-width: 1px;
+        border-color: #12679a54;
+    }
+
+        .contact .form-control:hover {
+            border-color: dodgerblue;
+        }
+
+    .contact .form-control1 {
+        padding: 25px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        background: #fbfbfb;
+        border-width: 1px;
+        border-color: #12679a54;
+        border-radius: 5px;
+    }
+
+        .contact .form-control1:hover {
+            border-color: dodgerblue;
+        }
+
+    .contact .form-control2 {
+        padding: 25px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        background: #fbfbfb;
+        border-width: 1px;
+        border-color: #12679a54;
+        border-radius: 5px;
+    }
+
+        .contact .form-control2:hover {
+            border-color: dodgerblue;
+        }
+
+    .contact button.btn {
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 15px;
+        background: #12679a;
+        color: #ffffff;
+    }
+
+    .contact .title h3 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .contact .title p {
+        font-size: 14px;
+        font-weight: 400;
+        color: #999;
+        line-height: 1.6;
+        margin: 0 0 40px;
+    }
+
+    .contact .contentcon .info {
+        margin-top: 10px;
+    }
+
+        .contact .contentcon .info i {
+            font-size: 30px;
+            padding: 0;
+            margin: 0;
+            color: #02434b;
+            margin-right: 20px;
+            text-align: center;
+            width: 20px;
+        }
+
+        .contact .contentcon .info h4 {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+            .contact .contentcon .info h4 span {
+                font-size: 13px;
+                font-weight: 300;
+                color: #999999;
+            }

@@ -1,0 +1,200 @@
+﻿@model IEnumerable<LandeWebProjectV1.Models.Aksesuar>
+
+@{
+    ViewBag.Title = "Accessories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var aks = (List<LandeWebProjectV1.Models.Aksesuar>)ViewData["Aks"]; // Cast the list
+
+    var dil = ViewBag.dil;
+}
+@switch (dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page container-fluid">
+                    <div class="map-category-page-inner">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="/TR">
+                                    Anasayfa
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/TR/ProductGroup/AccessoriesGroup">
+                                    Aksesuar Grubu
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/TR/ProductGroup/Accessories">
+                                    @foreach (var item2 in aks)
+                                    {
+
+                                        @Html.ActionLink(item2.AksesuarGrubu1.AksesuarGrupAdi, "Accessories", new { AksGrubuOid = item2.AksesuarGrubu1.Oid })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                        </div>
+
+                        <div class="four-features-text-heavy-module">
+                            <div class="">
+                                <div class="row">
+                                    @foreach (var item in aks)
+                                    {
+                                        int counter = 0;
+                                        <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="@Url.Action("AksesuarDetail","ProductGroup", new { urunOid = item.Oid })">
+                                            <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                <div class="map-category-image">
+
+                                                    <div class="map-category-image">
+                                                        @foreach (var foto in item.Fotograflar)
+                                                        {
+                                                            Guid a = foto == null ? Guid.Empty : foto.Aksesuar1.Oid;
+                                                            if (a == item.Oid)
+                                                            {
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" class='center-block' style="width: auto; height: 190px;" />
+                                                                counter++;
+                                                                break;
+                                                            }
+
+                                                        }
+                                                        @if (counter == 0)
+                                                        {
+                                                            <img src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+                                                        }
+                                                    </div>
+                                                    <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                        <span>@Html.DisplayFor(x => item.AksesuarAdi)</span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="product-aciklama">
+                                                    <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                </div>
+
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page container-fluid">
+                    <div class="map-category-page-inner">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="/ENG">
+                                    Home Page
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ProductGroup/AccessoriesGroup">
+                                    Accessories Group
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ENG/ProductGroup/Accessories">
+                                    @foreach (var item2 in aks)
+                                    {
+
+                                        @Html.ActionLink(item2.AksesuarGrubu1.EngAksesuarGrupAdi, "Accessories", new { AksGrubuOid = item2.AksesuarGrubu1.Oid })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                        </div>
+
+
+                        <div class="four-features-text-heavy-module">
+                            <div class="">
+                                <div class="row">
+                                    @foreach (var item in aks)
+                                    {
+                                        int counter = 0;
+                                        <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="@Url.Action("AksesuarDetail","ProductGroup", new { urunOid = item.Oid })">
+                                            <div class="four-features-text-heavy-module-feature" style="margin: 0px 0px 0px 0px">
+                                                <div class="map-category-image">
+
+                                                    <div class="map-category-image">
+                                                        @foreach (var foto in item.Fotograflar)
+                                                        {
+                                                            Guid a = foto == null ? Guid.Empty : foto.Aksesuar1.Oid;
+                                                            if (a == item.Oid)
+                                                            {
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" class='center-block' style="width: auto; height: 190px;" />
+                                                                counter++;
+                                                                break;
+                                                            }
+
+                                                        }
+                                                        @if (counter == 0)
+                                                        {
+                                                            <img src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+                                                        }
+                                                    </div>
+                                                    <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                        <span>@Html.DisplayFor(x => item.EngAksesuarAdi)</span>
+                                                    </div>
+
+                                                </div>
+                                                <div class="product-aciklama">
+                                                    <span style="">@Html.DisplayFor(modelItem => item.EngAciklama)</span>
+                                                </div>
+
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}

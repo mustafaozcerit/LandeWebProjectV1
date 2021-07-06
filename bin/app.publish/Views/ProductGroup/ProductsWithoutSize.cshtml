@@ -1,0 +1,257 @@
+﻿@model IEnumerable<LandeWebProjectV1.Models.Urunler>
+@{
+    ViewBag.Title = "ProductsWithoutSize";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var product = (List<LandeWebProjectV1.Models.Urunler>)ViewData["ProductsWithoutSize"]; // Cast the list
+    var fotograf = (List<LandeWebProjectV1.Models.Fotograflar>)ViewData["Fotograflar"];
+    var dil = ViewBag.dil;
+    string Menu = "";
+    string Icerik = "";
+    string Icerik2 = "";
+    foreach (var item in product)
+    {
+        switch (item.UrunGrubu1.UrunGrubuAdi)
+        {
+            case "Veri Merkezi Çözümleri":
+                Menu = "Datacenter";
+                Icerik = "Veri Merkezi Çözümleri";
+                Icerik2 = "Data Center Solutions";
+                break;
+            case "Soğutma Çözümleri":
+                Menu = "Datacenter";
+                Icerik = "Veri Merkezi Çözümleri";
+                Icerik2 = "Data Center Solutions";
+                break;
+            case "Endüstriyel Panolar ve Kabinetler":
+                Menu = "EndustriyelGuvenlik";
+                Icerik = "Endüstriyel Uygulamalar & Güvenlik Sistemleri";
+                Icerik2 = "Industrial Applicaiton & Securty Systems";
+                break;
+            case "Mobese ve Saha Güvenlik Sistemleri":
+                Menu = "EndustriyelGuvenlik";
+                Icerik = "Endüstriyel Uygulamalar & Güvenlik Sistemleri";
+                Icerik2 = "Industrial Applicaiton & Securty Systems";
+                break;
+            case "Uzaktan Erişim Sistemleri":
+                Menu = "OrtamIzleme";
+                Icerik = "Uzaktan Erişim Sistemleri";
+                Icerik2 = "Remote Management Systems";
+                break;
+            case "Güç Dağıtım Üniteleri":
+                Menu = "GucDagitimUniteleri";
+                Icerik = "Güç Dağıtım Üniteleri";
+                Icerik2 = "Power Distribution Units";
+                break;
+        }
+        break;
+    }
+
+}
+@switch (dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page map-subcategory container-fluid">
+                    <div class="map-category-page-inner">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="/TR">
+                                    Anasayfa
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/TR/ProductGroup/@Menu">
+                                    @Icerik
+
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ProductGroup/P">
+                                    @foreach (var item2 in product)
+                                    {
+
+                                        @Html.ActionLink(item2.UrunSerisi1.UrunSerisiAdi, "ProductsWithoutSize", new { urunserisiOid = item2.UrunSerisi1.Oid })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                        </div>
+
+                        <div class="open-html-module">
+                            <div class="container-fluid" style="padding:0;">
+                                <center>
+                                    <img src="~/Images/AVRACKNEWRAIL970x250steps.gif" style="text-align: left; width: 100%; vertical-align: top;" /><br />
+                                </center>
+                            </div>
+                        </div>
+
+
+                        <div class="four-features-text-heavy-module">
+                            <div class="">
+                                <div class="row">
+                                    @foreach (var item in product)
+                                    {
+                                        <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="@Url.Action("ProductDetailsWithoutSize","ProductGroup", new { urunOidst = item.Oid.ToString() })">
+                                            <div class="four-features-text-heavy-module-feature" style="margin: 0px 0px 0px 0px">
+                                                <div class="map-category-image">
+                                                    @foreach (LandeWebProjectV1.Models.Fotograflar foto in fotograf)
+                                                    {
+                                                        Guid a = foto == null ? Guid.Empty : foto.Urunler1.Oid;
+                                                        if (a == item.Oid)
+                                                        {
+
+                                                            <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" style="width: auto; height: 190px;" class="center-block" />
+                                                            break;
+                                                        }
+                                                    }
+                                                    @if (item.StokAdi !=null)
+                                                    {
+                                                        <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                            @Html.DisplayFor(x => item.StokAdi)
+                                                        </div>
+                                                    }
+
+
+                                                    <div class="four-features-text-heavy-module-feature-text">
+                                                        @Html.DisplayFor(x => item.KatalogKodu)
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="product-aciklama">
+                                                    <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page map-subcategory container-fluid">
+                    <div class="map-category-page-inner">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="/ENG">
+                                    Home Page
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ENG/ProductGroup/@Menu">
+                                    @Icerik2
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ProductGroup/P">
+                                    @foreach (var item2 in product)
+                                    {
+
+                                        @Html.ActionLink(item2.UrunSerisi1.EngUrunSerisiAdi, "ProductsWithoutSize", new { urunserisiOid = item2.UrunSerisi1.Oid })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                        </div>
+                        <div class="open-html-module">
+                            <div class="container-fluid" style="padding:0;">
+                                <center>
+                                    <img src="~/Images/AVRACKNEWRAIL970x250steps.gif" style="text-align: left; width: 100%; vertical-align: top;" /><br />
+                                </center>
+                            </div>
+                        </div>
+
+                        <div class="four-features-text-heavy-module">
+                            <div class="">
+                                <div class="row">
+                                    @foreach (var item in product)
+                                    {
+                                        <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="@Url.Action("ProductDetailsWithoutSize","ProductGroup", new { urunOidst = item.Oid.ToString() })">
+                                            <div class="four-features-text-heavy-module-feature" style="margin: 0px 0px 0px 0px">
+                                                <div class="map-category-image">
+                                                    @foreach (LandeWebProjectV1.Models.Fotograflar foto in fotograf)
+                                                    {
+                                                        Guid a = foto == null ? Guid.Empty : foto.Urunler1.Oid;
+                                                        if (a == item.Oid)
+                                                        {
+
+                                                            <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" style="width: auto; height: 190px;" class="center-block" />
+                                                            break;
+                                                        }
+                                                    }
+                                                    @if (item.StokAdi != null)
+                                                    {
+                                                        <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                            @Html.DisplayFor(x => item.StokAdi)
+                                                        </div>
+                                                    }
+
+
+                                                    <div class="four-features-text-heavy-module-feature-text">
+                                                        @Html.DisplayFor(x => item.KatalogKodu)
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="product-aciklama">
+                                                    <span style="">@Html.DisplayFor(modelItem => item.EngAciklama)</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+
+
+

@@ -1,0 +1,246 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+
+@{
+    //ViewBag.Title = "ProductSeries";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = Model.SayfaLinkBaslik;
+}
+@{
+
+    var dil = ViewBag.dil;
+}
+@switch (dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page map-subcategory container-fluid">
+                    <div class="map-category-page-inner">
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr">
+                                    Anasayfa
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr/kabinetler">
+                                    Kabinetler
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                @foreach (var item2 in Model.productGrup)
+                                {
+                                    <a href="~/@item2.grupUrl">@item2.grupAdi</a>
+                                }
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                        </div>
+
+                        <div class="map-category-page-image">
+                            @foreach (var item in Model.bannerModels)
+                            {
+                                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                            }
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                @Html.DisplayFor(modelItem => Model.SayfaLinkBaslik)
+                            </h2>
+                        </div>
+
+                        @*<div class="map-category-page-description show-more">
+                                <p>&nbsp;</p>
+                                @foreach (var item4 in series2)
+                                {
+                                    <center>
+                                        @Html.DisplayFor(modelItem => item4.Aciklama)
+                                    </center>
+                                    break;
+                                }
+                                <p>&nbsp;</p>
+                            </div>*@
+
+                        @*<div class="map-sub-category-page-categories-outer">
+                                <div class="map-sub-category-page-categories row">
+
+
+                                </div>
+                            </div>*@
+                    </div>
+
+                </div>
+                @*<hr style="border-width:25px; border-color:#D8E2E2;" />*@
+
+                <div class="four-features-text-heavy-module">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @foreach (var item in Model.urunModel)
+                            {
+                                <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                    <div class="four-features-text-heavy-module-feature" style="margin: 0px -16px 0px -16px">
+
+                                        <div class="four-features-text-heavy-module-feature-picture img-fluid" style="text-align: -webkit-center;">
+                                            @{if (item.fotograf != null)
+                                                {
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="width: auto; height: 190px;" class="center-block;" />
+
+                                                }
+                                                else
+                                                {
+                                                    <img src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+                                                }
+                                            }
+                                        </div>
+
+                                        <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                            <span>@Html.DisplayFor(modelItem => item.Baslik)</span>
+                                        </div>
+                                        <div class="product-aciklama">
+                                            <span>@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page map-subcategory container-fluid">
+                    <div class="map-category-page-inner">
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/en">
+                                    Home Page
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a>
+                                    Cabinets
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                @foreach (var item2 in Model.productGrup)
+                                {
+                                    <a href="~/@item2.grupUrl">@item2.grupAdi</a>
+                                }
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                        </div>
+
+                        <div class="map-category-page-image">
+                            @foreach (var item in Model.bannerModels)
+                            {
+                                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                            }
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                @Html.DisplayFor(modelItem => Model.SayfaLinkBaslik)
+                            </h2>
+                        </div>
+
+                        @*<div class="map-category-page-description show-more">
+                                <p>&nbsp;</p>
+                                @foreach (var item4 in series2)
+                                {
+                                    <center>
+                                        @Html.DisplayFor(modelItem => item4.EngAciklama)
+                                    </center>
+                                    break;
+                                }
+                                <p>&nbsp;</p>
+                            </div>*@
+
+                        @*<div class="map-sub-category-page-categories-outer">
+                                <div class="map-sub-category-page-categories row">
+
+
+                                </div>
+                            </div>*@
+                    </div>
+
+                </div>
+                @*<hr style="border-width:25px; border-color:#D8E2E2;" />*@
+
+                <div class="four-features-text-heavy-module">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="four-features-text-heavy-module">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        @foreach (var item in Model.urunModel)
+                                        {
+                                            <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                <div class="four-features-text-heavy-module-feature" style="margin: 0px -15px 0px -15px">
+
+                                                    <div class="four-features-text-heavy-module-feature-picture img-fluid" style="text-align: -webkit-center;">
+                                                        @{if (item.fotograf != null)
+                                                            {
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="width: auto; height: 190px;" class="center-block;" />
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <img src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+                                                            }
+                                                        }
+                                                    </div>
+
+                                                    <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                        <span>@Html.DisplayFor(modelItem => item.Baslik)</span>
+                                                    </div>
+                                                    <div class="product-aciklama">
+                                                        <span>@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                    </div>
+
+                                                </div>
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+

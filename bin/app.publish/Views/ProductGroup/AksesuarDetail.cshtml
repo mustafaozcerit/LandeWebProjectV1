@@ -1,0 +1,1257 @@
+﻿
+@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var dil = ViewBag.dil;
+    ViewBag.Title = Model.SayfaLinkBaslik;
+}
+
+
+
+@{
+    ViewBag.Title = "ProductDetailsWithoutSize";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var product = (List<LandeWebProjectV1.Models.Aksesuar>)ViewData["ProductDetail"]; // Cast the list
+
+    var SpecCtrl = (List<LandeWebProjectV1.Models.UrunDegerler>)ViewData["SpecCtrl"];
+
+    var Teknik = (List<LandeWebProjectV1.Models.TeknikCizimler>)ViewData["Teknik"]; //+
+
+    var montaj = (List<LandeWebProjectV1.Models.MontajKlavuzlari>)ViewData["Montaj"]; //+
+
+    var productDesc = ViewData["ProDesc"];
+
+    var katalog = (List<LandeWebProjectV1.Models.Kataloglar>)ViewData["Katalog"]; //+
+
+    var Foto = (List<LandeWebProjectV1.Models.Fotograflar>)ViewData["Foto"];
+
+    //var dil = ViewBag.dil;
+
+    var Degerler = (List<LandeWebProjectV1.Models.aksesuarDeger>)ViewData["Degerler"];
+
+    var sertifika = (List<LandeWebProjectV1.Models.Sertifikalar>)ViewData["UrunSertifikalar"];
+
+    var kaliteDoc = (List<LandeWebProjectV1.Models.KaliteDokumanlari>)ViewData["KaliteDok"]; //++
+
+    int TotalDocCounter = kaliteDoc.Count + sertifika.Count + katalog.Count + montaj.Count + Teknik.Count;
+
+
+
+    List<Guid> OzelliklerGuid = new List<Guid>();
+}
+<script>
+        $(document).ready(function () {
+            var val = $(this).val();
+            //$("#ozellikler").load('@(Url.Action("Specification"))?urunOidst=' + val);
+            $("#teknik").load('@(Url.Action("TeknikCizimler"))?urunOidst=' + val);
+            $("#fotox").load('@(Url.Action("Fotograflar"))?urunOidst=' + val);
+            $("#ProductDesc").load('@(Url.Action("ProductDescription"))?urunOidst=' + val);
+            var a = $("#ozellikctrl").val();
+            if (a == null) { document.getElementById("specctrl").style.display = "none" }
+            else { document.getElementById("specctrl").style.display = "block" }
+
+        $('.big-images').parent().css("z-index", 0);
+        $('.product-detail-thumbs-container').parent().css("z-index", 0);
+        });
+
+</script>
+<script src="~/Scripts/Main.min.js"></script>
+<script src="~/Scripts/legrand-vendor.min.js"></script>
+<input type="hidden" id="ozellikctrl" value="@Degerler" />
+@switch (dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+
+                <div class="product-detail-container-outer" itemscope itemtype="https://schema.org/Product">
+                    <div class="product-detail-container container-fluid" style="max-width: 970px">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr">
+                                    Anasayfa
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/tr/aksesuar_gruplari">
+                                    Aksesuarlar
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="">
+                                    @foreach (var item2 in product)
+                                    {
+                                        @Html.ActionLink(item2.AksesuarGrubu1.AksesuarGrupAdi, "Aksesuarlar", new { AksesuarGrubuAdi = item2.AksesuarGrubu1.WebUrl })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+
+                                @foreach (var item in product)
+                                {
+                                    <a href="~/tr/aksesuarlar/@item.AksesuarGrubu1.WebUrl/@item.WebUrl">
+                                        @*@Html.ActionLink(item.AksesuarAdi, item.AksesuarGrubu1.AksesuarGrupAdi, "AksesuarDetail", new { AksesuarAdi = item.WebUrl, AksesuarGrubuAdi = item.AksesuarGrubu1.WebUrl })*@
+                                        @item.AksesuarKodu
+                                    </a>
+                                }
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            @*<div class="breadcrumb-link">
+                                    <a href="/products/racks-enclosures/gangable-floor-standing-enclosures/bgr-series-23-in-wide-enclosure/bgr-4532-av.aspx">
+                                        @foreach (var item in product)
+                                        {
+                                            @Html.ActionLink(item.KatalogKodu, "ProductDetail", new { urunOid = item.Oid })
+                                            break;
+                                        }
+                                    </a>
+                                </div>*@
+                            @*<span class="breadcrumb-rsaquo">
+                                    &rsaquo;
+                                </span>*@
+                        </div>
+
+                        <div class="product-detail-head">
+                            <div class="product-detail-head-inner row">
+                                <div class="full-screen-photo-carousel carousel slide product-detail-head-inner-left col-lg-5 col-md-5 col-sm-5 col-xs-12" data-ride="carousel" id="myCarousel" style="max-height:400px;">
+
+                                    @{
+                                        if (Foto != null)
+                                        {
+                                            if (Foto.Count == 1)
+                                            {
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color:red;"></li>
+                                                </ol>
+                                            }
+                                            else
+                                            {
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color:red;"></li>
+                                                    @for (int i = 2; i <= Foto.Count; i++)
+                                                    {
+                                                        <li data-target="#myCarousel" data-slide-to="@i" style="background-color:red;"></li>
+                                                    }
+                                                </ol>
+                                            }
+                                        }
+                                    }
+
+
+                                    <div class="container-fluid">
+                                        <div class="row" id="fotox">
+                                            <div class="carousel-inner img-responsive" style="max-height:400px;width:100%; ">
+                                                @*@Html.Action("Fotograflar")*@
+                                                @foreach (var item in Model.aksesuarDetail)
+                                                {
+                                                    int i = 0;
+                                                    foreach (var item2 in item.fotograf)
+                                                    {
+                                                        if (i == 0)
+                                                        {
+                                                            <div class="item active" style="height:400px;vertical-align:middle;">
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(item2)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                                                                <div class="carousel-caption">
+                                                                    <a href="@item2" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="item" style="height:400px;vertical-align:middle;">
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(item2)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                                                                <div class="carousel-caption">
+                                                                    <a href="@item2" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        i++;
+                                                    }
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="margin:180px 0">
+                                        <span style="line-height:2"><</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="margin:180px 0">
+                                        <span style="line-height:2">></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+
+                                </div>
+                                @foreach (var item in product)
+                                {
+
+                            <div class="product-detail-head-inner-right col-lg-7 col-md-6 col-sm-6 col-xs-12">
+                                <div id="ProductDesc">
+                                    <div class="product-detail-title hidden-xs">
+                                        @Html.DisplayFor(modelItem => item.AksesuarGrubu1.AksesuarGrupAdi)
+                                        @if (item.Boyut1 != null && item.Yukseklik1 != null)
+                                        {
+                                            @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                                            <text>*</text>
+                                            @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                                            <text>-</text>
+                                            @Html.DisplayFor(modelItem => item.Yukseklik1.Yuksek)
+                                        }
+                                        else if (item.Boyut1 != null && item.Yukseklik1 == null)
+                                        {
+                                            @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                                            <text>*</text>
+                                            @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                                        }
+                                    </div>
+                                    <div class="product-detail-sku-brand-configure row hidden-xs">
+                                        <div class="product-detail-sku-brand col-lg-8 col-md-7 col-sm-12">
+
+                                            <span class="product-detail-sku"> @Html.DisplayFor(modelItem => item.AksesuarKodu)</span>
+                                            <span class="product-detail-brand">
+                                            </span>
+                                        </div>
+                                        <div class="product-detail-configure col-lg-4 col-md-5 col-sm-6 hidden-xs">
+                                        </div>
+                                    </div>
+                                    <div class="product-detail-overview-text">
+                                        @Html.DisplayFor(modelItem => item.Aciklama)
+                                    </div>
+
+                                </div>
+
+
+
+                                @*<div class="product-detail-head-inner-right-far col-md-1 col-sm-1 hidden-xs">
+            <div class="product-detail-social-tablet-icon">
+                <div class="product-detail-social-mobile-share hidden-lg hidden-md hidden-sm col-xs-12">
+                    Share this product
+                </div>
+                <div class="product-detail-social-mobile-icons col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-detail-social-mobile-icon mobile-icon-pdf  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                        <div class="addthis_toolbox addthis_default_style">
+                            <a href="@Url.Action("CreatePdf","ProductGroup",new { @oid = item.Oid})" class="">
+                                <img src="~/Images/pdf (1).svg" class="svg" alt="PDF" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-detail-social-mobile-icon mobile-icon-twitter  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                        <div class="addthis_toolbox addthis_default_style">
+                            <a href="http://twitter.com/intent/tweet?status=Pre-Configured BGR Rack for AV Systams+https://www.middleatlantic.com/products/racks-enclosures/gangable-floor-standing-enclosures/bgr-series-23-in-wide-enclosure/bgr-4532-av.aspx" class="">
+                                <img src="~/Images/twitter.svg" class="svg" alt="Twitter" style="height:35px" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-detail-social-mobile-icon mobile-icon-print  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                        <div class="addthis_toolbox addthis_default_style">
+                            <a href="javascript:window.print()" class="">
+                                <img src="~/Images/print.svg" alt="Print" class="svg" style="height:35px" />
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="product-detail-social-mobile-icon mobile-icon-facebook  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                        <div class="addthis_toolbox addthis_default_style">
+                            <a href="javascript:void(null);" class="addthis_button_email">
+                                <img src="~/Images/email.svg" class="svg" style="height:35px" alt="Email" />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>*@
+                                <br />
+                                <div class="product-detail-specifications row product-detail-specifications-container">
+                                    <div class="product-detail-specifications-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="product-detail-specifications-header-text col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                            Özellikler
+                                        </div>
+                                        <div id="productdetailresources" class="product-detail-specification-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            &#8250;
+                                        </div>
+                                    </div>
+
+                                    <div class="product-detail-specifications-body product-detail-resources col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        @if (Degerler.Count <= 0)
+                                        {
+                                            <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <a class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12" href="~/TR/ProductGroup/Contact">
+                                                    <div>
+                                                        <div class="container-fluid">
+                                                            <hr style="border-top: 2px solid; border-color: #eeeeee">
+                                                            <div style="text-align: left; padding-bottom: 0px;margin-bottom: 15px;">
+                                                                Şu an üzerinde çalışıyoruz.
+                                                                <br>
+                                                                Bizimle iletişime geçin.
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="product-detail-specifications-mansonry" id="ozellikler">
+                                                    <div style="width:200%;">
+                                                        @foreach (var x in Degerler)
+                                                        {
+
+                                                            Guid CurrentOid = (Guid)x.Degerler1.ozellikler;
+                                                            if (!OzelliklerGuid.Contains(CurrentOid))
+                                                            {
+                                                                OzelliklerGuid.Add(CurrentOid);
+                                                                <div class="product-detail-specifications-content-header">
+                                                                    <div class="" style="font-size: 14px; font-weight:bold; color:#647984">
+                                                                        @Html.DisplayFor(modelItem => x.Degerler1.Ozellikler1.OzellikAdi)
+
+                                                                    </div>
+
+                                                                    @foreach (var y in Degerler.Where(m => m.Degerler1.ozellikler == CurrentOid))
+                                                                    {
+                                                                        <div class="product-detail-specifications-content">
+                                                                            <div class="product-detail-specifications-content-item">
+                                                                                @Html.DisplayFor(modelItem => y.Degerler1.DegerAdi)&nbsp; :&nbsp;
+                                                                                @Html.DisplayFor(modelItem => y.Deger)&nbsp;
+                                                                                @if (y.Degerler1.DegerTipleri != null)
+                                                                                {
+                                                                                    @Html.DisplayFor(modelItem => y.Degerler1.DegerTipleri.DegerTipi)
+
+                                                                                }
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            }
+
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                                <div class="product-detail-specifications row product-detail-resources-container">
+                                    <div class="product-detail-specifications-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="product-detail-specifications-header-text col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                            Dokümanlar
+                                        </div>
+                                        <div id="productDetailResources" class="product-detail-specification-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                            &#8250;
+                                        </div>
+                                    </div>
+                                    <div class="product-detail-social-mobile-icon mobile-icon-pdf  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                                        <div class="addthis_toolbox addthis_default_style">
+
+                                            @*<a href="@Url.Action("PDF Oluştur", "CreatePdf", new { @oid = item.Oid, @dil = dil })" class="">
+                    PDF  </a>*@
+                                        </div>
+                                    </div>
+                                    <div class="product-detail-specifications-body product-detail-resources col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                        @if (TotalDocCounter <= 0)
+                                        {
+                                            <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <a class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12" href="~/TR/ProductGroup/Contact">
+                                                    <div>
+                                                        <div class="container-fluid">
+                                                            <hr style="border-top: 1.5px solid; border-color: #eeeeee">
+                                                            <div style="text-align: left; padding-bottom: 0px;margin-bottom: 15px;">
+                                                                Şu an üzerinde çalışıyoruz.
+                                                                <br>
+                                                                Bizimle iletişime geçin.
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+
+                                            if (katalog.Count > 0)
+                                            {
+                                                <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                            Kataloglar
+                                                        </div>
+                                                        <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                            &#8250;
+                                                        </div>
+                                                    </div>
+                                                    @foreach (var doc in katalog)
+                                                    {
+
+                                                        doc.FileData.size = doc.FileData.size / 1024;
+
+                                                        <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <a href="/-/media/brands/map/resources/cad-drawings/120-00009.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                <div class="product-detail-resource-image">
+                                                                    <img src="~/Images/pdffile.svg" class="svg" />
+                                                                </div>
+                                                                <div class="product-detail-resource-text">
+                                                                    <div class="product-detail-resource-title">
+                                                                        <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "katalog" }, new { target = "_blank" })</i>
+                                                                    </div>
+                                                                    <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+
+                                                                        <span>
+                                                                            <i>@Html.DisplayFor(modelItem => doc.FileData.size) &nbsp; KB</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+                                                    }
+                                                </div>
+                                            }
+                                            if (Teknik.Count > 0)
+                                            {
+                                                <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                            Teknik Çizimler
+                                                        </div>
+                                                        <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                            &#8250;
+                                                        </div>
+                                                    </div>
+                                                    <div id="teknik" style="cursor:pointer;">
+                                                        @foreach (var doc in Teknik)
+                                                        {
+                                                            <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                <a href="" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                    <div class="product-detail-resource-image">
+                                                                        <img src="~/Images/pdffile.svg" class="svg" />
+                                                                    </div>
+                                                                    <div class="product-detail-resource-text">
+                                                                        <div class="product-detail-resource-title">
+                                                                            <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "teknik" }, new { target = "_blank" })</i>
+                                                                        </div>
+
+                                                                        <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                                                            <span id="fileSize">
+                                                                                <i>@Html.DisplayFor(modelItem => doc.FileData.size / 1024)&nbsp;KB</i>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        }
+
+
+                                                    </div>
+                                                </div>
+                                            }
+                                            if (montaj.Count > 0)
+                                            {
+                                                <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                            Montaj Kılavuzları
+                                                        </div>
+                                                        <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                            &#8250;
+                                                        </div>
+                                                    </div>
+                                                    @foreach (var doc in montaj)
+                                                    {
+
+                                                        doc.FileData.size = doc.FileData.size / 1024;
+
+                                                        <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <a href="" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                <div class="product-detail-resource-image">
+                                                                    <img src="~/Images/pdffile.svg" class="svg" />
+                                                                </div>
+                                                                <div class="product-detail-resource-text">
+                                                                    <div class="product-detail-resource-title">
+                                                                        <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "montaj" }, new { target = "_blank" })</i>
+                                                                    </div>
+                                                                    <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                                                        @*<span>
+                                                    @Html.DisplayFor(modelItem => doc.dokumanUzanti)
+                                                </span>*@
+                                                                        <span>
+                                                                            <i>@Html.DisplayFor(modelItem => doc.FileData.size) &nbsp; KB</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+                                                    }
+
+                                                </div>
+                                            }
+                                            if (kaliteDoc.Count > 0 || sertifika.Count > 0)
+                                            {
+                                                <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                            Kalite Dokümanları
+                                                        </div>
+                                                        <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                            &#8250;
+                                                        </div>
+                                                    </div>
+                                                    @foreach (var doc in kaliteDoc)
+                                                    {
+
+                                                        doc.FileData.size = doc.FileData.size / 1024;
+
+                                                        <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <a href="/-/media/brands/map/resources/ae/96-01149_bgr.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                <div class="product-detail-resource-image">
+                                                                    @if ((doc.FileData.FileName).EndsWith("cdb"))
+                                                                    {
+                                                                        <img src="~/Images/cdbfile.svg" class="svg" id="docIcon" style="height:22px;" />
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/pdffile.svg" class="svg" id="docIcon" />
+                                                                    }
+                                                                </div>
+                                                                <div class="product-detail-resource-text">
+                                                                    <div class="product-detail-resource-title">
+
+
+                                                                        <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "kaliteDokumanlari" }, new { target = "_blank" })</i>
+
+
+                                                                    </div>
+                                                                    <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+
+                                                                        <span>
+                                                                            <i>@Html.DisplayFor(modelItem => doc.FileData.size)&nbsp;KB</i>
+                                                                        </span>
+
+                                                                    </div>
+                                                                    <div class="product-detail-resource-size">
+                                                                        @foreach (var logo in doc.Logolar)
+                                                                        {
+                                                                            <span>
+                                                                                <img src="data:image;base64,@System.Convert.ToBase64String(logo.LogoResmi)" class="img-responsive" style="height:20px;width:20px" />
+                                                                            </span>
+                                                                        }
+
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+                                                    }
+                                                    @foreach (var doc in sertifika)
+                                                    {
+
+                                                        doc.FileData.size = doc.FileData.size / 1024;
+
+                                                        <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                            <a href="/-/media/brands/map/resources/cad-drawings/120-00009.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                <div class="product-detail-resource-image">
+                                                                    <img src="~/Images/pdffile.svg" class="svg" />
+                                                                </div>
+                                                                <div class="product-detail-resource-text">
+                                                                    <div class="product-detail-resource-title">
+                                                                        <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "serifika" }, new { target = "_blank" })</i>
+                                                                    </div>
+                                                                    <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                                                        @*<span>
+                                                    @Html.DisplayFor(modelItem => doc.dokumanUzanti)
+                                                </span>*@
+                                                                        <span>
+                                                                            <i>@Html.DisplayFor(modelItem => doc.FileData.size) &nbsp; KB</i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+
+
+                                                    }
+
+
+
+                                                </div>
+                                            }
+
+                                        }
+
+                                    </div>
+                                </div>
+
+                                <div class="product-detail-specifications row product-detail-resources-container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col">
+                                            </div>
+                                            <div class="col">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                            </div>
+                                            <div class="col">
+                                            </div>
+                                            <div class="col">
+                                            </div>
+                                            <div class="col " style="margin-right:20px">
+                                                <button class="btn btn-danger">@Html.ActionLink("Hızlı PDF Oluştur", "CreatePdfAksesuar", new { @oid = item.Oid, @dil = dil }, new { target = "_blank" })</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-detail-module">
+
+                    </div>
+
+                    <div class="product-detail-spaces">
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+
+                <div class="product-detail-container-outer" itemscope itemtype="https://schema.org/Product">
+                    <span itemprop="name" style="display: none;">Pre-Configured BGR for AV Systems - 45RU, 32”D</span>
+                    <div class="product-detail-container container-fluid" style="max-width: 970px">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/en">
+                                    Home Page
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/en/accessories_group">
+                                    Accessories Group
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="">
+                                    @foreach (var item2 in product)
+                                    {
+                                        @Html.ActionLink(item2.AksesuarGrubu1.EngAksesuarGrupAdi, "Aksesuarlar", new { AksesuarGrubuAdi = item2.AksesuarGrubu1.EngWebUrl })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                @foreach (var item in product)
+                                {
+                                    <a href="~/tr/accessories/@item.AksesuarGrubu1.EngWebUrl/@item.EngWebUrl">
+                                        @*@Html.ActionLink(item.AksesuarAdi, item.AksesuarGrubu1.AksesuarGrupAdi, "AksesuarDetail", new { AksesuarAdi = item.WebUrl, AksesuarGrubuAdi = item.AksesuarGrubu1.WebUrl })*@
+                                        @item.AksesuarKodu
+
+                                    </a>
+                                }
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            @*<div class="breadcrumb-link">
+                                    <a href="/products/racks-enclosures/gangable-floor-standing-enclosures/bgr-series-23-in-wide-enclosure/bgr-4532-av.aspx">
+                                        @foreach (var item in product)
+                                        {
+                                            @Html.ActionLink(item.KatalogKodu, "ProductDetail", new { urunOid = item.Oid })
+                                            break;
+                                        }
+                                    </a>
+                                </div>*@
+                            @*<span class="breadcrumb-rsaquo">
+                                    &rsaquo;
+                                </span>*@
+                        </div>
+
+                        <div class="product-detail-head">
+                            <div class="product-detail-head-inner row">
+                                <div class="full-screen-photo-carousel carousel slide product-detail-head-inner-left col-lg-5 col-md-5 col-sm-5 col-xs-12" data-ride="carousel" id="myCarousel" style="max-height:400px;">
+
+                                    @{
+                                        if (Foto != null)
+                                        {
+                                            if (Foto.Count == 1)
+                                            {
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color:red;"></li>
+                                                </ol>
+                                            }
+                                            else
+                                            {
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color:red;"></li>
+                                                    @for (int i = 2; i <= Foto.Count; i++)
+                                                    {
+                                                        <li data-target="#myCarousel" data-slide-to="@i" style="background-color:red;"></li>
+                                                    }
+                                                </ol>
+                                            }
+                                        }
+                                    }
+
+
+                                    <div class="container-fluid">
+                                        <div class="row" id="fotox">
+                                            <div class="carousel-inner img-responsive" style="max-height:400px;width:100%; ">
+                                                @*@Html.Action("Fotograflar")*@
+                                                @foreach (var item in Model.aksesuarDetail)
+                                                {
+                                                    int i = 0;
+                                                    foreach (var item2 in item.fotograf)
+                                                    {
+                                                        if (i == 0)
+                                                        {
+                                                            <div class="item active" style="height:400px;vertical-align:middle;">
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(item2)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                                                                <div class="carousel-caption">
+                                                                    <a href="@item2" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="item" style="height:400px;vertical-align:middle;">
+                                                                <img src="data:image;base64,@System.Convert.ToBase64String(item2)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                                                                <div class="carousel-caption">
+                                                                    <a href="@item2" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        i++;
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="margin:180px 0">
+                                        <span style="line-height:2"><</span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="margin:180px 0">
+                                        <span style="line-height:2">></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+
+                                </div>
+                                @foreach (var item in product)
+                                {
+                                    <div class="product-detail-head-inner-right col-lg-7 col-md-6 col-sm-6 col-xs-12">
+                                        <div id="ProductDesc">
+                                            <div class="product-detail-title hidden-xs">
+                                                @Html.DisplayFor(modelItem => item.AksesuarGrubu1.EngAksesuarGrupAdi)
+                                                @if (item.Boyut1 != null && item.Yukseklik1 != null)
+                                                {
+                                                    @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                                                    <text>*</text>
+                                                    @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                                                    <text>-</text>
+                                                    @Html.DisplayFor(modelItem => item.Yukseklik1.Yuksek)
+                                                }
+                                                else if (item.Boyut1 != null && item.Yukseklik1 == null)
+                                                {
+                                                    @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                                                    <text>*</text>
+                                                    @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                                                }
+
+
+
+                                            </div>
+                                            <div class="product-detail-sku-brand-configure row hidden-xs">
+                                                <div class="product-detail-sku-brand col-lg-8 col-md-7 col-sm-12">
+
+                                                    <span class="product-detail-sku"> @Html.DisplayFor(modelItem => item.AksesuarKodu)</span>
+                                                    <span class="product-detail-brand">
+                                                    </span>
+                                                </div>
+                                                <div class="product-detail-configure col-lg-4 col-md-5 col-sm-6 hidden-xs">
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-overview-text">
+                                                @Html.DisplayFor(modelItem => item.EngAciklama)
+                                            </div>
+                                        </div>
+
+                                        @*<div class="product-detail-head-inner-right-far col-md-1 col-sm-1 hidden-xs">
+                                                <div class="product-detail-social-tablet-icon">
+                                                    <div class="product-detail-social-mobile-share hidden-lg hidden-md hidden-sm col-xs-12">
+                                                        Share this product
+                                                    </div>
+                                                    <div class="product-detail-social-mobile-icons col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="product-detail-social-mobile-icon mobile-icon-pdf  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                                                            <div class="addthis_toolbox addthis_default_style">
+                                                                <a href="@Url.Action("CreatePdf","ProductGroup",new { @oid = item.Oid})" class="">
+                                                                    <img src="~/Images/pdf (1).svg" class="svg" alt="PDF" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-detail-social-mobile-icon mobile-icon-twitter  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                                                            <div class="addthis_toolbox addthis_default_style">
+                                                                <a href="http://twitter.com/intent/tweet?status=Pre-Configured BGR Rack for AV Systams+https://www.middleatlantic.com/products/racks-enclosures/gangable-floor-standing-enclosures/bgr-series-23-in-wide-enclosure/bgr-4532-av.aspx" class="">
+                                                                    <img src="~/Images/twitter.svg" class="svg" alt="Twitter" style="height:35px" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-detail-social-mobile-icon mobile-icon-print  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                                                            <div class="addthis_toolbox addthis_default_style">
+                                                                <a href="javascript:window.print()" class="">
+                                                                    <img src="~/Images/print.svg" alt="Print" class="svg" style="height:35px" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="product-detail-social-mobile-icon mobile-icon-facebook  col-lg-12 col-md-12 col-sm-12 col-xs-2">
+                                                            <div class="addthis_toolbox addthis_default_style">
+                                                                <a href="javascript:void(null);" class="addthis_button_email">
+                                                                    <img src="~/Images/email.svg" class="svg" style="height:35px" alt="Email" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        <br />
+                                        <div class="product-detail-specifications row product-detail-specifications-container" id="">
+                                            <div class="product-detail-specifications-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="product-detail-specifications-header-text col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                    FEATURES
+                                                </div>
+                                                <div id="productDetailResources" class="product-detail-specification-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                    &#8250;
+                                                </div>
+                                            </div>
+
+                                            <div class="product-detail-specifications-body product-detail-resources col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                @if (Degerler.Count <= 0)
+                                                {
+                                                    <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <a class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12" href="~/ENG/ProductGroup/Contact">
+                                                            <div>
+                                                                <div class="container-fluid">
+                                                                    <hr style="border-top: 2px solid; border-color: #eeeeee">
+                                                                    <div style="text-align: left; padding-bottom: 0px;margin-bottom: 15px;">
+                                                                        We are developing the data.
+                                                                        <br>
+                                                                        Please contact us for further information.
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="product-detail-specifications-mansonry" id="ozellikler">
+                                                            <div style="width:200%;">
+                                                                @foreach (var x in Degerler)
+                                                                {
+
+                                                                    Guid CurrentOid = (Guid)x.Degerler1.ozellikler;
+                                                                    if (!OzelliklerGuid.Contains(CurrentOid))
+                                                                    {
+                                                                        OzelliklerGuid.Add(CurrentOid);
+                                                                        <div class="product-detail-specifications-content-header">
+                                                                            <div class="" style="font-size: 14px; font-weight:bold; color:#647984">
+                                                                                @Html.DisplayFor(modelItem => x.Degerler1.Ozellikler1.EngOzellikAdi)
+
+                                                                            </div>
+
+                                                                            @foreach (var y in Degerler.Where(m => m.Degerler1.ozellikler == CurrentOid))
+                                                                            {
+                                                                                <div class="product-detail-specifications-content">
+                                                                                    <div class="product-detail-specifications-content-item">
+                                                                                        @Html.DisplayFor(modelItem => y.Degerler1.EngDegerAdi)&nbsp; :&nbsp;
+                                                                                        @Html.DisplayFor(modelItem => y.Deger)&nbsp;
+                                                                                        @if (y.Degerler1.DegerTipleri != null)
+                                                                                        {
+                                                                                            if (y.Degerler1.DegerTipleri.EngDegerTipi != null)
+                                                                                            {
+                                                                                                @Html.DisplayFor(modelItem => y.Degerler1.DegerTipleri.EngDegerTipi)
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                @Html.DisplayFor(modelItem => y.Degerler1.DegerTipleri.DegerTipi)
+                                                                                            }
+
+                                                                                        }
+
+
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            }
+                                                                        </div>
+                                                                    }
+
+                                                                }
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                        <div class="product-detail-specifications row product-detail-resources-container">
+                                            <div class="product-detail-specifications-header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="product-detail-specifications-header-text col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                    Documents
+                                                </div>
+                                                <div id="productDetailResources" class="product-detail-specification-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                    &#8250;
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-specifications-body product-detail-resources col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                                                @if (TotalDocCounter <= 0)
+                                                {
+                                                    <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <a class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12" href="~/ENG/ProductGroup/Contact">
+                                                            <div>
+                                                                <div class="container-fluid">
+                                                                    <hr style="border-top: 1.5px solid; border-color: #eeeeee">
+                                                                    <div style="text-align: left; padding-bottom: 0px;margin-bottom: 15px;">
+                                                                        We are developing the data.
+                                                                        <br>
+                                                                        Please contact us for further information.
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+
+                                                    if (katalog.Count > 0)
+                                                    {
+                                                        <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                                    Catalogues
+                                                                </div>
+                                                                <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                                    &#8250;
+                                                                </div>
+                                                            </div>
+                                                            @foreach (var doc in katalog)
+                                                            {
+
+                                                                doc.FileData.size = doc.FileData.size / 1024;
+
+                                                                <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                    <a href="/-/media/brands/map/resources/cad-drawings/120-00009.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                        <div class="product-detail-resource-image">
+                                                                            <img src="~/Images/pdffile.svg" class="svg" />
+                                                                        </div>
+                                                                        <div class="product-detail-resource-text">
+                                                                            <div class="product-detail-resource-title">
+                                                                                <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "katalog" }, new { target = "_blank" })</i>
+                                                                            </div>
+                                                                            <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+
+                                                                                <span>
+                                                                                    <i>@Html.DisplayFor(modelItem => doc.FileData.size) &nbsp; KB</i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+
+
+                                                            }
+                                                        </div>
+                                                    }
+                                                    if (Teknik.Count > 0)
+                                                    {
+                                                        <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                                    Technical Drawings
+                                                                </div>
+                                                                <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                                    &#8250;
+                                                                </div>
+                                                            </div>
+                                                            <div id="teknik" style="cursor:pointer;">
+                                                                @foreach (var doc in Teknik)
+                                                                {
+                                                                    <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                        <a href="" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                            <div class="product-detail-resource-image">
+                                                                                <img src="~/Images/pdffile.svg" class="svg" />
+                                                                            </div>
+                                                                            <div class="product-detail-resource-text">
+                                                                                <div class="product-detail-resource-title">
+                                                                                    <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "teknik" }, new { target = "_blank" })</i>
+                                                                                </div>
+
+                                                                                <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                                                                    <span id="fileSize">
+                                                                                        <i>@Html.DisplayFor(modelItem => doc.FileData.size / 1024)&nbsp;KB</i>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                }
+
+
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                    if (montaj.Count > 0)
+                                                    {
+                                                        <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                                    Field Manual
+                                                                </div>
+                                                                <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                                    &#8250;
+                                                                </div>
+                                                            </div>
+                                                            @foreach (var doc in montaj)
+                                                            {
+
+                                                                doc.FileData.size = doc.FileData.size / 1024;
+
+                                                                <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                    <a href="" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                        <div class="product-detail-resource-image">
+                                                                            <img src="~/Images/pdffile.svg" class="svg" />
+                                                                        </div>
+                                                                        <div class="product-detail-resource-text">
+                                                                            <div class="product-detail-resource-title">
+                                                                                <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "montaj" }, new { target = "_blank" })</i>
+                                                                            </div>
+                                                                            <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                                                                @*<span>
+                                                                                        @Html.DisplayFor(modelItem => doc.dokumanUzanti)
+                                                                                    </span>*@
+                                                                                <span>
+                                                                                    <i>@Html.DisplayFor(modelItem => doc.FileData.size) &nbsp; KB</i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+
+
+                                                            }
+
+                                                        </div>
+                                                    }
+                                                    if (kaliteDoc.Count > 0 || sertifika.Count > 0)
+                                                    {
+                                                        <div class="product-detail-resource-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <div class="product-detail-resource-header-container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                                <div class="product-detail-resource-header col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                                                    Quality Documents
+                                                                </div>
+                                                                <div class="product-detail-resource-arrow arrow-up col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                                                    &#8250;
+                                                                </div>
+                                                            </div>
+                                                            @foreach (var doc in kaliteDoc)
+                                                            {
+
+                                                                doc.FileData.size = doc.FileData.size / 1024;
+
+                                                                <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                    <a href="/-/media/brands/map/resources/ae/96-01149_bgr.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                        <div class="product-detail-resource-image">
+                                                                            @if ((doc.FileData.FileName).EndsWith("cdb"))
+                                                                            {
+                                                                                <img src="~/Images/cdbfile.svg" class="svg" id="docIcon" style="height:22px;" />
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <img src="~/Images/pdffile.svg" class="svg" id="docIcon" />
+                                                                            }
+                                                                        </div>
+                                                                        <div class="product-detail-resource-text">
+                                                                            <div class="product-detail-resource-title">
+
+
+                                                                                <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "kaliteDokumanlari" }, new { target = "_blank" })</i>
+
+
+                                                                            </div>
+                                                                            <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+
+                                                                                <span>
+                                                                                    <i>@Html.DisplayFor(modelItem => doc.FileData.size)&nbsp;KB</i>
+                                                                                </span>
+
+                                                                            </div>
+                                                                            <div class="product-detail-resource-size">
+                                                                                @foreach (var logo in doc.Logolar)
+                                                                                {
+                                                                                    <span>
+                                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(logo.LogoResmi)" class="img-responsive" style="height:20px;width:20px" />
+                                                                                    </span>
+                                                                                }
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+
+
+                                                            }
+                                                            @foreach (var doc in sertifika)
+                                                            {
+
+                                                                doc.FileData.size = doc.FileData.size / 1024;
+
+                                                                <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                                    <a href="/-/media/brands/map/resources/cad-drawings/120-00009.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                                                                        <div class="product-detail-resource-image">
+                                                                            <img src="~/Images/pdffile.svg" class="svg" />
+                                                                        </div>
+                                                                        <div class="product-detail-resource-text">
+                                                                            <div class="product-detail-resource-title">
+                                                                                <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "serifika" }, new { target = "_blank" })</i>
+                                                                            </div>
+                                                                            <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                                                                @*<span>
+                                                                                        @Html.DisplayFor(modelItem => doc.dokumanUzanti)
+                                                                                    </span>*@
+                                                                                <span>
+                                                                                    <i>@Html.DisplayFor(modelItem => doc.FileData.size) &nbsp; KB</i>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+
+
+                                                            }
+
+
+
+                                                        </div>
+                                                    }
+
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                        <div class="product-detail-specifications row product-detail-resources-container">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col">
+                                                    </div>
+                                                    <div class="col">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                    </div>
+                                                    <div class="col">
+                                                    </div>
+                                                    <div class="col">
+                                                    </div>
+                                                    <div class="col " style="margin-right:20px">
+                                                        <button class="btn btn-danger">@Html.ActionLink("Create Quick PDF", "CreatePdfAksesuar", new { @oid = item.Oid, @dil = dil }, new { target = "_blank" })</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-detail-module">
+
+                    </div>
+
+                    <div class="product-detail-spaces">
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}

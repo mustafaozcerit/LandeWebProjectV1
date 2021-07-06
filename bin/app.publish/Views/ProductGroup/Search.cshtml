@@ -1,0 +1,389 @@
+﻿@*@using LandeWebProjectV1.Models*@
+@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var urunlers = ViewData["Search"] as IList<Urunler>;
+}
+
+@switch (ViewBag.dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page container-fluid">
+                    <div class="map-category-page-inner">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/TR">
+                                    Anasayfa
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a>
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="map-category-page-title" style="padding-bottom:0px">
+                            <h2>
+                                SEARCH
+                            </h2>
+                        </div>
+                        <div class="map-category-page-image">
+                            <img src="~/Images/Search-3.jpg" style="height:auto; width:100%" />
+                        </div>
+                        @*<div class="map-category-page-description show-more">
+
+                            </div>*@
+                        <div class="four-features-text-heavy-module" style="margin:0px">
+                            <div class="">
+                                <div class="row">
+                                    @if (Model.urunModel.Count == 0 && Model.seriModel.Count == 0 && Model.aksesuarDetail.Count == 0)
+                                    {
+                                        <div>
+                                            <div class="map-category-page-title">
+                                                <h2 class="text-center">ARADIĞINIZ KRİTERLERE UYGUN VERİ BULUNAMADI.</h2>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        if (Model.seriModel.Count != 0)
+                                        {
+                                            <div>
+                                                <div class="map-category-page-title" style="padding-top:0px">
+                                                    <h2 class="text-center">Ürün Serileri</h2>
+                                                </div>
+                                                @foreach (var item in Model.seriModel)
+                                                {
+                                                    <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                        <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                            <div class="map-category-image">
+
+                                                                <div class="map-category-image">
+
+                                                                    @if (item.fotograf != null)
+                                                                    {
+
+                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class="img-responsive" />
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                                    }
+                                                                </div>
+                                                                <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                                    <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="product-aciklama">
+                                                                <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </a>
+
+                                                }
+                                            </div>
+
+                                        }
+                                        if (Model.urunModel.Count != 0)
+                                        {
+                                            <div>
+                                                <div class="map-category-page-title">
+                                                    <h2 class="text-center">Ürünler</h2>
+                                                </div>
+                                                @foreach (var item in Model.urunModel)
+                                                {
+                                                    <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                        <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                            <div class="map-category-image">
+
+                                                                <div class="map-category-image">
+
+                                                                    @if (item.fotograf != null)
+                                                                    {
+
+                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class="img-responsive" />
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                                    }
+                                                                </div>
+                                                                <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                                    <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="product-aciklama">
+                                                                <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </a>
+
+                                                }
+                                            </div>
+
+                                        }
+                                        if (Model.aksesuarDetail.Count != 0)
+                                        {
+                                            <div>
+                                                <div class="map-category-page-title">
+                                                    <h2 class="text-center">Aksesuarlar</h2>
+                                                </div>
+                                                @foreach (var item in Model.aksesuarDetail)
+                                                {
+                                                    <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                        <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                            <div class="map-category-image">
+
+                                                                <div class="map-category-image">
+
+                                                                    @if (item.fotograf != null)
+                                                                    {
+
+                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.foti)" class="img-responsive" />
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                                    }
+                                                                </div>
+                                                                <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                                    <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="product-aciklama">
+                                                                <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </a>
+
+                                                }
+                                            </div>
+
+                                        }
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page container-fluid">
+                    <div class="map-category-page-inner">
+
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ENG">
+                                    Homapage
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a>
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="map-category-page-title" style="padding-bottom:0px">
+                            <h2>
+                                SEARCH
+                            </h2>
+                        </div>
+                        <div class="map-category-page-image">
+                            <img src="~/Images/Search-3.jpg" style="height:auto; width:100%" />
+                        </div>
+                        @*<div class="map-category-page-description show-more">
+
+                            </div>*@
+                        <div class="four-features-text-heavy-module" style="margin:0px">
+                            <div class="">
+                                <div class="row">
+                                    @if (Model.urunModel.Count == 0 && Model.seriModel.Count == 0 && Model.aksesuarDetail.Count == 0)
+                                    {
+                                        <div class="map-category-page-title">
+                                            <h2>WE COULD NOT FIND THE PRODUCT YOU'RE LOOKING FOR.</h2>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        if (Model.seriModel.Count != 0)
+                                        {
+                                            <div>
+                                                <div class="map-category-page-title" style="padding-top:0px">
+                                                    <h2 class="text-center">PRODUCTS SERIES</h2>
+                                                </div>
+                                                @foreach (var item in Model.seriModel)
+                                                {
+                                                    <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                        <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                            <div class="map-category-image">
+
+                                                                <div class="map-category-image">
+
+                                                                    @if (item.fotograf != null)
+                                                                    {
+
+                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class="img-responsive" />
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                                    }
+                                                                </div>
+                                                                <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                                    <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="product-aciklama">
+                                                                <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </a>
+
+                                                }
+                                            </div>
+
+                                        }
+                                        if (Model.urunModel.Count != 0)
+                                        {
+                                            <div>
+                                                <div class="map-category-page-title">
+                                                    <h2 class="text-center">PRODUCTS</h2>
+                                                </div>
+                                                @foreach (var item in Model.urunModel)
+                                                {
+                                                    <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                        <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                            <div class="map-category-image">
+
+                                                                <div class="map-category-image">
+
+                                                                    @if (item.fotograf != null)
+                                                                    {
+
+                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class="img-responsive" />
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                                    }
+                                                                </div>
+                                                                <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                                    <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="product-aciklama">
+                                                                <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </a>
+
+                                                }
+                                            </div>
+
+                                        }
+                                        if (Model.aksesuarDetail.Count != 0)
+                                        {
+                                            <div>
+                                                <div class="map-category-page-title">
+                                                    <h2 class="text-center">ACCESSORIES</h2>
+                                                </div>
+                                                @foreach (var item in Model.aksesuarDetail)
+                                                {
+                                                    <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                                        <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                                            <div class="map-category-image">
+
+                                                                <div class="map-category-image">
+
+                                                                    @if (item.fotograf != null)
+                                                                    {
+
+                                                                        <img src="data:image;base64,@System.Convert.ToBase64String(item.foti)" class="img-responsive" />
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                                    }
+                                                                </div>
+                                                                <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                                    <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="product-aciklama">
+                                                                <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </a>
+
+                                                }
+                                            </div>
+
+                                        }
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+
+
+
+
+

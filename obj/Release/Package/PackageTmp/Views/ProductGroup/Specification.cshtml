@@ -1,0 +1,110 @@
+﻿
+@{
+    var urunozellik = (List<LandeWebProjectV1.Models.UrunDegerler>)ViewData["UrunDegerler"]; // Cast the list
+}
+@{
+    var ozellik = (List<LandeWebProjectV1.Models.Ozellikler>)ViewData["Ozellik"]; // Cast the list
+
+    var dil = ViewBag.dil;
+}
+<script src="~/Scripts/Main.min.js"></script>
+<script src="~/Scripts/legrand-vendor.min.js"></script>
+<input type="hidden" id="ozellikctrl" value="@ozellik" />
+
+@switch (dil)
+{
+    case "tr":
+        if (ozellik != null)
+        {
+
+            <div style="width:200%;">
+                @foreach (var x in ozellik)
+                {
+
+                    <div class="product-detail-specifications-content-header">
+                        <div class="" style="font-size: 14px; font-weight:bold; color:#647984">
+                            @Html.DisplayFor(modelItem => x.OzellikAdi)
+
+                        </div>
+
+                        @foreach (var y in urunozellik.Where(m => m.Degerler1.Ozellikler1 == x))
+                        {
+                            <div class="product-detail-specifications-content">
+                                <div class="product-detail-specifications-content-item">
+                                    @Html.DisplayFor(modelItem => y.Degerler1.DegerAdi)&nbsp; :&nbsp;
+                                    @Html.DisplayFor(modelItem => y.Deger)&nbsp;
+                                    @if (y.Degerler1.DegerTipleri != null)
+                                    {
+                                        @Html.DisplayFor(modelItem => y.Degerler1.DegerTipleri.DegerTipi)
+
+                                    }
+
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                }
+
+            </div>
+
+
+        }
+        break;
+    case "en":
+        if (ozellik != null)
+        {
+
+            <div style="width:200%;">
+                @foreach (var x in ozellik)
+                {
+
+                    <div class="product-detail-specifications-content-header">
+                        <div class="" style="font-size: 14px; font-weight:bold; color:#647984">
+                            @Html.DisplayFor(modelItem => x.EngOzellikAdi)
+
+                        </div>
+
+                        @foreach (var y in urunozellik.Where(m => m.Degerler1.Ozellikler1 == x))
+                        {
+                            <div class="product-detail-specifications-content">
+                                <div class="product-detail-specifications-content-item">
+                                    @Html.DisplayFor(modelItem => y.Degerler1.EngDegerAdi)&nbsp; :&nbsp;
+                                    @Html.DisplayFor(modelItem => y.Deger)&nbsp;
+                                    @if (y.Degerler1.DegerTipleri != null)
+                                    {
+                                        if (y.Degerler1.DegerTipleri.EngDegerTipi != null)
+                                        {
+                                            @Html.DisplayFor(modelItem => y.Degerler1.DegerTipleri.EngDegerTipi)
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(modelItem => y.Degerler1.DegerTipleri.DegerTipi)
+                                        }
+
+                                    }
+
+
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                }
+
+            </div>
+
+
+        }
+        break;
+    default:
+        break;
+}
+
+
+
+<style>
+    product-detail-specifications-content-header {
+        width: 100%;
+    }
+</style>

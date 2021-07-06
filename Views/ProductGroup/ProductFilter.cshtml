@@ -1,0 +1,69 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+
+    var Urun = (List<LandeWebProjectV1.Models.Urunler>)ViewData["Urun"]; // Cast the list
+                                                                         //var fotograf = (List<LandeWebProjectV1.Models.Fotograflar>)ViewData["Fotograflar"];
+                                                                         //fotograf.RemoveAll(x => x == null);
+    string dil = ViewBag.dil;
+}
+
+
+<div class="map-series-page-products row">
+
+    @foreach (var item in @Model.urunModel)
+    {
+        <div class="map-series-products-product col-md-4 col-xs-12 col-sm-12" data-filter1="33.69" data-filter2="45" data-filter3="" data-id="3d8aa876-0d18-4767-a57c-bfb71fbda760">
+            <a href="~/@item.URL">
+                <div class="map-series-product-image">
+                    @{
+                        if (item.fotograf != null)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive' />
+
+                        }
+                        else
+                        {
+                            <img src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+
+                        }
+
+
+                    }
+                </div>
+                <div class="map-series-product-body">
+
+                    <div class="map-series-body-top">
+                        <div class="map-series-product-title" style="text-align:center">
+                            <text>@item.Baslik</text>
+                          
+
+                                @*@Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                                <text>mm *</text>
+                                @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                                <text>mm</text>
+                                @Html.DisplayFor(x => item.Yukseklik1.Yuksek)
+                                <text> - </text>
+                                @Html.DisplayFor(modelItem => item.Renk1.renk1)*@
+                            <p><span style="font-weight: 500;"> @Html.DisplayFor(x => item.KatalogKodu)</span></p>
+                        </div>
+                    </div>
+                    <div class="map-series-product-description">
+                        <span style="background-color: #ffffff;">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                        @*<span>
+                                25" D X 51 3/8” H
+                                Configured
+                            </span>*@
+                    </div>
+                    <br /><br /><br />
+
+                    <div class="map-series-body-bottom">
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    }
+</div>
+
+
+

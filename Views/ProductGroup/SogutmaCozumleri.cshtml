@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "SogutmaCozumleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var liste = (List<LandeWebProjectV1.Models.UrunGrubu>)ViewData["SogutmaGroup"]; // Cast the list
+}
+
+<div class="content">
+    <form id="contentForm" method="POST">
+        <div class="map-category-page container-fluid">
+            <div class="map-category-page-inner">
+
+
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/">
+                            Anasayfa
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/ProductGroup/SogutmaCozumleri">
+                            Soğutma Çözümleri
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+
+                </div>
+
+                <div class="map-category-page-image">
+                    <img src="~/Images/fan resim.png" style="height:286px; width:970px" />
+                </div>
+                <div class="map-category-page-title">
+                    <h2>
+                       Soğutma Çözümleri
+                    </h2>
+                </div>
+                <div class="map-category-page-description show-more">
+                    @*@Html.TextBoxFor(y =>y)*@
+                    <br />
+                </div>
+                <div class="map-category-page-categories row">
+
+                    @foreach (var item in liste)
+                    {
+                        <div class="map-category-container col-lg-3 col-sm-4 col-xs-6">
+                            <div class="map-category-container-inner">
+                                <a href="" class="clicktrack" ctcategory=" Installation Time Savers" ctaction="clicked" ctvalue="/products/accessories/install-time-savers.aspx" ctlabel="Product Category">
+                                    <div class="map-category-image">
+                                        @if (item.Fotograflar.Select(y => y.fotograf) != null)
+                                        {
+                                            <img src="data:image;base64,@System.Convert.ToBase64String(item.Fotograflar.Select(x => x.fotograf).FirstOrDefault())" class='img-responsive' />
+                                        }
+                                    </div>
+                                    @*<div class="map-category-link">
+                                            @Html.ActionLink(item.AksesuarGrupAdi, "Accessories", new { AksGrubuOid = item.Oid })
+                                        </div>*@
+                                </a>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

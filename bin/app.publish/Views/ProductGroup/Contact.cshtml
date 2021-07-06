@@ -1,0 +1,293 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "İletişim";
+            break;
+        case "en":
+            ViewBag.Title = "Contact";
+            break;
+        default:
+            ViewBag.Title = "Contact";
+            break;
+    }
+}
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/contact-form.css" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+        $("#submitForm").submit(function () {
+            $.ajax({
+                type: "POST",
+                url: "ProductGroup/Contact",
+                data: $(this).serialize(),
+                success: function () {
+                    alert("Mesaj gönderildi.");
+                }
+            })
+        })
+    })
+</script>
+
+@switch (dil)
+{
+    case "tr":
+        <form action='@Url.Action("SendEmail","ProductGroup")' method='post' id="submitForm">
+
+            <section class="contact" id="contact">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h2>
+                            İletişim
+                            <span> </span>
+                        </h2>
+                        <p>
+                            LANDE ENDÜSTRİYEL METAL ÜRÜNLER SANAYİ VE TİCARET ANONİM ŞİRKETİ
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="title">
+                                <h3>İstanbul</h3>
+                            </div>
+                            <div class="contentcon">
+                                <!-- Info-1 -->
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.istTelefon))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            Telefon :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.istTelefon</span>
+                                            @*<span>+90 (216) 312 2653</span>*@
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.istFax))
+                                {
+                                    <!-- Info-2 -->
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            FAX :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.istFax</span>
+                                            <span>@*+90 (216) 312 0909*@</span>
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.istAdres))
+                                {
+                                    <!-- Info-3 -->
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            Adres :<br>
+                                            <span>@Model.iletisimModel.istAdres</span>
+                                            @*<span>Merve Mahallesi Gazi Caddesi No: 17 Sancaktepe / İstanbul, Türkiye</span>*@
+                                        </h4>
+                                    </div>
+                                }
+                            </div>
+                            <div class="title">
+                                <h3>Eskişehir</h3>
+                            </div>
+                            <div class="contentcon">
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.eskTelefon))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            Telefon :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.eskTelefon</span>
+                                            @*<span>+90 (222) 236 2466</span>*@
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.eskFax))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            Fax :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.eskFax</span>
+                                            @*<span>+90 (222) 236 2466</span>*@
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.eskAdres))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            Adres :<br>
+                                            <span>@Model.iletisimModel.eskAdres</span>
+                                            <span>@*Fabrika Adresi: 20. Cadde No: 14 Eskişehir Organize Sanayi Bölgesi Eskişehir, Türkiye*@</span>
+                                        </h4>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Ad Soyad" name="kisiadi" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" placeholder="E-Posta" name="contactEmail" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Firma" name="contactCompany">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Telefon" name="contactPhone">
+                                </div>
+                                @*<div class="col-sm-6">
+                                        <select style="width:252px" class="form-control1" name="contactCountry"><option value="" disabled selected hidden>Country</option><option value="USA">United States</option><option value="AFG">Afghanistan</option><option value="ALB">Albania</option><option value="ALG">Algeria</option><option value="AND">Andorra</option><option value="ANG">Angola</option><option value="ATG">Antigua and Barbuda</option><option value="ARG">Argentina</option><option value="ARM">Armenia</option><option value="ABW">Aruba</option><option value="AUS">Australia</option><option value="AUT">Austria</option><option value="AZE">Azerbaijan</option><option value="BHS">Bahamas, The</option><option value="BHR">Bahrain</option><option value="BGD">Bangladesh</option><option value="BRB">Barbados</option><option value="BLR">Belarus</option><option value="BEL">Belgium</option><option value="BLZ">Belize</option><option value="BEN">Benin</option><option value="BTN">Bhutan</option><option value="BOL">Bolivia</option><option value="BIH">Bosnia and Herzegovina</option><option value="BWA">Botswana</option><option value="BRA">Brazil</option><option value="BRN">Brunei</option><option value="BGR">Bulgaria</option><option value="BFA">Burkina Faso</option><option value="MMR">Burma (Myanmar)</option><option value="BDI">Burundi</option><option value="CPV">Cabo Verde</option><option value="KHM">Cambodia</option><option value="CMR">Cameroon</option><option value="CAN">Canada</option><option value="CAF">Central African Republic</option><option value="TCD">Chad</option><option value="CHL">Chile</option><option value="CHN">China</option><option value="COL">Colombia</option><option value="COM">Comoros</option><option value="COD">Congo, Democratic Republic of the</option><option value="COG">Congo, Republic of the</option><option value="CRI">Costa Rica</option><option value="CIV">Cote d'lvoire</option><option value="HRV">Croatia</option><option value="CUB">Cuba</option><option value="CUW">Curacao</option><option value="CYP">Cyprus</option><option value="CZE">Czechia</option><option value="DNK">Denmark</option><option value="DJI">Djibouti</option><option value="DMA">Dominica</option><option value="DOM">Dominican Republic</option><option value="ECU">Ecuador</option><option value="EGY">Egypt</option><option value="SLV">El Salvador</option><option value="GNQ">Equatorial Guinea</option><option value="ERI">Eritrea</option><option value="EST">Estonia</option><option value="ETH">Ethiopia</option><option value="FJI">Fiji</option><option value="FIN">Finland</option><option value="FRA">France</option><option value="GAB">Gabon</option><option value="GMB">Gambia, The</option><option value="GEO">Georgia</option><option value="DEU">Germany</option><option value="GHA">Ghana</option><option value="GRC">Greece</option><option value="GRD">Grenada</option><option value="GTM">Guatemala</option><option value="GIN">Guinea</option><option value="GNB">Guinea-Bissau</option><option value="GUY">Guyana</option><option value="HTI">Haiti</option><option value="VAT">Holy See</option><option value="HND">Honduras</option><option value="HKG">Hong Kong</option><option value="HUN">Hungary</option><option value="ISL">Iceland</option><option value="IND">India</option><option value="IDN">Indonesia</option><option value="IRN">Iran</option><option value="IRQ">Iraq</option><option value="IRL">Ireland</option><option value="ISR">Israel</option><option value="ITA">Italy</option><option value="JAM">Jamaica</option><option value="JPN">Japan</option><option value="JOR">Jordan</option><option value="KAZ">Kazakhstan</option><option value="KEN">Kenya</option><option value="KIR">Kiribati</option><option value="PRK">Korea, North</option><option value="KOR">Korea, South</option><option value="UNK">Kosovo</option><option value="KWT">Kuwait</option><option value="KGZ">Kyrgyzstan</option><option value="LAO">Laos</option><option value="LVA">Latvia</option><option value="LBN">Lebanon</option><option value="LSO">Lesotho</option><option value="LBR">Liberia</option><option value="LIE">Liechtenstein</option><option value="LTU">Lithuania</option><option value="LUX">Luxembourg</option><option value="MAC">Macau</option><option value="MKD">Macedonia</option><option value="MDG">Madagascar</option><option value="MWI">Malawi</option><option value="MYS">Malaysia</option><option value="MDV">Maldives</option><option value="MLI">Mali</option><option value="MLT">Malta</option><option value="MHL">Marshall Islands</option><option value="MRT">Mauritania</option><option value="MUS">Mauritius</option><option value="MEX">Mexico</option><option value="FSM">Micronesia</option><option value="MDA">Moldova</option><option value="MCO">Monaco</option><option value="MNG">Mongolia</option><option value="MNE">Montenegro</option><option value="MAR">Morocco</option><option value="MOZ">Mozambique</option><option value="NAM">Namibia</option><option value="NRU">Nauru</option><option value="NPL">Nepal</option><option value="NLD">Netherlands</option><option value="NZL">New Zealand</option><option value="NIC">Nicaragua</option><option value="NER">Niger</option><option value="NGA">Nigeria</option><option value="NOR">Norway</option><option value="OMN">Oman</option><option value="PAK">Pakistan</option><option value="PLW">Palau</option><option value="PSE">Palestinian Territories</option><option value="PAN">Panama</option><option value="PNG">Papua New Guinea</option><option value="PRY">Paraguay</option><option value="PER">Peru</option><option value="PHL">Philippines</option><option value="POL">Poland</option><option value="PRT">Portugal</option><option value="QAT">Qatar</option><option value="ROU">Romania</option><option value="RUS">Russia</option><option value="RWA">Rwanda</option><option value="KNA">Saint Kitts and Nevis</option><option value="LCA">Saint Lucia</option><option value="VCT">Saint Vincent and the Grenadines</option><option value="WSM">Samoa</option><option value="SMR">San Marino</option><option value="STP">Sao Tome and Principe</option><option value="SAU">Saudi Arabia</option><option value="SEN">Senegal</option><option value="SCG">Serbia</option><option value="SYC">Seychelles</option><option value="SLE">Sierra Leone</option><option value="SGP">Singapore</option><option value="SXM">Sint Maarten</option><option value="SVK">Slovakia</option><option value="SVN">Slovenia</option><option value="SLB">Solomon Islands</option><option value="SOM">Somalia</option><option value="ZAF">South Africa</option><option value="KOR">South Korea</option><option value="SSD">South Sudan</option><option value="ESP">Spain</option><option value="LKA">Sri Lanka</option><option value="SDN">Sudan</option><option value="SUR">Suriname</option><option value="SWZ">Swaziland</option><option value="SWE">Sweden</option><option value="CHE">Switzerland</option><option value="SYR">Syria</option><option value="TWN">Taiwan</option><option value="TJK">Tajikistan</option><option value="TZA">Tanzania</option><option value="THA">Thailand</option><option value="TLS">Timor-Leste</option><option value="TGO">Togo</option><option value="TON">Tonga</option><option value="TTO">Trinidad and Tobago</option><option value="TUN">Tunisia</option><option value="TUR">Turkey</option><option value="TKM">Turkmenistan</option><option value="TUV">Tuvalu</option><option value="UGA">Uganda</option><option value="UKR">Ukraine</option><option value="ARE">United Arab Emirates</option><option value="GBR">United Kingdom</option><option value="URY">Uruguay</option><option value="UZB">Uzbekistan</option><option value="VUT">Vanuatu</option><option value="VEN">Venezuela</option><option value="VNM">Vietnam</option><option value="YEM">Yemen</option><option value="ZMB">Zambia</option><option value="ZWE">Zimbabwe</option></select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select style="width:252px" class="form-control2" id="hook_art" name="contactPersonType" mapto="{none}" autocomplete="off"><option value="" disabled selected hidden>I am a/an: *</option><option value="AV Consultant">A/V Consultant</option><option value="AV / Security Distributor">A/V &amp; Security Distributor</option><option value="Commercial AV Integrator">Commercial A/V Integrator</option><option value="Residential AV Integrator">Residential A/V Integrator</option><option value="Residential Security Installer">Residential Security Installer</option><option value="Electrical Contractor">Electrical Contractor</option><option value="Electrical Distributor">Electrical Distributor</option><option value="Facility Manager">Facility Manager</option><option value="Plant Manager">Plant Manager</option><option value="Technology Manager">Technology Manager (IT, Network, Datacenter)</option><option value="Home Builder">Home Builder</option><option value="Homeowner">Homeowner</option></select>
+                                    </div>*@
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Konu" name="contactSubject" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="commentconctact" placeholder="İçerik" name="comment" required></textarea>
+                            </div>
+                            <button class="btn btn-block" type="submit" id="btnsub" onclick="send()">Gönder</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+        break;
+    case "en":
+        <form action='@Url.Action("SendEmail","ProductGroup")' method='post' id="submitForm">
+
+            <section class="contact" id="contact">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h2>
+                            Contact
+                            <span> Us </span>
+                        </h2>
+                        <p>
+                            LANDE INDUSTRIAL METAL PRODUCTS INDUSTRY AND TRADE INCORPORATED COMPANY
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="title">
+                                <h3>İstanbul</h3>
+                            </div>
+                            <div class="contentcon">
+                                <!-- Info-1 -->
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.istTelefon))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            PHONE :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.istTelefon</span>
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.istFax))
+                                {
+                                    <!-- Info-2 -->
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            FAX :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.istFax</span>
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.istAdres))
+                                {
+                                    <!-- Info-3 -->
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            ADDRESS :<br>
+                                            <span>@Model.iletisimModel.istAdres</span>
+                                        </h4>
+                                    </div>
+                                }
+                            </div>
+                            <div class="title">
+                                <h3>Eskişehir</h3>
+                            </div>
+                            <div class="contentcon">
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.eskTelefon))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            PHONE :
+                                            <br>
+                                            <span>+90 @Model.iletisimModel.eskTelefon</span>
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.eskFax))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            FAX :<br>
+                                            <span>+90 @Model.iletisimModel.eskFax</span>
+                                        </h4>
+                                    </div>
+                                }
+                                @if (!string.IsNullOrEmpty(Model.iletisimModel.eskAdres))
+                                {
+                                    <div class="info">
+                                        <h4 class="d-inline-block">
+                                            ADDRESS :<br>
+                                            <span>@Model.iletisimModel.eskAdres</span>
+                                        </h4>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Name" name="kisiadi" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control" placeholder="Email" name="contactEmail" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Company" name="contactCompany">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" placeholder="Phone" name="contactPhone">
+                                </div>
+                                @*<div class="col-sm-6">
+                                        <select style="width:252px" class="form-control1" name="contactCountry"><option value="" disabled selected hidden>Country</option><option value="USA">United States</option><option value="AFG">Afghanistan</option><option value="ALB">Albania</option><option value="ALG">Algeria</option><option value="AND">Andorra</option><option value="ANG">Angola</option><option value="ATG">Antigua and Barbuda</option><option value="ARG">Argentina</option><option value="ARM">Armenia</option><option value="ABW">Aruba</option><option value="AUS">Australia</option><option value="AUT">Austria</option><option value="AZE">Azerbaijan</option><option value="BHS">Bahamas, The</option><option value="BHR">Bahrain</option><option value="BGD">Bangladesh</option><option value="BRB">Barbados</option><option value="BLR">Belarus</option><option value="BEL">Belgium</option><option value="BLZ">Belize</option><option value="BEN">Benin</option><option value="BTN">Bhutan</option><option value="BOL">Bolivia</option><option value="BIH">Bosnia and Herzegovina</option><option value="BWA">Botswana</option><option value="BRA">Brazil</option><option value="BRN">Brunei</option><option value="BGR">Bulgaria</option><option value="BFA">Burkina Faso</option><option value="MMR">Burma (Myanmar)</option><option value="BDI">Burundi</option><option value="CPV">Cabo Verde</option><option value="KHM">Cambodia</option><option value="CMR">Cameroon</option><option value="CAN">Canada</option><option value="CAF">Central African Republic</option><option value="TCD">Chad</option><option value="CHL">Chile</option><option value="CHN">China</option><option value="COL">Colombia</option><option value="COM">Comoros</option><option value="COD">Congo, Democratic Republic of the</option><option value="COG">Congo, Republic of the</option><option value="CRI">Costa Rica</option><option value="CIV">Cote d'lvoire</option><option value="HRV">Croatia</option><option value="CUB">Cuba</option><option value="CUW">Curacao</option><option value="CYP">Cyprus</option><option value="CZE">Czechia</option><option value="DNK">Denmark</option><option value="DJI">Djibouti</option><option value="DMA">Dominica</option><option value="DOM">Dominican Republic</option><option value="ECU">Ecuador</option><option value="EGY">Egypt</option><option value="SLV">El Salvador</option><option value="GNQ">Equatorial Guinea</option><option value="ERI">Eritrea</option><option value="EST">Estonia</option><option value="ETH">Ethiopia</option><option value="FJI">Fiji</option><option value="FIN">Finland</option><option value="FRA">France</option><option value="GAB">Gabon</option><option value="GMB">Gambia, The</option><option value="GEO">Georgia</option><option value="DEU">Germany</option><option value="GHA">Ghana</option><option value="GRC">Greece</option><option value="GRD">Grenada</option><option value="GTM">Guatemala</option><option value="GIN">Guinea</option><option value="GNB">Guinea-Bissau</option><option value="GUY">Guyana</option><option value="HTI">Haiti</option><option value="VAT">Holy See</option><option value="HND">Honduras</option><option value="HKG">Hong Kong</option><option value="HUN">Hungary</option><option value="ISL">Iceland</option><option value="IND">India</option><option value="IDN">Indonesia</option><option value="IRN">Iran</option><option value="IRQ">Iraq</option><option value="IRL">Ireland</option><option value="ISR">Israel</option><option value="ITA">Italy</option><option value="JAM">Jamaica</option><option value="JPN">Japan</option><option value="JOR">Jordan</option><option value="KAZ">Kazakhstan</option><option value="KEN">Kenya</option><option value="KIR">Kiribati</option><option value="PRK">Korea, North</option><option value="KOR">Korea, South</option><option value="UNK">Kosovo</option><option value="KWT">Kuwait</option><option value="KGZ">Kyrgyzstan</option><option value="LAO">Laos</option><option value="LVA">Latvia</option><option value="LBN">Lebanon</option><option value="LSO">Lesotho</option><option value="LBR">Liberia</option><option value="LIE">Liechtenstein</option><option value="LTU">Lithuania</option><option value="LUX">Luxembourg</option><option value="MAC">Macau</option><option value="MKD">Macedonia</option><option value="MDG">Madagascar</option><option value="MWI">Malawi</option><option value="MYS">Malaysia</option><option value="MDV">Maldives</option><option value="MLI">Mali</option><option value="MLT">Malta</option><option value="MHL">Marshall Islands</option><option value="MRT">Mauritania</option><option value="MUS">Mauritius</option><option value="MEX">Mexico</option><option value="FSM">Micronesia</option><option value="MDA">Moldova</option><option value="MCO">Monaco</option><option value="MNG">Mongolia</option><option value="MNE">Montenegro</option><option value="MAR">Morocco</option><option value="MOZ">Mozambique</option><option value="NAM">Namibia</option><option value="NRU">Nauru</option><option value="NPL">Nepal</option><option value="NLD">Netherlands</option><option value="NZL">New Zealand</option><option value="NIC">Nicaragua</option><option value="NER">Niger</option><option value="NGA">Nigeria</option><option value="NOR">Norway</option><option value="OMN">Oman</option><option value="PAK">Pakistan</option><option value="PLW">Palau</option><option value="PSE">Palestinian Territories</option><option value="PAN">Panama</option><option value="PNG">Papua New Guinea</option><option value="PRY">Paraguay</option><option value="PER">Peru</option><option value="PHL">Philippines</option><option value="POL">Poland</option><option value="PRT">Portugal</option><option value="QAT">Qatar</option><option value="ROU">Romania</option><option value="RUS">Russia</option><option value="RWA">Rwanda</option><option value="KNA">Saint Kitts and Nevis</option><option value="LCA">Saint Lucia</option><option value="VCT">Saint Vincent and the Grenadines</option><option value="WSM">Samoa</option><option value="SMR">San Marino</option><option value="STP">Sao Tome and Principe</option><option value="SAU">Saudi Arabia</option><option value="SEN">Senegal</option><option value="SCG">Serbia</option><option value="SYC">Seychelles</option><option value="SLE">Sierra Leone</option><option value="SGP">Singapore</option><option value="SXM">Sint Maarten</option><option value="SVK">Slovakia</option><option value="SVN">Slovenia</option><option value="SLB">Solomon Islands</option><option value="SOM">Somalia</option><option value="ZAF">South Africa</option><option value="KOR">South Korea</option><option value="SSD">South Sudan</option><option value="ESP">Spain</option><option value="LKA">Sri Lanka</option><option value="SDN">Sudan</option><option value="SUR">Suriname</option><option value="SWZ">Swaziland</option><option value="SWE">Sweden</option><option value="CHE">Switzerland</option><option value="SYR">Syria</option><option value="TWN">Taiwan</option><option value="TJK">Tajikistan</option><option value="TZA">Tanzania</option><option value="THA">Thailand</option><option value="TLS">Timor-Leste</option><option value="TGO">Togo</option><option value="TON">Tonga</option><option value="TTO">Trinidad and Tobago</option><option value="TUN">Tunisia</option><option value="TUR">Turkey</option><option value="TKM">Turkmenistan</option><option value="TUV">Tuvalu</option><option value="UGA">Uganda</option><option value="UKR">Ukraine</option><option value="ARE">United Arab Emirates</option><option value="GBR">United Kingdom</option><option value="URY">Uruguay</option><option value="UZB">Uzbekistan</option><option value="VUT">Vanuatu</option><option value="VEN">Venezuela</option><option value="VNM">Vietnam</option><option value="YEM">Yemen</option><option value="ZMB">Zambia</option><option value="ZWE">Zimbabwe</option></select>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select style="width:252px" class="form-control2" id="hook_art" name="contactPersonType" mapto="{none}" autocomplete="off"><option value="" disabled selected hidden>I am a/an: *</option><option value="AV Consultant">A/V Consultant</option><option value="AV / Security Distributor">A/V &amp; Security Distributor</option><option value="Commercial AV Integrator">Commercial A/V Integrator</option><option value="Residential AV Integrator">Residential A/V Integrator</option><option value="Residential Security Installer">Residential Security Installer</option><option value="Electrical Contractor">Electrical Contractor</option><option value="Electrical Distributor">Electrical Distributor</option><option value="Facility Manager">Facility Manager</option><option value="Plant Manager">Plant Manager</option><option value="Technology Manager">Technology Manager (IT, Network, Datacenter)</option><option value="Home Builder">Home Builder</option><option value="Homeowner">Homeowner</option></select>
+                                    </div>*@
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Subject" name="contactSubject" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" id="commentconctact" placeholder="Message" name="comment" required></textarea>
+                            </div>
+                            <button class="btn btn-block" type="submit" id="btnsub" onclick="send()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+        break;
+    default:
+        break;
+}

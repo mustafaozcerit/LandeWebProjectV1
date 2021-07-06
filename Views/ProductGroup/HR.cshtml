@@ -1,0 +1,100 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "HR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    switch (ViewBag.dil)
+    {
+        case "tr":
+            ViewBag.Title = "İK Vizyonumuz ve Politikamız";
+            break;
+        case "en":
+            ViewBag.Title = "Our Vision";
+            break;
+        default:
+            ViewBag.Title = "Our Vision";
+            break;
+    }
+}
+@switch (ViewBag.dil)
+{
+    case "tr":
+        <form id="contentForm" method="POST">
+
+
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+                    <h3>@Model.genelBilgiler.Baslik</h3>
+
+                    @if (Model.genelBilgiler.Aciklama1 != null)
+                    {
+                        <h4 class="DoCufon">Vizyonumuz</h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama1)
+                        {
+                            <p>@item</p>
+                        }
+                    }
+                    <br />
+                    @if (Model.genelBilgiler.Aciklama2 != null)
+                    {
+                        <h4 class="DoCufon">Politikamız</h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama2)
+                        {
+                            <p>@item</p>
+                        }
+
+                    }
+                </div>
+            </div>
+            <br /><br />
+        </form>
+
+        break;
+    case "en":
+        <form id="contentForm" method="POST">
+
+
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+                    <h3>@Model.genelBilgiler.Baslik</h3>
+
+                    @if (Model.genelBilgiler.Aciklama1 != null)
+                    {
+                <h4 class="DoCufon">Our Vision</h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama1)
+                        {
+                            <p>@item</p>
+                        }
+                    }
+                    <br />
+                    @if (Model.genelBilgiler.Aciklama2 != null)
+                    {
+                <h4 class="DoCufon">Our Policy</h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama2)
+                        {
+                            <p>@item</p>
+                        }
+
+                    }
+                </div>
+            </div>
+            <br /><br />
+        </form>
+
+        break;
+}

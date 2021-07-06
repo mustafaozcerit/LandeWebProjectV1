@@ -1,0 +1,115 @@
+﻿@{
+    var product = (List<LandeWebProjectV1.Models.Urunler>)ViewData["ProDesc"]; // Cast the list
+    var dil = ViewBag.dil;
+}
+@switch (dil)
+{
+    case "tr":
+        if (product != null)
+        {
+            foreach (var item in product)
+            {
+
+                <div class="product-detail-title">
+                    @Html.DisplayFor(modelItem => item.UrunSerisi1.UrunSerisiAdi)
+                    @if (item.Boyut1 != null && item.Yukseklik1 != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                        <text>*</text>
+                        @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                        <text>-</text>
+                        @Html.DisplayFor(modelItem => item.Yukseklik1.Yuksek)
+                        <text>-</text>
+                    }
+                    else if (item.Boyut1 != null && item.Yukseklik1 == null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                        <text>*</text>
+                        @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                    }
+
+                    @if (item.Renk1 != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Renk1.renk1)
+                    }
+
+                </div>
+                <div class="product-detail-sku-brand-configure row ">
+                    <div class="product-detail-sku-brand col-lg-8 col-md-7 col-sm-12">
+
+                        <span class="product-detail-sku"> @Html.DisplayFor(modelItem => item.KatalogKodu)</span>
+                        <span class="product-detail-brand">
+                        </span>
+                    </div>
+                    <div class="product-detail-configure col-lg-4 col-md-5 col-sm-6 hidden-xs">
+                    </div>
+                </div>
+                <div class="product-detail-overview-text">
+                    @Html.DisplayFor(modelItem => item.UrunSerisi1.Aciklama)
+                </div>
+                <div class="product-detail-overview-text">
+                    @Html.DisplayFor(modelItem => item.Aciklama)
+                </div>
+
+            }
+
+
+        }
+        break;
+    case "en":
+        if (product != null)
+        {
+            foreach (var item in product)
+            {
+
+                <div class="product-detail-title">
+                    @Html.DisplayFor(modelItem => item.UrunSerisi1.EngUrunSerisiAdi)
+                    @if (item.Boyut1 != null && item.Yukseklik1 != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                        <text>*</text>
+                        @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                        <text>-</text>
+                        @Html.DisplayFor(modelItem => item.Yukseklik1.Yuksek)
+                        <text>-</text>
+                    }
+                    else if (item.Boyut1 != null && item.Yukseklik1 == null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Boyut1.Genislik)
+                        <text>*</text>
+                        @Html.DisplayFor(modelItem => item.Boyut1.Derinlik)
+                    }
+
+                    @if (item.Renk1 != null)
+                    {
+                        @Html.DisplayFor(modelItem => item.Renk1.EngRenk)
+                    }
+
+                </div>
+                <div class="product-detail-sku-brand-configure row">
+                    <div class="product-detail-sku-brand col-lg-8 col-md-7 col-sm-12">
+
+                        <span class="product-detail-sku"> @Html.DisplayFor(modelItem => item.KatalogKodu)</span>
+                        <span class="product-detail-brand">
+                        </span>
+                    </div>
+                    <div class="product-detail-configure col-lg-4 col-md-5 col-sm-6 hidden-xs">
+                    </div>
+                </div>
+                <div class="product-detail-overview-text">
+                    @Html.DisplayFor(modelItem => item.UrunSerisi1.EngAciklama)
+                </div>
+                <div class="product-detail-overview-text">
+                    @Html.DisplayFor(modelItem => item.EngAciklama)
+                </div>
+
+            }
+
+
+        }
+
+        break;
+
+    default:
+        break;
+}

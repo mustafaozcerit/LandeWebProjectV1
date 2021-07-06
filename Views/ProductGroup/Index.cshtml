@@ -1,0 +1,517 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+
+@{
+    string dil = ViewBag.dil;
+
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "Rack Kabinet";
+            break;
+        case "en":
+            ViewBag.Title = "Rack Cabinets";
+            break;
+        default:
+            ViewBag.Title = "ERROR";
+            break;
+    }
+
+
+}
+
+@{
+    List<LandeWebProjectV1.Models.Haberler> news = Model.AnasayfaModel.Haberler; // Cast the list
+    List<LandeWebProjectV1.Models.YoutubeVideo> video = Model.AnasayfaModel.Videolar;
+    var Reklam = Model.AnasayfaModel.Reklamlar;
+
+    var Value = Reklam == null ? 0 : 1;
+
+}
+@switch (dil)
+{
+    case "tr":
+        <div class="home-hero" style="height:auto ;">
+            <video id="indexVideo" controls="controls" autoplay="autoplay" loop="loop" style="width: 100%; margin-top: -10%;" muted>
+                @*<source src="~/Images/Server Room-1.m4v" type="video/mp4" />*@
+                <source src="~/Videos/LandeRackKabinet.m4v" type="video/mp4" />
+            </video>
+
+            @*<div class="container-fluid" style="margin-top:-50%;">
+                    <div class="home-hero-content">
+                        <h1>WHAT GREAT SYSTEMS ARE BUILT ON™</h1>
+                        <h2>Your trusted infrastructure foundation for ultimate system reliability, longevity and performance.</h2>
+                    </div>
+                </div>*@
+        </div>
+
+        <div class="content" style="background-color: #eeeeee" ;">
+            <form id="contentForm" method="POST">
+                <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee" ; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; "></div>
+                <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee" ; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; "></div>
+
+                @if (news != null)
+                {
+                    <div class="open-html-module">
+                        <div class="container-fluid" style="padding-bottom: 0; text-align:center;">
+                            <h3>HABERLER</h3>
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="full-screen-photo-carousel carousel slide col-12" data-ride="carousel" id="myCarousel">
+
+                        @{
+                            if (news.Count == 1)
+                            {
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                </ol>
+                            }
+                            else
+                            {
+                                int count = news.Count;
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    @for (int i = 2; i <= news.Count; i++)
+                                    {
+                                        <li data-target="#myCarousel" data-slide-to="@i"></li>
+                                    }
+                                </ol>
+                            }
+                        }
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="carousel-inner img-responsive haberler-div" style="">
+                                    @if (news != null)
+                                    {
+                                        int i = 0;
+                                        foreach (var item in news)
+                                        {
+                                            if (i == 0)
+                                            {
+                                                <div class="item active">
+                                                    <img class="img-responsive haberler-Img" src="data:image;base64,@System.Convert.ToBase64String(item.HaberFoto)" alt="#" onclick="openLink('@item.HaberLink')" />
+                                                    <div class="carousel-caption">
+                                                        @*<h3>@item.HaberBaslik</h3>
+                                                            <h4> @item.HaberAciklama</h4>
+                                                            <h5>@item.HaberTarih</h5>*@
+                                                        <a href="@item.HaberLink" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="item ">
+                                                    <img class="img-responsive haberler-Img" src="data:image;base64,@System.Convert.ToBase64String(item.HaberFoto) " alt="#" onclick="openLink('@item.HaberLink') " />
+                                                    <div class="carousel-caption">
+                                                        @*<h3>@item.HaberBaslik</h3>
+                                                            <h4> @item.HaberAciklama</h4>
+                                                            <h5>@item.HaberTarih</h5>*@
+                                                        <a href="@item.HaberLink" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            i++;
+                                        }
+                                    }
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <span style="top: 50%;position: absolute;"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <span style="top: 50%;position: absolute;">></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </form>
+
+            <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; ">
+
+            </div>
+
+            <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; ">
+
+            </div>
+
+            @{
+                if (video != null)
+                {
+                    int videoSayisi = 1;
+
+                    <div class="image-w3-features-module text-above" style="background-color: #eeeeee">
+                        <div class="image-w3-features-module-header-text">
+                            @*<h2>EXPLORE</h2>
+                                <p style="text-align: center;">Find what you need by navigating through our product offering, browsing our application-focused solutions or designing a system tailored to your project specifications.</p>*@
+                        </div>
+                        <div class="image-w3-features-module-inner text-above">
+                            <div class="container-fluid align-items-center" style="display: flex; background-color: #303841">
+
+                                <div id="aBtnGroup" class="btn-group flex-wrap" style="display:flex; width:100%; justify-content:center; ">
+                                    @foreach (var item in video)
+                                    {
+                                        if (videoSayisi < 4)
+                                        {
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 " style="">
+                                                <div style="height: 300px; color: white; text-align: center; display:flex;">
+                                                    <button type="button" class="btn  zoom" data-toggle="modal" data-target="#modalYT"
+                                                            value="@item.Value">
+                                                        <img class="img-responsive" src="@item.ResimLinki" alt="#" style="max-height:100%; max-width:100%; display:inline;">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+                                        videoSayisi++;
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+            }
+
+        </div>
+
+
+
+
+        <div class="modal" id="BannerModal" tabindex="-1" role="document" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body mb-0 p-0">
+                        <div class="banner-close">
+                            <button type="button" class="close" data-dismiss="modal" id="bannerClose" aria-label="Close">
+                            </button>
+                        </div>
+                        @if (Reklam != null)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(Reklam.Image)" alt="" class="img-responsive center-block" />
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" runat="server" id="ReklamValue" value="@Value" />
+
+        <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-body mb-0 p-0" style="background-color:black;">
+
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe id="video" width="560" height="315" src=""
+                                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        break;
+    case "en":
+        <div class="home-hero" style="height:auto">
+            <video id="indexVideo" controls="controls" autoplay="autoplay" loop="loop" style="width: 100%; margin-top: -10%; height: 70%" muted>
+                @*<source src="~/Images/Server Room-1.m4v" type="video/mp4" />*@
+                <source src="~/Videos/LandeRackKabinet.m4v" type="video/mp4" />
+            </video>
+
+            @*<div class="container-fluid" style="margin-top:-50%;">
+                    <div class="home-hero-content">
+                        <h1>WHAT GREAT SYSTEMS ARE BUILT ON™</h1>
+                        <h2>Your trusted infrastructure foundation for ultimate system reliability, longevity and performance.</h2>
+                    </div>
+                </div>*@
+        </div>
+
+        <div class="content" style="background-color: #eeeeee">
+            <form id="contentForm" method="POST">
+                <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee" ; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; "></div>
+                <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee" ; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; "></div>
+                @if (news != null)
+                {
+                    <div class="open-html-module">
+                        <div class="container-fluid" style="padding-bottom: 0; text-align:center;">
+                            <h3>NEWS</h3>
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="full-screen-photo-carousel carousel slide col-12" data-ride="carousel" id="myCarousel">
+
+                        @{
+                            if (news.Count == 1)
+                            {
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                </ol>
+                            }
+                            else
+                            {
+                                int count = news.Count;
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    @for (int i = 2; i <= news.Count; i++)
+                                    {
+                                        <li data-target="#myCarousel" data-slide-to="@i"></li>
+                                    }
+                                </ol>
+                            }
+                        }
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="carousel-inner img-responsive haberler-div">
+                                    @if (news != null)
+                                    {
+                                        int i = 0;
+                                        foreach (var item in news)
+                                        {
+                                            if (i == 0)
+                                            {
+                                                <div class="item active">
+                                                    <img class="img-responsive haberler-Img" src="data:image;base64,@System.Convert.ToBase64String(item.HaberFoto)" alt="#" onclick="openLink('@item.HaberLink')" />
+                                                    <div class="carousel-caption">
+                                                        @*<h3>@item.HaberBaslik</h3>
+                                                            <h4> @item.HaberAciklama</h4>
+                                                            <h5>@item.HaberTarih</h5>*@
+                                                        <a href="@item.HaberLink" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="item ">
+                                                    <img class="img-responsive haberler-Img" src="data:image;base64,@System.Convert.ToBase64String(item.HaberFoto) " alt="#" onclick="openLink('@item.HaberLink') " />
+                                                    <div class="carousel-caption">
+                                                        @*<h3>@item.HaberBaslik</h3>
+                                                            <h4> @item.HaberAciklama</h4>
+                                                            <h5>@item.HaberTarih</h5>*@
+                                                        <a href="@item.HaberLink" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                                                    </div>
+                                                </div>
+                                            }
+                                            i++;
+                                        }
+                                    }
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <span style="top: 50%;position: absolute;"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <span style="top: 50%;position: absolute;">></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </form>
+
+            <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; ">
+
+            </div>
+
+            <div class="landing-page-divider" style="box-sizing: content-box; height: 25px; background-color: #eeeeee; margin-top: 0px; margin-bottom: 0px; padding-top: -100px; padding-bottom: -100px; ">
+
+            </div>
+
+            @{
+                if (video != null)
+                {
+                    int videoSayisi = 1;
+
+                    <div class="image-w3-features-module text-above" style="background-color: #eeeeee">
+                        <div class="image-w3-features-module-header-text">
+                            @*<h2>EXPLORE</h2>
+                                <p style="text-align: center;">Find what you need by navigating through our product offering, browsing our application-focused solutions or designing a system tailored to your project specifications.</p>*@
+                        </div>
+                        <div class="image-w3-features-module-inner text-above">
+                            <div class="container-fluid align-items-center" style="display: flex; background-color: #303841">
+
+                                <div id="aBtnGroup" class="btn-group flex-wrap" style="display:flex; width:100%; justify-content:center; ">
+                                    @foreach (var item in video)
+                                    {
+                                        if (videoSayisi < 4)
+                                        {
+                                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 " style="">
+                                                <div style="height: 300px; color: white; text-align: center; display:flex;">
+                                                    <button type="button" class="btn  zoom" data-toggle="modal" data-target="#modalYT"
+                                                            value="@item.Value">
+                                                        <img class="img-responsive" src="@item.ResimLinki" alt="#" style="max-height:100%; max-width:100%; display:inline;">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            break;
+                                        }
+                                        videoSayisi++;
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+            }
+
+        </div>
+
+
+        <div class="modal" id="BannerModal" tabindex="-1" role="document" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body mb-0 p-0">
+                        <div class="banner-close">
+                            <button type="button" class="close" data-dismiss="modal" id="bannerClose" aria-label="Close">
+                            </button>
+                        </div>
+                        @if (Reklam != null)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(Reklam.Image)" alt="" class="img-responsive center-block" />
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" runat="server" id="ReklamValue" value="@Value" />
+
+        <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered" role="document">
+
+                <div class="modal-content">
+
+                    <div class="modal-body mb-0 p-0" style="background-color:black;">
+
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            <iframe id="video" width="560" height="315" src=""
+                                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        break;
+    default:
+        break;
+}
+
+
+
+<style>
+    .carousel-control.left {
+        border-radius: 0% !important;
+    }
+
+    .carousel-control.right {
+        border-radius: 0% !important;
+    }
+
+    #bannerClose {
+        border: 0;
+        background: url(../../Images/bannerkapatSiyah.png) no-repeat;
+        background-size: cover;
+        height: 35px;
+        width: 35px;
+        transition: all .5s;
+    }
+
+    .banner-close {
+        position: absolute;
+        z-index: 9999;
+        width: 100%;
+        text-align: right;
+        max-width: 6vw;
+        min-width: 39px;
+        float: right;
+        right: 0
+    }
+    /*    .image-w3-features-module {
+        height: 1000PX !important;
+    }
+
+    .image-w3-features-module.text-above {
+        height: 1000PX !important;
+    }*/
+
+    .zoom {
+        padding: 10px;
+        transition: transform .2s;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+        .zoom:hover {
+            transform: scale(1.1);
+        }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        var a = document.getElementById("ReklamValue").value;
+        if (a == 1) {
+            setTimeout(function () {
+                $("#BannerModal").modal('show');
+            }, 3000); // 3000 to load it after 3 seconds from page load
+        }
+
+    });
+
+
+    $('#aBtnGroup button').on('click', function () {
+        var thisBtn = $(this);
+        thisBtn.addClass('active').siblings().removeClass('active');
+        var btnText = thisBtn.text();
+        var btnValue = thisBtn.val();
+        console.log(btnText + ' - ' + btnValue);
+
+        document.getElementById('video').src = "https://www.youtube.com/embed/" + btnValue;
+    });
+    $("#modalYT").on('hidden.bs.modal', function (e) {
+        $("#modalYT iframe").attr("src", $("#modalYT iframe").attr("src"));
+    });
+
+    function openLink(mylink) {
+
+        if (mylink != null) {
+            window.open(mylink);
+        } else {
+            alert('Geçerli bir link yok.', 'Uyarı');
+        }
+    }
+
+</script>

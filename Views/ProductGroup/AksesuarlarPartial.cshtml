@@ -1,0 +1,59 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+
+@{
+    ViewBag.Title = "Accessories";
+    Layout = null;
+}
+
+<div class="content">
+    <form id="contentForm" method="POST">
+        <div class="map-category-page container-fluid">
+            <div class="map-category-page-inner">
+
+                <div class="four-features-text-heavy-module">
+                    <div class="">
+                        <div class="row">
+                            @foreach (var item in Model.urunModel)
+                            {
+
+                                <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="~/@item.URL">
+                                    <div class="four-features-text-heavy-module-feature" style="margin:0px 0px 0px 0px">
+                                        <div class="map-category-image">
+
+                                            <div class="map-category-image">
+
+                                                @if (item.fotograf != null)
+                                                {
+
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class="img-responsive" />
+
+                                                }
+                                                else
+                                                {
+                                                    <img src="~/Images/no-image-available.png" class="img-responsive" />
+
+                                                }
+                                            </div>
+                                            <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                                <span>@Html.DisplayFor(x => item.Baslik)</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="product-aciklama">
+                                            <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </form>
+</div>

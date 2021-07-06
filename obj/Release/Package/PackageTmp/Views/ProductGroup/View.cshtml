@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Sertifika";
+    var data = (List<LandeWebProjectV1.Models.Sertifikalar>)ViewData["Sertifika"];
+}
+@foreach (var item in data)
+{
+<div>
+    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+</div>
+}
+
+

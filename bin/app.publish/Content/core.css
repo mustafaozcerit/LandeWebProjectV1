@@ -1,0 +1,94 @@
+﻿﻿@import 'fonts';
+@import 'print';
+
+body {
+    background-color: #eee;
+    font-family: $content-font;
+    overflow-x: hidden;
+    width: 100%;
+    &:after
+
+{
+    content: "";
+    background-color: rgba(black, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100vw;
+    z-index: 2;
+    opacity: 0;
+    transition: visibility 0s ease 0.5s, opacity 0.5s ease;
+    visibility: hidden;
+}
+
+@media (max-width: $screen-md-max) {
+    &.search-active,
+    &.header-active,
+    &.mini-cart-active {
+        &:after
+
+{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+}
+}
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+.content {
+    background-color: white;
+    position: relative;
+
+    @media (min-width: $screen-lg-min) {
+        padding-bottom: 37px;
+
+        .overview-page &,
+        .section-page &,
+        .resourcesanddownloads-page &,
+        .cartpage-page &,
+        .contentpage-page &,
+        .homepage-page &,
+        .generallandingpage-page &,
+        .pressreleasesectionpage-page &,
+        .pressreleasepage-page &,
+        .pressreleasearchivepage-page &,
+        .pressreleasefolder-page &,
+        .checkoutpage-page &,
+        .salesforceform-page &,
+        .featurepage-page &,
+        .engblog-page &,
+        .entry-page &,
+        .blogcategory-page & {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.no-transition {
+    &, & *
+
+{
+    transition: none !important;
+}
+
+}
+
+select {
+    box-shadow: none !important;
+}
+
+#container {
+    width: 970px;
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+    min-height: calc(100vh - 100px);
+}

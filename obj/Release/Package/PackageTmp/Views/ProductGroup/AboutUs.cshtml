@@ -1,0 +1,411 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@using LandeWebProjectV1.Models
+@{
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "Hakkımızda";
+            break;
+        case "en":
+            ViewBag.Title = "About Us";
+            break;
+        default:
+            ViewBag.Title = "About Us";
+            break;
+    }
+}
+@{
+    IList<YonetimKadrosu> yonetimKadrosus = Model.aboutUsModels;
+    yonetimKadrosus = yonetimKadrosus.OrderBy(x => x.Index).ToList();
+}
+<link href="~/Content/cards.css" rel="stylesheet" />
+
+@switch (dil)
+{
+    case "tr":
+        <div class="home-hero">
+            <picture>
+                <img src="data:image;base64,@System.Convert.ToBase64String(Model.altBilgiModel.fotograf)" />
+            </picture>
+
+        </div>
+        <div class="content">
+            <form id="contentForm" method="POST">
+
+
+                <div class="open-html-module">
+                    <div class="container-fluid" style="padding-bottom: 0;">
+                        <h3>@Model.genelBilgiler.Baslik</h3>
+                        @foreach (var item in Model.genelBilgiler.Aciklama1)
+                        {
+                            <p>@item</p>
+                        }
+                    </div>
+                </div>
+
+                <div class="open-html-module">
+                    <div class="container-fluid" style="padding-bottom: 0;">
+                        <h3>@Model.genelBilgiler.Baslik2</h3>
+                        @foreach (var item in Model.genelBilgiler.Aciklama2)
+                        {
+                            <p>@item</p>
+                        }
+
+
+
+                    </div>
+                </div>
+
+                <div class="open-html-module">
+                    <div class="container-fluid" style="padding-bottom: 0;">
+                        <h3>YÖNETİM KADROSU</h3>
+
+                    </div>
+                </div>
+                <div class="cards">
+
+                    @foreach (var item in yonetimKadrosus)
+                    {
+
+                        <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image center-block" src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:135px" />
+                            </div>
+                            <div class="card-title">
+                                <h2 style="font-size:20px">@item.Adi</h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                    @item.Görevi
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+
+
+
+
+
+                <div class="features-module features-module-2 " id="features-module-e0265555-8657-4ae0-9957-ff6f4fe86e56">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.ikGrup[0].fotograf) )">
+                                        @*url(../../Images/human-resource.jpg)*@
+                                        <a href='~/tr/insan_kaynaklari' class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.ikGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">İnsan Kaynakları</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.ikGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href='~/tr/insan_kaynaklari' class='features-module-feature-link ' target='_blank'>
+                                            <div>Vizyonumuz/Misyonumuz</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.haberGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/newshero.jpg*@
+                                        <a href="~/tr/haberler" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.haberGrup[0].GrupBaslik</div>
+                                            <div class="features-module-feature-title">@*Basında Biz*@</div>
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.haberGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href="~/tr/haberler" class='features-module-feature-link ' target='_blank'>
+                                            <div>Haberler</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="features-module features-module-2 " id="features-module-929679bf-27ea-4049-92b3-703685457ebf">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.cerezGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/cookie.png*@
+                                        <a href="~/tr/cerez_politikasi" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.cerezGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Çerez Politikası</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.cerezGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href="~/tr/cerez_politikasi" class='features-module-feature-link ' target='_blank'>
+                                            <div>DAHA FAZLASI İÇİN</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.GizlilikGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/gizlilik-bildirimi.jpg*@
+                                        <a href="~/tr/gizlilik_politikasi" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.GizlilikGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Gizlilik Bildirimi</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.GizlilikGrup[0].Aciklama</div>
+                                            @*<div class="features-module-feature-text">Elle is an international women's network, founded by the Legrand Group in France and active across Legrand in more than 20 countries.</div>*@
+                                        </div>
+                                        <a href="~/tr/gizlilik_politikasi" class='features-module-feature-link ' target='_blank'>
+                                            <div>DAHA FAZLASI İÇİN</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-module features-module-2 " id="features-module-929679bf-27ea-4049-92b3-703685457ebf">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.kvkGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/kvkk.png*@
+                                        <a href="~/tr/kisisel_verilerin_korunmasi" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.kvkGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">KVK Aydınlatma Metni</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.kvkGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href="~/tr/kisisel_verilerin_korunmasi" class='features-module-feature-link ' target='_blank'>
+                                            <div>DAHA FAZLASI İÇİN</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="home-hero">
+            <picture>
+                <img src="~/Images/lande-rack-kabinet-fabrika.png" />
+                <!--[if IE 9]><video style="display: none;"><![endif]
+                <source srcset="/-/media/middleatlantic/images/modularcontent/homeheroes/homepage_hero_desktop.ashx" media="(min-width: 1024px)" />
+                <source srcset="/-/media/middleatlantic/images/modularcontent/homeheroes/homepage_hero_tablet.ashx" media="(min-width:768px)" /><!--[if IE 9]></video><![endif]
+                        <img srcset="/-/media/middleatlantic/images/modularcontent/homeheroes/homepage_hero_mobile.ashx" alt="" />    -->
+            </picture>
+
+        </div>
+        <div class="content">
+            <form id="contentForm" method="POST">
+
+                <div class="open-html-module">
+                    <div class="container-fluid" style="padding-bottom: 0;">
+                        <h3>@Model.genelBilgiler.Baslik</h3>
+                        @foreach (var item in Model.genelBilgiler.Aciklama1)
+                        {
+                            <p>@item</p>
+                        }
+                    </div>
+                </div>
+
+                <div class="open-html-module">
+                    <div class="container-fluid" style="padding-bottom: 0;">
+                        <h3>@Model.genelBilgiler.Baslik2</h3>
+                        @foreach (var item in Model.genelBilgiler.Aciklama2)
+                        {
+                            <p>@item</p>
+                        }
+                    </div>
+                </div>
+                <div class="open-html-module">
+                    <div class="container-fluid" style="padding-bottom: 0;">
+                        <h3>SENIOR STAFF</h3>
+
+                    </div>
+                </div>
+
+
+                <div class="cards">
+                    @foreach (var item in yonetimKadrosus)
+                    {
+
+                        <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image center-block" src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:135px" />
+                            </div>
+                            <div class="card-title">
+                                <h2 style="font-size:20px">@item.Adi</h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                    @item.GöreviEng
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="features-module features-module-2 " id="features-module-e0265555-8657-4ae0-9957-ff6f4fe86e56">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.ikGrup[0].fotograf))">
+                                        @*../../Images/human-resource.jpg*@
+
+
+                                        <a href='~/en/human_resources' class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.ikGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Human Resource</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.ikGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href='~/en/Hhman_resources' class='features-module-feature-link ' target='_blank'>
+                                            <div>Our Mission & Vision</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.haberGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/newshero.jpg*@
+                                        <a href="~/en/news" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.haberGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Lande News</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.haberGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href="~/en/news" class='features-module-feature-link ' target='_blank'>
+                                            <div>News</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="features-module features-module-2 " id="features-module-929679bf-27ea-4049-92b3-703685457ebf">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.cerezGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/cookie.png*@
+                                        <a href="~/en/cookies_policy" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.cerezGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Cookie Policy</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.cerezGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href="~/en/cookies_policy" class='features-module-feature-link ' target='_blank'>
+                                            <div>LEARN MORE</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.GizlilikGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/gizlilik-bildirimi.jpg*@
+                                        <a href="~/en/privacy_notice" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.GizlilikGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Privacy Notice</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.GizlilikGrup[0].Aciklama</div>
+                                            @*<div class="features-module-feature-text">Elle is an international women's network, founded by the Legrand Group in France and active across Legrand in more than 20 countries.</div>*@
+                                        </div>
+                                        <a href="~/en/privacy_notice" class='features-module-feature-link ' target='_blank'>
+                                            <div>LEARN MORE</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-module features-module-2 " id="features-module-929679bf-27ea-4049-92b3-703685457ebf">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-xs-4 features-module-feature-image" style="background-image: url(data:image;base64,@System.Convert.ToBase64String(Model.genelBilgiler.kvkGrup[0].fotograf))">
+                                        @*../../Images/OtherAboutUs/kvkk.png*@
+                                        <a href="~/en/personal_data_protection" class='features-module-feature-link ' target='_blank'></a>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div>
+                                            <div class="features-module-feature-title">@Model.genelBilgiler.kvkGrup[0].GrupBaslik</div>
+                                            @*<div class="features-module-feature-title">Personel Data Protection</div>*@
+                                            <div class="features-module-feature-text">@Model.genelBilgiler.kvkGrup[0].Aciklama</div>
+                                        </div>
+                                        <a href="~/en/personal_data_protection" class='features-module-feature-link ' target='_blank'>
+                                            <div>LEARN MORE</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+
+
+<style>
+    .card {
+        border: none !important;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .card-description {
+        text-align: center;
+    }
+</style>

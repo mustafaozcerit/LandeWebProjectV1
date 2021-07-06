@@ -1,0 +1,116 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    //ViewBag.Title = "PersonalDataProtection";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    switch (ViewBag.dil)
+    {
+        case "tr":
+            ViewBag.Title = "Kişisel Verilerin Korunması";
+            break;
+        case "en":
+            ViewBag.Title = "PersonalDataProtection";
+            break;
+        default:
+            ViewBag.Title = "Personal Data Protection";
+            break;
+    }
+}
+
+@switch (ViewBag.dil)
+{
+    case "tr":
+        <form id="contentForm" method="POST">
+
+            <div class="open-html-module">
+
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+                    <h3>
+                        @Model.genelBilgiler.Baslik
+                    </h3>
+                    @if (Model.genelBilgiler.Aciklama1 != null)
+                    {
+                        foreach (var item in Model.genelBilgiler.Aciklama1)
+                        {
+                            <p style="margin-bottom:20px">@item</p>
+                        }
+                    }
+
+
+                    @if (Model.genelBilgiler.Aciklama2 != null)
+                    {
+                        <h4 class="DoCufon">Bilgilendirme </h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama2)
+                        {
+                            <p style="margin-bottom:20px">@item</p>
+                        }
+                    }
+                    @if (Model.genelBilgiler.Aciklama3 != null)
+                    {
+                        <h4 class="DoCufon">Kanun </h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama3)
+                        {
+                            <p style="margin-bottom:20px">@item</p>
+                        }
+                    }
+                </div>
+            </div>
+            <br /><br />
+        </form>
+        break;
+    case "en":
+        <form id="contentForm" method="POST">
+
+
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+                    <h3>
+                        @Model.genelBilgiler.Baslik
+                    </h3>
+                    @if (Model.genelBilgiler.Aciklama1 != null)
+                    {
+                        foreach (var item in Model.genelBilgiler.Aciklama1)
+                        {
+                            <p style="margin-bottom:20px">@item</p>
+                        }
+                    }
+
+
+                    @if (Model.genelBilgiler.Aciklama2 != null)
+                    {
+                        <h4 class="DoCufon">Information </h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama2)
+                        {
+                            <p style="margin-bottom:20px">@item</p>
+                        }
+                    }
+                    @if (Model.genelBilgiler.Aciklama3 != null)
+                    {
+                        <h4 class="DoCufon">Law</h4>
+                        foreach (var item in Model.genelBilgiler.Aciklama3)
+                        {
+                            <p style="margin-bottom:20px">@item</p>
+                        }
+                    }
+                </div>
+            </div>
+            <br /><br />
+        </form>
+        break;
+}
+

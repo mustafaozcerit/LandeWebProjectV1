@@ -1,0 +1,82 @@
+﻿
+@{
+    var file = (List<LandeWebProjectV1.Models.TeknikCizimler>)ViewData["File"];
+
+    foreach (var mb in file)
+    {
+        mb.FileData.size = mb.FileData.size / 1024;
+    }
+
+    var dil = ViewBag.dil;
+
+}
+@switch (dil)
+{
+    case "tr":
+        if (file != null)
+        {
+
+            foreach (var doc in file)
+            {
+                if (doc.Web == true)
+                {
+
+                    <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                            <div class="product-detail-resource-image">
+                                <img src="~/Images/pdffile.svg" class="svg" />
+                            </div>
+                            <div class="product-detail-resource-text">
+                                <div class="product-detail-resource-title">
+                                    <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "teknik" }, new { target = "_blank" })</i>
+                                </div>
+
+                                <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                    <span id="fileSize">
+                                        <i>@Html.DisplayFor(modelItem => doc.FileData.size)&nbsp;KB</i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+
+            }
+
+        }
+        break;
+    case "en":
+        if (file != null)
+        {
+
+            foreach (var doc in file)
+            {
+                if (doc.EngWeb == true)
+                {
+                    <div class="product-detail-resource col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <a href="/-/media/brands/map/resources/ae/96-01149_bgr.ashx" class="clicktrack" ctcategory="Related Doc Downloaded" ctaction="href">
+                            <div class="product-detail-resource-image">
+                                <img src="~/Images/pdffile.svg" class="svg" />
+                            </div>
+                            <div class="product-detail-resource-text">
+                                <div class="product-detail-resource-title">
+                                    <i>@Html.ActionLink(doc.FileData.FileName, "ShowPDF", new { Oid = doc.Oid, doc = "teknik" }, new { target = "_blank" })</i>
+                                </div>
+
+                                <div class="product-detail-resource-size" style="border-top: 1px dotted #12679a; padding-left: 30px; margin-top: 7px;">
+                                    <span id="fileSize">
+                                        <i>@Html.DisplayFor(modelItem => doc.FileData.size)&nbsp;KB</i>
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+
+            }
+
+        }
+        break;
+    default:
+        break;
+}

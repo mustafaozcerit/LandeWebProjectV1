@@ -1,0 +1,82 @@
+﻿
+@{
+    var AksGroup = (List<System.Web.Mvc.SelectListItem>)ViewData["AksGroupSelect"]; // Cast the list
+}
+
+@{
+    var AksGroupDefault = (List<System.Web.Mvc.SelectListItem>)ViewData["AksGroupDefault"]; // Cast the list
+}
+
+@{
+    var AksList = (List<LandeWebProjectV1.Models.Aksesuar>)ViewData["AksList"]; // Cast the list
+
+    var dil = ViewBag.dil;
+    string urunOid = ViewBag.urun;
+} 
+
+<script>
+    $(function(){
+        $("#aksid").change(function (e) {
+            var val = $(this).val();
+            $("#akses").load('@(Url.Action("AksesuarlarPartial"))?urunOid=@urunOid&&AksesuarGrubuAdi=' + val);
+
+       });
+    });
+
+
+</script>
+<script>
+    $(function loadaks (){
+
+        var val = null;
+        $("#akses").load('@(Url.Action("AksesuarlarPartial"))?urunOid=@urunOid&&AksesuarGrubuAdi=' + val);
+
+    });
+
+</script>
+
+@switch (dil)
+{
+    case "tr":
+        <div class="map-related-components-select-outer" onload="loadaks()">
+            @if (AksGroup == null)
+            {
+                @Html.DropDownList("AksGroupDefault", (IEnumerable<SelectListItem>)ViewData["AksGroupDefault"], new { @id = "aksid", @style = "border: 2px solid;padding:10px;width:60%;margin-left: 20%; border-color: #D8E2E2; ", @class = "map-related-components-select" })
+            }
+            else
+            {
+                @Html.DropDownList("AksGroup", (IEnumerable<SelectListItem>)ViewData["AksGroupSelect"], new { @id = "aksid", @urunOid=urunOid, @style = "border: 2px solid;padding:10px;width:60%;margin-left: 20%; border-color: #D8E2E2; ", @class = "map-related-components-select" })
+                @*@Html.DropDownList("AksGroup", (IEnumerable<SelectListItem>)ViewData["AksGroupSelect"])*@
+            }
+
+
+        </div>
+
+        <div class="map-related-components-results" id="akses">
+            @*@Html.Action("AksesuarlarPartial")*@
+
+
+        </div>
+        break;
+    case "en":
+        <div class="map-related-components-select-outer" onload="loadaks()">
+            @if (AksGroup == null)
+            {
+                @Html.DropDownList("AksGroupDefault", (IEnumerable<SelectListItem>)ViewData["AksGroupDefault"], new { @id = "aksid", @style = "border: 2px solid;padding:10px;width:60%;margin-left: 20%; border-color: #D8E2E2;", @class = "map-related-components-select" })
+            }
+            else
+            {
+                @Html.DropDownList("AksGroup", (IEnumerable<SelectListItem>)ViewData["AksGroupSelect"], new { @id = "aksid", @urunOid = urunOid, @style = "border: 2px solid;padding:10px;width:60%;margin-left: 20%; border-color: #D8E2E2;", @class = "map-related-components-select" })
+            }
+
+
+        </div>
+
+        <div class="map-related-components-results" id="akses">
+            @*@Html.Action("Aksesuarlar")*@
+        </div>
+        break;
+    default:
+        break;
+}
+

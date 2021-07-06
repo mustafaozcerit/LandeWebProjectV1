@@ -1,0 +1,120 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    var Foto = (List<LandeWebProjectV1.Models.Fotograflar>)ViewData["Foto"];
+}
+
+
+
+@foreach (var item in Model.urunModel)
+{
+    if (item.fotograf != null)
+    {
+        int i = 0;
+        if (i == 0)
+        {
+            <div class="item active" style="height:400px;vertical-align:middle;">
+                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                <div class="carousel-caption">
+                    <a href="@item.fotograf" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="item" style="height:400px;vertical-align:middle;">
+                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                <div class="carousel-caption">
+                    <a href="@item.fotograf" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                </div>
+            </div>
+        }
+        i++;
+    }
+
+    else
+    {
+        <div class="item active" style="height:400px;vertical-align:middle;">
+            <img src="~/Images/no-image-available.png" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('~/Images/no-image-available.png')" />
+            <div class="carousel-caption">
+                <a href="~/Images/no-image-available.png" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+            </div>
+        </div>
+    }
+}
+
+@*int i = 0;
+    foreach (var item in Model.urunModel)
+    {
+        if (i == 0)
+        {
+            <div class="item active" style="height:400px;vertical-align:middle;">
+                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                <div class="carousel-caption">
+                    <a href="@item.fotograf" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="item" style="height:400px;vertical-align:middle;">
+                <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:300px;margin-top:50px; width:auto;" class="img-responsive" alt="#" onclick="makeLarge('@item.fotograf')" />
+                <div class="carousel-caption">
+                    <a href="@item.fotograf" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                </div>
+            </div>
+        }
+        i++;
+    }*@
+
+
+
+
+@*<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="big-images owl-carousel owl-carousel-new owl-loaded owl-drag" id="sync1">
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-32%, 0px, 0px); transition: all 0s ease 0s; width: 2472px;">
+                    @foreach (var foto in Foto)
+                    {
+                        <div class="owl-item" style="width:33%">
+                            <div class="item">
+                                <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" class='img-responsive' alt="#" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="owl-nav disabled">
+                <div class="owl-prev">‹</div>
+                <div class="owl-next">›</div>
+            </div>
+            <div class="owl-dots disabled">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 product-detail-thumbs-container">
+        <div class="thumbs owl-carousel owl-carousel-new owl-loaded owl-drag" id="sync2">
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-123px, 0px, 0px); transition: all 0s ease 0s; width: 495px;">
+                    @foreach (var foto in Foto)
+                    {
+                        <div class="owl-item" style="width: 15%;">
+                            <div class="item">
+                                <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" class='img-responsive' alt="#" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="owl-nav">
+                <div class="owl-prev">‹</div>
+                <div class="owl-next">›</div>
+            </div>
+            <div class="owl-dots disabled">
+
+            </div>
+        </div>
+    </div>*@
+

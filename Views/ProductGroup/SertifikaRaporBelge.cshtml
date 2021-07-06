@@ -1,0 +1,322 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "SertifikaRaporBelge";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "Sertifika Rapor Belge";
+            break;
+        case "en":
+            ViewBag.Title = "Certificate Report Document";
+            break;
+        default:
+            ViewBag.Title = "Certificate Report Document";
+            break;
+    }
+
+}
+@switch (dil)
+{
+    case "tr":
+        <div class="map-category-page map-series container-fluid">
+            <div class="map-category-page-inner map-series-page-inner">
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/tr">
+                            Anasayfa
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/tr/sertifika_rapor_belge">
+                            Sertifika Rapor Belge
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+
+                        @if (Model.sertifikalarModels.Count > 0)
+                        {
+                            <H2 class="col-lg-12"><strong>Sertifikalar</strong></H2>
+
+                            foreach (var item in Model.sertifikalarModels)
+                            {
+                                <div class=" card [ is-collapsed ] col-lg-3 col-md-4 col-xs-6">
+                                    <div class="card__inner [ js-expander ]">
+                                        <span>
+                                            @if (item.fotograf != null)
+                                            {
+                                                Guid newGuid = Guid.Parse(item.Oid);
+                                                <a href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "serifika" })" target="_blank">
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+                                                </a>
+                                            }
+                                        </span>
+                                        <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander" style="margin-top:15px">
+                                        <i class="fa fa-close [ js-collapser ]"></i>
+                                    </div>
+                                    <div class="aciklama">
+                                        @if (item.WebDokumanAdi != null)
+                                        {
+                                            <div style="font-size: 14px; color: #12679A; padding: 0px 1em 0px 1em"><b>@Html.ActionLink(item.WebDokumanAdi, "ShowPDF", new { oid = Guid.Parse(item.Oid), doc = "serifika" }, new { target = "_blank" })</b></div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                    </div>
+
+                    <div class="row">
+
+                        @if (Model.kaliteDokumanlariModels.Count > 0)
+                        {
+                            <H2 class="col-lg-12"><strong>Kalite Dökümanları</strong></H2>
+
+                            foreach (var item in Model.kaliteDokumanlariModels)
+                            {
+                                <div class=" card [ is-collapsed ] col-lg-3 col-md-4 col-xs-6">
+                                    <div class="card__inner [ js-expander ]">
+                                        <span>
+                                            @if (item.fotograf != null)
+                                            {
+                                                Guid newGuid = Guid.Parse(item.Oid);
+                                                <a href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "kaliteDokumanlari" })" target="_blank">
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+                                                </a>
+                                            }
+                                        </span>
+                                        <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander" style="margin-top:15px">
+                                        <i class="fa fa-close [ js-collapser ]"></i>
+                                    </div>
+                                    <div class="aciklama">
+                                        @if (item.WebDokumanAdi != null)
+                                        {
+                                            <div style="font-size: 14px; color: #12679A; padding: 0px 1em 0px 1em"><b>@Html.ActionLink(item.WebDokumanAdi, "ShowPDF", new { oid = Guid.Parse(item.Oid), doc = "kaliteDokumanlari" }, new { target = "_blank" })</b></div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                    </div>
+
+
+                    <div class="row">
+
+                        @if (Model.raporlarModels.Count > 0)
+                        {
+                            <H2 class="col-lg-12"><strong>Raporlar</strong></H2>
+
+                            foreach (var item in Model.raporlarModels)
+                            {
+                                <div class=" card [ is-collapsed ] col-lg-3 col-md-4 col-xs-6">
+                                    <div class="card__inner [ js-expander ]">
+                                        <span>
+                                            @if (item.fotograf != null)
+                                            {
+                                                Guid newGuid = Guid.Parse(item.Oid);
+                                                <a href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "rapor" })" target="_blank">
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+                                                </a>
+                                            }
+                                        </span>
+                                        <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander" style="margin-top:15px">
+                                        <i class="fa fa-close [ js-collapser ]"></i>
+                                    </div>
+                                    <div class="aciklama">
+                                        @if (item.WebDokumanAdi != null)
+                                        {
+                                            <div style="font-size: 14px; color: #12679A; padding: 0px 1em 0px 1em"><b>@Html.ActionLink(item.WebDokumanAdi, "ShowPDF", new { oid = Guid.Parse(item.Oid), doc = "rapor" }, new { target = "_blank" })</b></div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+        break;
+    case "en":
+        <div class="map-category-page map-series container-fluid">
+            <div class="map-category-page-inner map-series-page-inner">
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/en">
+                            Home Page
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/en/certificate_report_document">
+                            Certificates Reports Documents
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+
+                        @if (Model.sertifikalarModels.Count > 0)
+                        {
+                            <H2 class="col-lg-12"><strong>Certificates</strong></H2>
+
+                            foreach (var item in Model.sertifikalarModels)
+                            {
+                                <div class=" card [ is-collapsed ] col-lg-3 col-md-4 col-xs-6">
+                                    <div class="card__inner [ js-expander ]">
+                                        <span>
+                                            @if (item.fotograf != null)
+                                            {
+                                                Guid newGuid = Guid.Parse(item.Oid);
+                                                <a href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "serifika" })" target="_blank">
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+                                                </a>
+                                            }
+                                        </span>
+                                        <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander" style="margin-top:15px">
+                                        <i class="fa fa-close [ js-collapser ]"></i>
+                                    </div>
+                                    <div class="aciklama">
+                                        @if (item.EngWebDokumanAdi != null)
+                                        {
+                                            <div style="font-size: 14px; color: #12679A; padding: 0px 1em 0px 1em"><b>@Html.ActionLink(item.EngWebDokumanAdi, "ShowPDF", new { oid = Guid.Parse(item.Oid), doc = "serifika" }, new { target = "_blank" })</b></div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                    </div>
+                    <div class="row">
+
+                        @if (Model.sertifikalarModels.Count > 0)
+                        {
+                            <H2 class="col-lg-12"><strong>Quality Documents</strong></H2>
+
+                            foreach (var item in Model.kaliteDokumanlariModels)
+                            {
+                                <div class=" card [ is-collapsed ] col-lg-3 col-md-4 col-xs-6">
+                                    <div class="card__inner [ js-expander ]">
+                                        <span>
+                                            @if (item.fotograf != null)
+                                            {
+                                                Guid newGuid = Guid.Parse(item.Oid);
+                                                <a href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "kaliteDokumanlari" })" target="_blank">
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+                                                </a>
+                                            }
+                                        </span>
+                                        <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander" style="margin-top:15px">
+                                        <i class="fa fa-close [ js-collapser ]"></i>
+                                    </div>
+                                    <div class="aciklama">
+                                        @if (item.EngWebDokumanAdi != null)
+                                        {
+                                            <div style="font-size: 14px; color: #12679A; padding: 0px 1em 0px 1em"><b>@Html.ActionLink(item.EngWebDokumanAdi, "ShowPDF", new { oid = Guid.Parse(item.Oid), doc = "kaliteDokumanlari" }, new { target = "_blank" })</b></div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                    </div>
+
+                    <div class="row">
+
+                        @if (Model.raporlarModels.Count > 0)
+                        {
+                            <H2 class="col-lg-12"><strong>Reports</strong></H2>
+
+                            foreach (var item in Model.raporlarModels)
+                            {
+                                <div class=" card [ is-collapsed ] col-lg-3 col-md-4 col-xs-6">
+                                    <div class="card__inner [ js-expander ]">
+                                        <span>
+                                            @if (item.fotograf != null)
+                                            {
+                                                Guid newGuid = Guid.Parse(item.Oid);
+                                                <a href="@Url.Action("ShowPDF", "ProductGroup", new { oid = newGuid, doc = "rapor" })" target="_blank">
+                                                    <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" class='img-responsive w-100 center-block' />
+                                                </a>
+                                            }
+                                        </span>
+                                        <i class="fa fa-folder-o"></i>
+                                    </div>
+                                    <div class="card__expander" style="margin-top:15px">
+                                        <i class="fa fa-close [ js-collapser ]"></i>
+                                    </div>
+                                    <div class="aciklama">
+                                        @if (item.EngWebDokumanAdi != null)
+                                        {
+                                            <div style="font-size: 14px; color: #12679A; padding: 0px 1em 0px 1em"><b>@Html.ActionLink(item.EngWebDokumanAdi, "ShowPDF", new { oid = Guid.Parse(item.Oid), doc = "rapor" }, new { target = "_blank" })</b></div>
+                                        }
+
+                                    </div>
+                                </div>
+
+                            }
+                        }
+                    </div>
+
+                    <br />
+                </div>
+            </div>
+        </div>
+        break;
+    default:
+        break;
+}
+
+
+
+<style>
+    a {
+        padding: 0px !important;
+    }
+
+    .card {
+        border: 2px groove;
+        border-color: transparent;
+        border-radius: 10px;
+    }
+
+        .card:hover {
+            border: 2px groove !important;
+            border-color: #D8E2E2 !important;
+            border-radius: 10px !important;
+            background-color: transparent !important;
+        }
+</style>

@@ -1,0 +1,264 @@
+﻿@*@model System.Collections.Generic.List<LandeWebProjectV1.Models.UrunSerisi>*@
+@model List<LandeWebProjectV1.Models.UrunSerisi>
+
+@{
+    ViewBag.Title = "ProductSeries";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var series = (System.Collections.Generic.List<LandeWebProjectV1.Models.UrunSerisi>)ViewData["ProductSeries"]; // Cast the list
+
+    var series2 = (List<LandeWebProjectV1.Models.UrunSerisi>)ViewData["ProductSeries"]; // Cast the list
+    var fotograf = (List<LandeWebProjectV1.Models.Fotograflar>)ViewData["Fotograflar"]; // Fotoğraflar
+    var dil = ViewBag.dil;
+}
+@switch (dil)
+{
+    case "tr":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page map-subcategory container-fluid">
+                    <div class="map-category-page-inner">
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="/TR">
+                                    Anasayfa
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/TR/ProductGroup/Kabinetler">
+                                    Kabinetler
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+
+                                <a href="">
+
+                                    @foreach (var item2 in series2)
+                                    {
+                                        @Html.ActionLink(item2.UrunGrubu1.UrunGrubuAdi, "ProductSeries", new { urunGrubuOid = item2.UrunGrubu1.Oid })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                        </div>
+
+                        <div class="map-category-page-image">
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                @foreach (var item2 in series2)
+                                {
+                                    @Html.DisplayFor(modelItem => item2.UrunGrubu1.UrunGrubuAdi)
+                                    break;
+                                }
+                            </h2>
+                        </div>
+
+                        @*<div class="map-category-page-description show-more">
+                                <p>&nbsp;</p>
+                                @foreach (var item4 in series2)
+                                {
+                                    <center>
+                                        @Html.DisplayFor(modelItem => item4.Aciklama)
+                                    </center>
+                                    break;
+                                }
+                                <p>&nbsp;</p>
+                            </div>*@
+
+                        @*<div class="map-sub-category-page-categories-outer">
+                                <div class="map-sub-category-page-categories row">
+
+
+                                </div>
+                            </div>*@
+                    </div>
+
+                </div>
+                @*<hr style="border-width:25px; border-color:#D8E2E2;" />*@
+
+                <div class="four-features-text-heavy-module">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @foreach (var item in series2)
+                            {
+                                <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="@Url.Action("Products", "ProductGroup", new { urunserisiOid = item.Oid })">
+                                    <div class="four-features-text-heavy-module-feature" style="margin: 0px -15px 0px -15px">
+
+                                        <div class="four-features-text-heavy-module-feature-picture img-fluid" style="text-align: -webkit-center;">
+                                            @{int counter = 0;
+                                                foreach (LandeWebProjectV1.Models.Fotograflar foto in fotograf)
+                                                {
+                                                    Guid a = foto == null ? Guid.Empty : foto.UrunSerisi1.Oid;
+                                                    if (a == item.Oid)
+                                                    {
+                                                        <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" style="width: auto; height: 190px;" class="center-block;" />
+                                                        counter++;
+                                                        break;
+                                                    }
+                                                }
+                                                if (counter == 0)
+                                                {
+                                                    <img src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+                                                }
+                                            }
+                                        </div>
+
+                                        <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                            <span>@Html.DisplayFor(modelItem => item.UrunSerisiAdi)</span>
+                                        </div>
+                                        <div class="product-aciklama">
+                                            <span>@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    case "en":
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page map-subcategory container-fluid">
+                    <div class="map-category-page-inner">
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="/ENG">
+                                    Home Page
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+                                <a href="~/ENG/ProductGroup/Kabinetler">
+                                    Cabinets
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                            <div class="breadcrumb-link">
+
+                                <a href="">
+
+                                    @foreach (var item2 in series2)
+                                    {
+                                        @Html.ActionLink(item2.UrunGrubu1.EngUrunGrubuAdi, "ProductSeries", new { urunGrubuOid = item2.UrunGrubu1.Oid })
+                                        break;
+                                    }
+                                </a>
+                            </div>
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+                        </div>
+
+                        <div class="map-category-page-image">
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                @foreach (var item2 in series2)
+                                {
+                                    @Html.DisplayFor(modelItem => item2.UrunGrubu1.EngUrunGrubuAdi)
+                                    break;
+                                }
+                            </h2>
+                        </div>
+
+                        @*<div class="map-category-page-description show-more">
+                                <p>&nbsp;</p>
+                                @foreach (var item4 in series2)
+                                {
+                                    <center>
+                                        @Html.DisplayFor(modelItem => item4.EngAciklama)
+                                    </center>
+                                    break;
+                                }
+                                <p>&nbsp;</p>
+                            </div>*@
+
+                        @*<div class="map-sub-category-page-categories-outer">
+                                <div class="map-sub-category-page-categories row">
+
+
+                                </div>
+                            </div>*@
+                    </div>
+
+                </div>
+                @*<hr style="border-width:25px; border-color:#D8E2E2;" />*@
+
+                <div class="four-features-text-heavy-module">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @foreach (var item in series2)
+                            {
+                                <a class="col-lg-3 col-md-4 col-xs-12 col-sm-12" href="@Url.Action("Products","ProductGroup", new { urunserisiOid = item.Oid })">
+                                    <div class="four-features-text-heavy-module-feature" style="margin: 0px -15px 0px -15px">
+
+                                        <div class="four-features-text-heavy-module-feature-picture img-fluid text-center"  style="text-align:-webkit-center;">
+                                            @{int counter = 0;
+                                                foreach (LandeWebProjectV1.Models.Fotograflar foto in fotograf)
+                                                {
+                                                    Guid a = foto == null ? Guid.Empty : foto.UrunSerisi1.Oid;
+                                                    if (a == item.Oid)
+                                                    {
+                                                        <img class="rounded" src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" style="width: auto; height: 190px;" class="center-block;" />
+                                                        counter++;
+                                                        break;
+                                                    }
+                                                }
+                                                if (counter == 0)
+                                                {
+                                                    <img class="rounded" src="~/Images/no-image-available.png" class='center-block' style="width: auto; height: 190px;" />
+                                                }
+                                            }
+                                        </div>
+
+                                        <div class="four-features-text-heavy-module-feature-title" style="text-align:center">
+                                            <span>@Html.DisplayFor(modelItem => item.EngUrunSerisiAdi)</span>
+                                        </div>
+                                        <div class="product-aciklama">
+                                            <span>@Html.DisplayFor(modelItem => item.EngAciklama)</span>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+

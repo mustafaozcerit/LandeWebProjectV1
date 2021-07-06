@@ -1,0 +1,1172 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    //var layoutlist = (List<LandeWebProjectV1.Models.UrunGrubu>)ViewData["LayoutList"]; // Cast the list
+    //var tumSeri = (List<LandeWebProjectV1.Models.UrunSerisi>)ViewData["LayoutTumSeri"]; // Cast the list
+    //var layoutSeriList = (List<LandeWebProjectV1.Models.UrunSerisi>)ViewData["LayoutTumSeri"];
+    //var aks = (List<LandeWebProjectV1.Models.AksesuarGrubu>)ViewData["AksGroup"]; // Cast the list
+    //var ortamIzleme = (List<LandeWebProjectV1.Models.Urunler>)ViewData["OrtamUrunler"]; // Cast the list
+    var genelKatalog = (List<LandeWebProjectV1.Models.Kataloglar>)ViewData["GenelKatalog"];
+
+    var dil = ViewBag.dil;
+    string language = "";
+    switch (dil)
+    {
+        case "en":
+            language = "en-gb";
+            break;
+        default:
+            language = "tr";
+            break;
+    }
+    var count = 0;
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="@language">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lande - @ViewData["Title"]</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="~/Content/Main.css" rel="stylesheet" />
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Lande Products manufactures Exceptional Support &amp; Protection Products for the Commercial AV, Security, Data/Structured Cabling, Residential Entertainment and Broadcast markets." />
+    <meta name="keywords" content="Kabinetler, Dikili Tip Kabinetler, Duvar tipi Kabinetler, PROline, Proline Ürün Ailesi, Veri Merkezi, MobileQube, KVM Konsol Unitesi, Veri Merkezi Çözümleri, Gün Dağıtım Uniteleri, Profesyonel Pdu Serisi, IP66 Duvar tipi, Mobese Güvenlik Sistemleri, MOBESELine Serisi ,equipment rack, Lande Products, lande racks, rack cabinets, rack lande, Rack Enclosures, Cabinets, wall mounting cabinets, wall mounting, workstations , workstation, office Solutions, cooling solutions, MobileQube, One Container Data Center, DYNAcenter, Data Center Cabinets, micro Data, SmartQube, KVM Console Unit, Accessories, Termometers, Remoce Control Systems, Drawers, Industrial Application, Security System, IP66 Wall Mounting, All in One Security, Access Control Systems, Enviromental Monitoring, Pdu Series, Lande Rack KAbinet, " />
+    <meta property="og:description" content="Lande Products manufactures Exceptional Support &amp; Protection Products for the Commercial AV, Security, Data/Structured Cabling, Residential Entertainment and Broadcast markets." />
+    <meta property="og:image" content="https://www.lande.com/images/LANDE-logo-TR.JPG" />
+    <meta property="og:url" content="https://www.Lande.com.tr/" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <link rel="canonical" href="https://www.Lande.com.tr/" />
+
+    <meta ID="metaRobots" name="robots" content="index,follow" />
+
+
+
+    <style>
+        .Search-field {
+            padding: 5px;
+            width: 250px;
+            border: 1px solid red;
+            border-radius: 5px;
+            font-family: sans-serif;
+        }
+    </style>
+
+    <!--Begin Convert cart script-->
+    <script>
+        /*ConvertCart.com-legrand.us*/
+        (function (c, o, n, v, e, r, t, s) { s = c.fetch ? 'f' : '', c.ccartObj = e, c[e] = c[e] || function () { (c[e].q = c[e].q || []).push(arguments) }, c[e].t = Date.now(), r = o.createElement(n); r.async = 1; r.src = v + s + '.js'; t = o.getElementsByTagName(n)[0]; t.parentNode.insertBefore(r, t) })(window, document, 'script', '//cdn.convertcart.com/70555218', 'ccart')
+    </script>
+
+
+    <script src="~/Scripts/legrand-vendor.min.js"></script>
+    @switch (dil)
+    {
+        case "tr":
+            <script src="~/Scripts/Main_TR.js"></script>
+            break;
+        case "en":
+            <script src="~/Scripts/Main_ENG.js"></script>
+            break;
+    }
+
+
+    <script>
+        $.fn.colorbox = function () { };
+
+        Legrand = Legrand2;
+
+        Legrand.Core.Init();
+
+        var head = {
+            'ready': $(document).ready
+        };
+    </script>
+
+    <script>
+        var globalSession = "e4d311b1-abd2-4fb5-8aa8-e59a224d14f0";
+    </script>
+
+    <link rel="icon" href="~/Images/title_Icon.Jpeg" type="image/x-icon">
+
+
+</head>
+<body class="homepage-page" data-pageid="ef3b4886-514a-483f-8b52-44c763752654" @*oncontextmenu="return false;"*@>
+
+    @*<noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZJK87"
+                    height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>*@
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="header-page-overlay"></div>
+    @switch (dil)
+    {
+        case "tr":
+            <header class="generic-header-top" style="z-index:10; height:152px" id="header">
+                <div class="header-container generic-header container-fluid">
+                    <div class="header-first-row row">
+                        <div class="header-content-bar">
+                            <span class="hidden-md hidden-sm hidden-xs">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="header-second-row row">
+                        <div class="header-hamburger-button header-hamburger-generic-inactive hidden-lg">
+                            <a href="#" class="box-shadow-menu">
+                            </a>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding-left: 5px">
+                            <a href="/">
+                                <img class="header-logoImg" src="~/Images/LandeLogo-TR.jpg" />
+                            </a>
+                        </div>
+
+                        <div id="degisim" class="col-lg-9 col-sm-5 header-navigation-container " @*style="margin-right:140px"*@>
+                            @*<div class="header-navigation-top-small" >
+                                    <div class="header-hamburger-button">
+                                        <a href="#" class="box-shadow-menu">
+                                        </a>
+                                    </div>
+
+                                </div>*@
+                            <ul class="header-navigation-list header-navigation-list-main">
+                                <li>
+                                    <span>Ürünler</span>
+                                    <div id="header-navigation-main-sublist-0" class="header-navigation-main-sublist" style="z-index:2">
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Kabinetler</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.kabinetler)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/tr/kabinetler" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Veri Merkezi Çözümleri</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.veriMerkezi)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/tr/veri_merkezi_cozumleri" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Aksesuarlar</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.akseuarlar)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/tr/aksesuar_gruplari" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Endüstriyel Uygulamalar & Güvenlik Sistemleri</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.endustriyelUygulamalar)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/tr/endustriyel_uygulamalar_ve_guvenlik_sistemleri" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Uzaktan Erişim Sistemleri</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.uzaktanErisimSistemleri)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+
+                                            <li class="bestSeller">
+                                                <a href="~/tr/uzaktan_erisim_sistemleri" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                            </li>
+
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Güç Dağıtım Üniteleri</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.gucDagitimUniteleri)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/tr/guc_dagitim_uniteleri" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                            </li>
+                                        </ul>
+                                        @*<ul>
+                                                <li class="header-navigation-main-title"><div>LANDE Home Office Ürünleri</div></li>
+                                                @{ count = 0;}
+                                                @foreach (var item in Model.layout.homeOffice)
+                                                {
+                                                    if (count < 5)
+                                                    {
+                                                        <li class="">
+                                                            <a href="~/@item.URL" data-ct-category="Header Link">
+                                                                @item.Baslik
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                    count++;
+                                                }
+                                                <li class="bestSeller">
+                                                    <a href="~/tr/lande_home_office_urunleri" data-ct-category="Header Link">Tümünü Görüntüle</a>
+                                                </li>
+                                            </ul>*@
+                                        <div style="margin-right:auto; margin-left:auto;">
+                                            <div class="header-navigation-main-title" style="margin-right: auto; margin-left: auto; text-align: center; font-size: 15px; padding-bottom: 10px;">
+                                                LANDE HOME OFFICE ÜRÜNLERİ
+                                            </div>
+                                            <div>
+                                                <a href="https://landehomeoffice.com/" data-ct-category="Header Link" style="font-size: 14px; padding-bottom: 10px;"><strong>landehomeoffice.com'u ziyaret edin.</strong></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <span>Dokümanlar</span>
+                                    <div id="header-navigation-main-sublist-1" class="header-navigation-main-sublist" style="z-index:2">
+                                        @if (genelKatalog.Count > 0)
+                                        {
+                                            foreach (var item in genelKatalog)
+                                            {
+                                                <ul>
+                                                    <li class="header-navigation-main-title"><a target="_blank" href="@Url.Action("ShowPDF","ProductGroup", new { oid = item.Oid , doc = "genelkatalog"})" data-ct-category="Header Link">Lande Genel Katalog</a></li>
+                                                </ul>
+                                                break;
+                                            }
+
+                                        }
+
+                                        <ul>
+                                            <li class="header-navigation-main-title header-b"><a href="~/tr/kataloglar" data-ct-category="Header Link">Kataloglar</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title header-b"><a href="~/tr/teknik_sartnameler" data-ct-category="Header Link">Teknik Şartnameler</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title header-b"><a href="~/tr/sertifika_rapor_belge" data-ct-category="Header Link">Sertifikalar/Raporlar/Belgeler</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><a target="_blank" href="@Url.Action("CorporateShowPDF","ProductGroup", new {@dil="tr" })" data-ct-category="Header Link">LANDE Kurumsal Logo Kullanımı</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+
+                                    <a class="header-a" href="~/tr/video" data-ct-category="Header Link">Videolar</a>
+
+                                    <div id="header-navigation-main-sublist-2" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                                <li>
+
+                                    <a class="header-a" href="~/tr/hakkimizda" data-ct-category="Header Link">Hakkımızda</a>
+
+                                    <div id="header-navigation-main-sublist-3" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="header-a" href="~/tr/iletisim" data-ct-category="Header Link">İletişim</a>
+                                    <div id="header-navigation-main-sublist-4" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="header-a" href="@Url.Action("ChangeLanguage", "ProductGroup", new { path = Request.Path , qs = Request.ServerVariables["QUERY_STRING"]})" data-ct-category="Header Link">TR | EN</a>
+                                    <div id="header-navigation-main-sublist-4" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                            </ul>
+                            @*<ul>
+                                        <a class="header-a" data-ct-category="Header Link" style="margin-top:-20px ; margin-left:80px">
+                                            @using (Html.BeginForm("Search", "ProductGroup"))
+                                            {
+                                                <input type="search" name="keyword" placeholder="aranacak ürün..." />
+                                                <button type="submit">Ara</button>
+                                            }
+                                        </a>
+                                </ul>*@
+
+
+
+                        </div>
+
+                        @*<div class="container h-100">
+                                <div class="d-flex justify-content-center h-100">
+                                    <div class="searchbar">
+                                        <input class="search_input" type="text" name="" placeholder="Search...">
+                                        <button type="submit">Ara</button>
+                                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>*@
+                        <div class="col-lg-4 header-icons hidden-md hidden-sm hidden-xs">
+                            <div class="header-icon header-icon-search">
+                                <a title="Search" href="#" class="header-search-initiate">
+                                    <img src="~/Images/searchicon.svg" class="svg header-icon-default" Alt="Search" />
+                                </a>
+                                <div class="header-search-container">
+                                    @using (Html.BeginForm("Search", "ProductGroup"))
+                                    {
+                                        <div class="header-search-form" style="display: none;">
+                                            <input class="Search-field" type="SearchValue" name="keyword" required="" placeholder="aranacak ürün..." type="text" id="header-search-field" />
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </div>
+
+                                    }
+                                    @*<form action="~/ProductGroup/Search" method="Post" class="header-search-form" style="display: none;">
+                                            <input name="SearchValue" required="" placeholder="SEARCH" type="text" id="header-search-field" autocomplete="off">
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </form>*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    @*<div class="header-third-row hidden-lg">
+                            <div class="header-icons header-icons-search">
+                                <div class="header-icon header-icon-search">
+                                    <a title="Search" href="#" class="header-search-initiate">
+                                        <img src="~/Images/searchicon.svg" class="svg header-icon-default" Alt="Search" />
+                                    </a>
+                                    <div class="header-search-container">
+                                        <form action="/search.aspx" method="get" class="header-search-form" style="display: none;">
+                                            <input name="q" required="" placeholder="SEARCH" type="text" id="header-search-field" autocomplete="off">
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </header>
+            break;
+        case "en":
+            <header class="generic-header-top" style="z-index:10">
+                <div class="header-container generic-header container-fluid">
+                    <div class="header-first-row row">
+                        <div class="header-content-bar">
+                            <span class="hidden-md hidden-sm hidden-xs">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="header-second-row row">
+                        <div class="header-hamburger-button header-hamburger-generic-inactive hidden-lg">
+                            <a href="#" class="box-shadow-menu">
+                            </a>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                            <a href="/en">
+                                <img class="header-logoImg" src="~/Images/LandeLogo-ENG.jpg" />
+                            </a>
+                        </div>
+
+                        <div id="degisim" class="col-lg-9 col-sm-5 header-navigation-container  ">
+                            @*<div class="header-navigation-top-small" >
+                                    <div class="header-hamburger-button">
+                                        <a href="#" class="box-shadow-menu">
+                                        </a>
+                                    </div>
+
+                                </div>*@
+                            <ul class="header-navigation-list header-navigation-list-main">
+                                <li>
+                                    <span>Products</span>
+                                    <div id="header-navigation-main-sublist-0" class="header-navigation-main-sublist" style="z-index:2">
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>CabInets</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.kabinetler)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/en/cabinets" data-ct-category="Header Link">View All</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Data Center SolutIons</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.veriMerkezi)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/en/data_center_solutions" data-ct-category="Header Link">View All</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>AccessorIes</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.akseuarlar)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/en/accessories_group" data-ct-category="Header Link">View All</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>IndustrIal ApplIcatIons & Securty Systems</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.endustriyelUygulamalar)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/en/industrial_applications_and_security_systems" data-ct-category="Header Link">View All</a>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Remote Managemet Systems</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.uzaktanErisimSistemleri)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/en/remote_management_systems" data-ct-category="Header Link">View All</a>
+                                            </li>
+
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><div>Power DIstrIbutIon UnIts</div></li>
+                                            @{ count = 0;}
+                                            @foreach (var item in Model.layout.gucDagitimUniteleri)
+                                            {
+                                                if (count < 5)
+                                                {
+                                                    <li class="">
+                                                        <a href="~/@item.URL" data-ct-category="Header Link">
+                                                            @item.Baslik
+                                                        </a>
+                                                    </li>
+                                                }
+                                                count++;
+                                            }
+                                            <li class="bestSeller">
+                                                <a href="~/en/power_distribution_units" data-ct-category="Header Link">View All</a>
+                                            </li>
+                                        </ul>
+                                        @*<ul>
+                                                <li class="header-navigation-main-title"><div>Lande Home Office Products</div></li>
+                                                @{ count = 0;}
+                                                @foreach (var item in Model.layout.homeOffice)
+                                                {
+                                                    if (count < 5)
+                                                    {
+                                                        <li class="">
+                                                            <a href="~/@item.URL" data-ct-category="Header Link">
+                                                                @item.Baslik
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                    count++;
+                                                }
+                                                <li class="bestSeller">
+                                                    <a href="~/en/lande_home_office_products" data-ct-category="Header Link">View All</a>
+                                                </li>
+                                            </ul>*@
+                                        <div style="margin-right:auto; margin-left:auto;">
+                                            <div class="header-navigation-main-title" style="margin-right: auto; margin-left: auto; text-align: center; font-size: 15px; padding-bottom: 10px;">
+                                                LANDE HOME OFFICE PRODUCTS
+                                            </div>
+                                            <div>
+                                                <a href="https://landehomeoffice.com/" data-ct-category="Header Link" style="font-size: 14px; padding-bottom: 10px; text-align: center;"><strong>Visit landehomeoffice.com</strong></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <span>Documents</span>
+                                    <div id="header-navigation-main-sublist-1" class="header-navigation-main-sublist" style="z-index:2">
+                                        @if (genelKatalog.Count > 0)
+                                        {
+                                            foreach (var item in genelKatalog)
+                                            {
+                                                <ul>
+                                                    <li class="header-navigation-main-title"><a target="_blank" href="@Url.Action("ShowPDF","ProductGroup", new { fileOid = item.Oid , doc = "katalog"})" data-ct-category="Header Link">Lande General Catalogues</a></li>
+                                                </ul>
+                                                break;
+                                            }
+
+                                        }
+
+
+                                        <ul>
+                                            <li class="header-navigation-main-title header-b"><a href="~/en/catalogue" data-ct-category="Header Link">Catalogues</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title  header-b"><a href="~/en/specification" data-ct-category="Header Link">Technical Specification</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title  header-b"><a href="~/en/certificate_report_document" data-ct-category="Header Link">Certificates/Reports/Documents</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li class="header-navigation-main-title"><a target="_blank" href="@Url.Action("CorporateShowPDF","ProductGroup", new {@dil="en"})" data-ct-category="Header Link">LANDE Corporate Logo Usage</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+
+                                    <a class="header-a" href="~/en/videos" data-ct-category="Header Link">VIdeos</a>
+
+                                    <div id="header-navigation-main-sublist-2" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                                <li>
+
+                                    <a class="header-a" href="~/en/about_us" data-ct-category="Header Link">About Us</a>
+
+                                    <div id="header-navigation-main-sublist-3" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="header-a" href="~/en/contact" data-ct-category="Header Link">Contact Us</a>
+                                    <div id="header-navigation-main-sublist-4" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="header-a" href="@Url.Action("ChangeLanguage", "ProductGroup", new { path = Request.Path, qs = Request.ServerVariables["QUERY_STRING"]})" data-ct-category="Header Link">TR | EN</a>
+                                    <div id="header-navigation-main-sublist-4" class="header-navigation-main-sublist" style="display:none">
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        @*<div class="input-group" style="margin-top:20px">
+                                @using (Html.BeginForm("Search", "ProductGroup"))
+                                {
+                                    <input type="search" name="keyword" placeholder="find product..." /><button type="submit">Search</button>
+                                }
+                            </div>*@
+                        @*<div class="col-lg-3 header-icons hidden-md hidden-sm hidden-xs">
+                                <div class="header-icon header-icon-search">
+                                    <a title="Search" href="#" class="header-search-initiate">
+                                        <img src="~/Images/searchicon.svg" class="svg header-icon-default" Alt="Search" />
+                                    </a>
+                                    <div class="header-search-container">
+                                        <form action="~/ProductGroup/Search" method="Post" class="header-search-form" style="display: none;">
+                                            <input name="SearchValue" required="" placeholder="SEARCH" type="text" id="header-search-field" autocomplete="off">
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>*@
+                        <div class="col-lg-4 header-icons hidden-md hidden-sm hidden-xs">
+                            <div class="header-icon header-icon-search">
+                                <a title="Search" href="#" class="header-search-initiate">
+                                    <img src="~/Images/searchicon.svg" class="svg header-icon-default" Alt="Search" />
+                                </a>
+                                <div class="header-search-container">
+                                    @using (Html.BeginForm("Search", "ProductGroup"))
+                                    {
+                                        <div class="header-search-form" style="display: none;">
+                                            <input class="Search-field" type="SearchValue" name="keyword" required="" placeholder="search products..." type="text" id="header-search-field" />
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </div>
+
+                                    }
+                                    @*<form action="~/ProductGroup/Search" method="Post" class="header-search-form" style="display: none;">
+                                            <input name="SearchValue" required="" placeholder="SEARCH" type="text" id="header-search-field" autocomplete="off">
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </form>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="header-third-row hidden-lg">
+                            <div class="header-icons header-icons-search">
+                                <div class="header-icon header-icon-search">
+                                    <a title="Search" href="#" class="header-search-initiate">
+                                        <img src="~/Images/searchicon.svg" class="svg header-icon-default" Alt="Search" />
+                                    </a>
+                                    <div class="header-search-container">
+                                        <form action="/search.aspx" method="get" class="header-search-form" style="display: none;">
+                                            <input name="q" required="" placeholder="SEARCH" type="text" id="header-search-field" autocomplete="off">
+                                            <input type="submit" id="header-search-submit" value="" title="Search">
+                                            <div id="header-search-cancel" class="hidden-lg"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                </div>
+            </header>
+            break;
+        default:
+            break;
+    }
+
+
+    <div class="content">
+
+        @RenderBody()
+
+    </div>
+    @switch (dil)
+    {
+        case "tr":
+            <footer>
+                @*<div class="footer-button container"></div>*@
+                <div class="footer-main-container">
+                    <div class="container-fluid">
+                        <div class="footer-first-row row">
+                            <a class="footer-logo col-lg-2" href="/">
+                                @*<img src='/-/media/images/sites/middleatlantic/footer/logo-footer.ashx?h=36&amp;w=124&amp;la=en&amp;hash=F80C9274814BB35F7C302C81D8E19E50A4CA1D79' alt='' />*@
+                            </a>
+                            <div class="footer-top-fill col-lg-12 col-sm-12 col-xs-12 ">
+
+                            </div>
+
+                        </div>
+                        <div class="footer-second-row row">
+                            <!--<div class="footer-navigation-container col-lg-6 col-lg-push-6 col-sm-8">
+                                <ul>
+                                    <li class="footer-navigation-header">-->
+                            @*<a href="~/ProductGroup/ProductGroup">ÜRÜNLER</a>*@
+                            <!--</li>
+                            </ul>
+                            <ul>
+                                <li class="footer-navigation-header">-->
+                            @*<a href="#">DOKÜMANLAR</a>*@
+                            <!--</li>
+                                </ul>
+                                <ul>
+                                    <li class="footer-navigation-header">
+                                        <a href="~/ProductGroup/Video">VİDEOLAR</a>
+                                    </li>
+                                </ul>
+                            </div>-->
+
+                            <div class="footer-form col-lg-12 col-sm-12">
+                                <div class="footer-form-title">
+                                    ŞİRKET HAKKINDA
+                                </div>
+                                @Model.layout.footerAciklama
+                                @*Lande rack kabinetleri 2012'den bu yana güç dağıtım üniteleri, ortam izleme ve uzaktan erişim sistemleri, hassas klimalar ve bilgi ve iletişim sektöründeki daha bir çok ürün konusunda uzmanlaşmış çözüm ortağı bir firmadır.*@
+                            </div>
+                            <div class="footer-top-fill col-lg-10 col-sm-12 col-xs-12 hidden-lg">
+                                <div class="footer-social-media-container">
+                                    <a title="LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/lande-rack-kabinet?originalSubdomain=tr" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/linkedinfooter.svg" alt="LinkedIn" class="svg" />
+                                    </a>
+                                    <a title="Youtube" class="footer-social-link" href="https://www.youtube.com/channel/UCco2wyOUpRkWJtZUPU40eSQ" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/youtubefooter.svg" alt="Youtube" class="svg" />
+
+                                    </a>
+                                    <a title="Twitter" class="footer-social-link" href="https://twitter.com/landecabinets?lang=en" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+
+                                        <img src="~/Images/twitterfooter.svg" alt="Twitter" class="svg" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-third-row row" style="text-align:left">
+                            <div class="footer-navigation-container col-lg-12 col-sm-6">
+
+                            </div>
+
+                            <div class="footer-brand col-lg-3 col-sm-6 col-lg-12" style="text-align:center">
+                                <img src="~/Images/landeLogo.png" />
+                            </div>
+                            <div class="footer-copyright col-lg-5 col-sm-12 col-lg-12" style="text-align:center">
+                                © 2020 Lande. All Rights Reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer>
+                @*<div class="footer-button container"></div>*@
+                <div class="footer-main-container">
+                    <div class="container-fluid">
+                        <div class="footer-first-row row">
+                            @*<a class="footer-logo col-lg-2" href="/">
+                                    <img src='/-/media/images/sites/middleatlantic/footer/logo-footer.ashx?h=36&amp;w=124&amp;la=en&amp;hash=F80C9274814BB35F7C302C81D8E19E50A4CA1D79' alt='' />
+                                </a>*@
+                            <div class="footer-top-fill col-lg-12 col-sm-12 col-xs-12 ">
+                                <div class="footer-social-media-container">
+                                    <a title="LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/lande-rack-kabinet?originalSubdomain=tr" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/linkedinfooter.svg" alt="LinkedIn" class="svg" />
+                                    </a>
+                                    <a title="Youtube" class="footer-social-link" href="https://www.youtube.com/channel/UCco2wyOUpRkWJtZUPU40eSQ" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/youtubefooter.svg" alt="Youtube" class="svg" />
+
+                                    </a>
+                                    <a title="Twitter" class="footer-social-link" href="https://twitter.com/landecabinets?lang=en" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+
+                                        <img src="~/Images/twitterfooter.svg" alt="Twitter" class="svg" />
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="footer-second-row row">
+                            <!--<div class="footer-navigation-container col-lg-6 col-lg-push-6 col-sm-8">
+                                <ul>
+                                    <li class="footer-navigation-header">-->
+                            @*<a href="#">PRODUCTS</a>*@
+                            <!--</li>
+                            </ul>
+                            <ul>
+                                <li class="footer-navigation-header">-->
+                            @*<a href="#">DOCUMENTS</a>*@
+                            <!--</li>
+                                </ul>
+                                <ul>
+                                    <li class="footer-navigation-header">
+                                        <a href="~/ENG/ProductGroup/Video">VIDEOS</a>
+                                    </li>
+                                </ul>
+                            </div>-->
+
+                            <div class="footer-form col-lg-12  col-sm-12">
+                                <div class="footer-form-title">
+                                    ŞİRKET HAKKINDA
+                                </div>
+                                @Model.layout.footerAciklama
+                                @*Lande rack kabinetleri 2012'den bu yana güç dağıtım üniteleri, ortam izleme ve uzaktan erişim sistemleri, hassas klimalar ve bilgi ve iletişim sektöründeki daha bir çok ürün konusunda uzmanlaşmış çözüm ortağı bir firmadır.*@
+                            </div>
+                            <div class="footer-top-fill col-lg-10 col-sm-12 col-xs-12 hidden-lg">
+                                @*<div class="footer-social-media-container">
+                                        <a title="LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/lande-rack-kabinet?originalSubdomain=tr" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                            <img src="~/Images/linkedinfooter.svg" alt="LinkedIn" class="svg" />
+                                        </a>
+                                        <a title="Youtube" class="footer-social-link" href="https://www.youtube.com/channel/UCco2wyOUpRkWJtZUPU40eSQ" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                            <img src="~/Images/youtubefooter.svg" alt="Youtube" class="svg" />
+
+                                        </a>
+                                        <a title="Twitter" class="footer-social-link" href="https://twitter.com/landecabinets?lang=en" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+
+                                            <img src="~/Images/twitterfooter.svg" alt="Twitter" class="svg" />
+                                        </a>
+                                    </div>*@
+                            </div>
+                        </div>
+                        <div class="footer-third-row row" style="text-align:left">
+                            @*<div class="footer-navigation-container col-lg-12 col-sm-6">
+                                    <div class="footer-center col-lg-12 col-md-4 col-sm-6" style="display:contents;">
+                                        <div>
+                                            <i class="fa fa-map-marker"></i>
+                                            <p><span>Merve Mah. Gazi Cad. No: 17 </span>Sancaktepe / İstanbul , Türkiye</p>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-phone"></i>
+                                            <p> +90 (216) 312 2653</p>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-envelope"></i>
+                                            <p><a href="mailto:satis@lande.com.tr"> satis@lande.com.tr </a></p>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            <div class="footer-brand col-lg-12 col-sm-12 col-lg-12" style="text-align:center">
+                                <img src="~/Images/LandeLogo-ENG.jpg" />
+                            </div>
+                            <div class="footer-copyright col-lg-5 col-sm-12 col-lg-12" style="text-align:center">
+                                © 2020 Lande. All Rights Reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            break;
+        case "en":
+            <footer>
+                @*<div class="footer-button container"></div>*@
+                <div class="footer-main-container">
+                    <div class="container-fluid">
+                        <div class="footer-first-row row">
+                            <a class="footer-logo col-lg-2" href="/">
+                                @*<img src='/-/media/images/sites/middleatlantic/footer/logo-footer.ashx?h=36&amp;w=124&amp;la=en&amp;hash=F80C9274814BB35F7C302C81D8E19E50A4CA1D79' alt='' />*@
+                            </a>
+                            <div class="footer-top-fill col-lg-12 col-sm-12 col-xs-12 ">
+
+                            </div>
+
+                        </div>
+                        <div class="footer-second-row row">
+                            <!--<div class="footer-navigation-container col-lg-6 col-lg-push-6 col-sm-8">
+                                <ul>
+                                    <li class="footer-navigation-header">-->
+                            @*<a href="~/ProductGroup/ProductGroup">ÜRÜNLER</a>*@
+                            <!--</li>
+                            </ul>
+                            <ul>
+                                <li class="footer-navigation-header">-->
+                            @*<a href="#">DOKÜMANLAR</a>*@
+                            <!--</li>
+                                </ul>
+                                <ul>
+                                    <li class="footer-navigation-header">
+                                        <a href="~/ProductGroup/Video">VİDEOLAR</a>
+                                    </li>
+                                </ul>
+                            </div>-->
+
+                            <div class="footer-form col-lg-12 col-sm-12">
+                                <div class="footer-form-title">
+                                    ABOUT COMPANY
+                                </div>
+                                @Model.layout.footerAciklama
+                                @*Lande is an ICT ecosystem solution provider specialized in rack cabinets and enclosures, PDUs, environmental monitoring systems, remote control systems, precision cooling systems and a wide range of further products for ICT sector, since 2012.*@
+                            </div>
+                            <div class="footer-top-fill col-lg-10 col-sm-12 col-xs-12 hidden-lg">
+                                <div class="footer-social-media-container">
+                                    <a title="LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/lande-rack-kabinet?originalSubdomain=tr" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/linkedinfooter.svg" alt="LinkedIn" class="svg" />
+                                    </a>
+                                    <a title="Youtube" class="footer-social-link" href="https://www.youtube.com/channel/UCco2wyOUpRkWJtZUPU40eSQ" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/youtubefooter.svg" alt="Youtube" class="svg" />
+
+                                    </a>
+                                    <a title="Twitter" class="footer-social-link" href="https://twitter.com/landecabinets?lang=en" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+
+                                        <img src="~/Images/twitterfooter.svg" alt="Twitter" class="svg" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-third-row row" style="text-align:left">
+                            <div class="footer-navigation-container col-lg-12 col-sm-6">
+
+                            </div>
+
+                            <div class="footer-brand col-lg-3 col-sm-6 col-lg-12" style="text-align:center">
+                                <img src="~/Images/landeLogo.png" />
+                            </div>
+                            <div class="footer-copyright col-lg-5 col-sm-12 col-lg-12" style="text-align:center">
+                                © 2020 Lande. All Rights Reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer>
+                @*<div class="footer-button container"></div>*@
+                <div class="footer-main-container">
+                    <div class="container-fluid">
+                        <div class="footer-first-row row">
+                            @*<a class="footer-logo col-lg-2" href="/">
+                                    <img src='/-/media/images/sites/middleatlantic/footer/logo-footer.ashx?h=36&amp;w=124&amp;la=en&amp;hash=F80C9274814BB35F7C302C81D8E19E50A4CA1D79' alt='' />
+                                </a>*@
+                            <div class="footer-top-fill col-lg-12 col-sm-12 col-xs-12 ">
+                                <div class="footer-social-media-container">
+                                    <a title="LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/lande-rack-kabinet?originalSubdomain=tr" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/linkedinfooter.svg" alt="LinkedIn" class="svg" />
+                                    </a>
+                                    <a title="Youtube" class="footer-social-link" href="https://www.youtube.com/channel/UCco2wyOUpRkWJtZUPU40eSQ" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                        <img src="~/Images/youtubefooter.svg" alt="Youtube" class="svg" />
+
+                                    </a>
+                                    <a title="Twitter" class="footer-social-link" href="https://twitter.com/landecabinets?lang=en" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+
+                                        <img src="~/Images/twitterfooter.svg" alt="Twitter" class="svg" />
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="footer-second-row row">
+                            <!--<div class="footer-navigation-container col-lg-6 col-lg-push-6 col-sm-8">
+                                <ul>
+                                    <li class="footer-navigation-header">-->
+                            @*<a href="#">PRODUCTS</a>*@
+                            <!--</li>
+                            </ul>
+                            <ul>
+                                <li class="footer-navigation-header">-->
+                            @*<a href="#">DOCUMENTS</a>*@
+                            <!--</li>
+                                </ul>
+                                <ul>
+                                    <li class="footer-navigation-header">
+                                        <a href="~/ENG/ProductGroup/Video">VIDEOS</a>
+                                    </li>
+                                </ul>
+                            </div>-->
+
+                            <div class="footer-form col-lg-12  col-sm-12">
+                                <div class="footer-form-title">
+                                    About Company
+                                </div>
+                                @Model.layout.footerAciklama
+                                @*Lande is an ICT ecosystem solution provider specialized in rack cabinets and enclosures, PDUs, environmental monitoring systems, remote control systems, precision cooling systems and a wide range of further products for ICT sector, since 2012.*@
+                            </div>
+                            <div class="footer-top-fill col-lg-10 col-sm-12 col-xs-12 hidden-lg">
+                                @*<div class="footer-social-media-container">
+                                        <a title="LinkedIn" class="footer-social-link" href="https://www.linkedin.com/company/lande-rack-kabinet?originalSubdomain=tr" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                            <img src="~/Images/linkedinfooter.svg" alt="LinkedIn" class="svg" />
+                                        </a>
+                                        <a title="Youtube" class="footer-social-link" href="https://www.youtube.com/channel/UCco2wyOUpRkWJtZUPU40eSQ" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+                                            <img src="~/Images/youtubefooter.svg" alt="Youtube" class="svg" />
+
+                                        </a>
+                                        <a title="Twitter" class="footer-social-link" href="https://twitter.com/landecabinets?lang=en" target="_blank" data-ct-category="FooterLink" data-ct-action="clicked" data-ct-label="self">
+
+
+                                            <img src="~/Images/twitterfooter.svg" alt="Twitter" class="svg" />
+                                        </a>
+                                    </div>*@
+                            </div>
+                        </div>
+                        <div class="footer-third-row row" style="text-align:left">
+                            @*<div class="footer-navigation-container col-lg-12 col-sm-6">
+                                    <div class="footer-center col-lg-12 col-md-4 col-sm-6" style="display:contents;">
+                                        <div>
+                                            <i class="fa fa-map-marker"></i>
+                                            <p><span>Merve Mah. Gazi Cad. No: 17 </span>Sancaktepe / İstanbul , Türkiye</p>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-phone"></i>
+                                            <p> +90 (216) 312 2653</p>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-envelope"></i>
+                                            <p><a href="mailto:satis@lande.com.tr"> satis@lande.com.tr </a></p>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            <div class="footer-brand col-lg-12 col-sm-12 col-lg-12" style="text-align:center">
+                                <img src="~/Images/LandeLogo-ENG.jpg" />
+                            </div>
+                            <div class="footer-copyright col-lg-5 col-sm-12 col-lg-12" style="text-align:center">
+                                © 2020 Lande. All Rights Reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            break;
+        default:
+            break;
+    }
+
+
+    @*<script>
+            $("#header-search-field").autocomplete({
+                //source: "/api/search/getkeywords?a=b",
+                paramName: 'q',
+                select: function (term) {
+                    location.href = '/search.aspx?q=' + term;
+                }
+            });
+        </script>*@
+
+    @*<span class="server-source" style="display: none;" data-contextsite="website-middleatlantic">1008578-CD1</span>*@
+    <script>var serverDateTime = '5/27/2020 3:42:30 AM';</script>
+    <script type="text/javascript">
+        function trackEvent(args) {
+            if (typeof args.label != 'undefined' && typeof args.value != 'undefined') {
+                ga('send', 'event', args.category, args.action, args.label, args.value)
+            } else if (typeof args.label != 'undefined') {
+                ga('send', 'event', args.category, args.action, args.label)
+            } else {
+                ga('send', 'event', args.category, args.action)
+            }
+        }
+
+        $(document).ready(function () {
+            $('.clicktrack').click(function () {
+                args = {};
+                $l = $(this);
+                args['category'] = $l.attr('ctcategory');
+                args['action'] = $l.attr('ctaction').replace(".ashx", "");
+                if (args['action'] == 'href') {
+                    args['action'] = $l.attr('href').replace(".ashx", "");
+                }
+                if ($l.attr('ctlabel') != '') {
+                    args['label'] = $l.attr('ctlabel');
+                }
+                if ($l.attr('ctvalue') != '') {
+                    args['value'] = $l.attr('ctvalue');
+                }
+                trackEvent(args);
+            });
+        });
+
+                @*const searchButton = document.getElementById('search-button');
+        const searchInput = document.getElementById('search-input');
+        searchButton.addEventListener('click', () => {
+            const inputValue = searchInput.value;
+            var link6 = searchInput.value;
+            alert(inputValue);
+            var bakimDurumu = {
+                Deger: link6,
+                }
+                 $.ajax({
+                url: '@Url.Action("SearchValue", "ProductGroup")',
+                type: 'POST',
+                dataType: 'json',
+                data: bakimDurumu,
+                success: function (data) {
+                    alert(data);
+                },
+                   error: function (data) {
+                }
+            });
+
+
+
+        });*@
+
+
+
+    </script>
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+
+
+</html>

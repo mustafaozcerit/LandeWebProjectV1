@@ -1,0 +1,94 @@
+﻿@model IEnumerable<LandeWebProjectV1.Models.UrunGrubu>
+
+@{
+    ViewBag.Title = "ProductGroup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var group = (List<LandeWebProjectV1.Models.UrunGrubu>)ViewData["ProductGroup"]; // Cast the list
+}
+
+<link href="~/Content/product-group.css" rel="stylesheet" />
+
+<div class="content">
+    <form id="contentForm" method="POST">
+        <div class="map-category-page container-fluid">
+            <div class="map-category-page-inner">
+
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+
+                    <div class="breadcrumb-link">
+                        <a href="/">
+                            Anasayfa
+                        </a>
+                    </div>
+
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+
+                    <div class="breadcrumb-link">
+                        <a href="~/ProductGroup/ProductGroup">
+                            Kabinetler
+                        </a>
+                    </div>
+
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+
+                </div>
+
+                <div class="map-category-page-title">
+                    <h2>
+                        KABİNETLER
+                    </h2>
+                </div>
+
+                <div class="map-category-page-description show-more">
+
+                    @foreach (var item4 in group)
+                    {
+                        <p>
+                            @Html.DisplayFor(modelItem => item4.Aciklama)
+                        </p>
+                        break;
+                    }
+                </div>
+
+                <div class="map-category-page-categories row">
+                    @foreach (var item in group)
+                    {
+                        <a class="col-xs-6 col-sm-3" href="@Url.Action("ProductSeries","ProductGroup", new { urunGrubuOid = item.Oid })">
+                            <div class="map-category-container"  style="margin: 0px -15px 0px -15px">
+
+                                <div class="map-category-container-inner" >
+
+
+                                    <div class="map-category-image">
+                                        @*@foreach (var foto in item.Fotograflar)
+                                        {
+                                                <img src="data:image;base64,@System.Convert.ToBase64String(foto.fotograf)" style="width:auto;height:210px" class='img-responsive center-block' />
+                                            break;
+                                        }*@
+                                    </div>
+                                    <div class="four-features-text-heavy-module-feature-title">
+                                        <span>@Html.DisplayFor(x=> item.UrunGrubuAdi)</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-aciklama">
+                                    <span style="">@Html.DisplayFor(modelItem => item.Aciklama)</span>
+                                </div>
+                            </div>
+                            </a>
+                            }
+
+                    </div>
+            </div>
+        </div>
+    </form>
+</div>

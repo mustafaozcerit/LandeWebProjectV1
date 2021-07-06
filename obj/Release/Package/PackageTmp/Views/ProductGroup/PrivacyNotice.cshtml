@@ -1,0 +1,82 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    //ViewBag.Title = "PrivacyNotice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    switch (ViewBag.dil)
+    {
+        case "tr":
+            ViewBag.Title = "Gizlilik Politikası";
+            break;
+        case "en":
+            ViewBag.Title = "Privacy Notice";
+            break;
+        default:
+            ViewBag.Title = "Privacy Notice";
+            break;
+    }
+}
+
+
+@switch (ViewBag.dil)
+{
+    case "tr":
+        <form id="contentForm" method="POST">
+
+
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom:0;">
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                </div>
+                <div class="container-fluid" style="padding-bottom: 0;">
+
+                    <h3>@Model.genelBilgiler.Baslik</h3>
+
+                    @foreach (var item in Model.genelBilgiler.Aciklama1)
+                    {
+                        <p style="margin-bottom:20px">@item</p>
+                    }
+
+                </div>
+            </div>
+            <br /><br />
+        </form>
+        break;
+    case "en":
+        <form id="contentForm" method="POST">
+
+
+            <div class="open-html-module">
+                <div class="container-fluid" style="padding-bottom: 0;">
+
+                    <div class="map-category-page-image">
+                        @foreach (var item in Model.bannerModels)
+                        {
+                            <img src="data:image;base64,@System.Convert.ToBase64String(item.fotograf)" style="height:auto; width:100%" />
+                        }
+                    </div>
+                    <h3>@Model.genelBilgiler.Baslik</h3>
+
+                    @foreach (var item in Model.genelBilgiler.Aciklama1)
+                    {
+                        <p style="margin-bottom:20px">@item</p>
+                    }
+
+                    @*<h3>GİZLİLİK POLİTİKASI</h3>
+                        <p>
+                            Lande A.Ş. veya bağlı şirketleri, ziyaretçiler tarafından bu sitedeki formlar aracılığıyla sunulan isminiz, elektronik posta adresiniz, iş ve ev adresiniz, telefon numaranız ve sair kişisel verilerinizi (Bundan sonra “Kişisel Bilgiler” olarak anılacaktır.) üçüncü kişilere satmayacağını, kiralamayacağını veya hiçbir şekilde kullandırmayacağını kabul, beyan ve taahhüt eder. <br /><br />
+                            Lande A.Ş. veya bağlı şirketleri, Kişisel Bilgileri aşağıdaki amaçlarla sınırlı olmak üzere kullanacaktır: Basılı yayınlar/yazışmalar göndermek, elektronik posta ile basın bültenleri veya bildirimler göndermek, işe alım süreçlerinde başvurularınızı değerlendirmek, satın aldığınız malları ve/veya ödüllerinizi teslim etmek.<br /><br />
+                            Kişisel Bilgilere, sadece Lande A.Ş. veya bağlı şirketlerinin yetkili personeli ve Kişisel Bilgileri gizli tutmayı kabul etmiş olan üçüncü kişi temsilcileri erişebilirler. Lande A.Ş. veya bağlı şirketleri, Kişisel Bilgileri açıklamadan, Kişisel Bilgilerden elde edilebilecek istatistiksel verileri (tarayıcı tipi, coğrafi konum, yaş, cinsiyet, vb.), web sitesini iyileştirmek ve genel olarak tüketicileri hakkında daha çok bilgi sahibi olmak amacıyla kullanabilecektir. Elde edilen bu tür istatistiksel veriler üzerindeki her türlü haklar Lande A.Ş. veya bağlı şirketlerine aittir.<br /><br />
+                            Lande A.Ş. veya bağlı şirketleri, web sitesindeki bağlantılar aracılığıyla ulaşacağınız üçüncü kişilere ait web sitelerinin gizlilik ilkeleri hakkında bir garanti vermez.Bu nedenle kişisel olarak belirlenebilir herhangi bir bilgi vermeden önce, gittiğiniz sitelerin gizlilik yaklaşımlarını değerlendirmenizi öneririz.<br /><br />
+                        </p>*@
+
+                </div>
+            </div>
+            <br /><br />
+        </form>
+        break;
+}

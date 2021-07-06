@@ -1,0 +1,162 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "KurumsaLogoKullanimi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "KurumsaLogoKullanimi";
+            break;
+        case "en":
+            ViewBag.Title = "KurumsaLogoKullanimiEN";
+            break;
+        default:
+            ViewBag.Title = "KurumsaLogoKullanimiEN";
+            break;
+    }
+}
+}
+
+@switch (dil)
+{
+    case "tr":
+        <div class="map-category-page map-series container-fluid">
+            <div class="map-category-page-inner map-series-page-inner">
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/tr">
+                            Anasayfa
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/tr/lande_kurumsal_logo_kullanimi">
+                            Lande Kurumsal Logo Kullanımı
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+
+
+                    <div class="row">
+                        <h2 style="background: url('../../Images/teknikSartname.jpg') no-repeat; background-size: cover; padding: 70px 30px; width: 100%; height: 157px;">Lande Kurumsal Logo Kullanımı</h2>
+
+                        <div class="col-12">
+
+                            @*@if (Model.teknikSartnameModels.Count > 0)
+                            {
+                                <hr style="width: 97%" />
+
+                                foreach (var item in Model.teknikSartnameModels)
+                                {
+                                    <div class="col-md-12">
+                                        @switch (item.dokumanUzanti)
+                                        {
+                                            case "docx":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid=item.Oid })"><img src="@Url.Content("~/Images/microsoft-word64px.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "doc":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid=item.Oid })"><img src="@Url.Content("~/Images/microsoft-word64px.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "pdf":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url , oid=item.Oid })"><img src="@Url.Content("~/Images/pdf.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "xls":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url , oid=item.Oid })"><img src="@Url.Content("~/Images/excel.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "xlsx":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url , oid=item.Oid })"><img src="@Url.Content("~/Images/excel.png")" style="width: 5%" /></a>
+
+                                                break;
+                                        }
+                                        @{ item.WebDokumanAdi = item.WebDokumanAdi == null ? item.DokumanAdi : item.WebDokumanAdi; }
+                                        <span style="padding-left: 10px; font-size: 18px;">@Html.ActionLink(item.WebDokumanAdi, "DownloadTeknikSartname", new { Url = item.url, oid = item.Oid })</span>
+                                        <hr />
+                                    </div>
+                                }
+                            }*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        break;
+    case "en":
+        <div class="map-category-page map-series container-fluid">
+            <div class="map-category-page-inner map-series-page-inner">
+                <div class="breadcrumb-chain">
+                    <span class="breadcrumb-lsaquo">
+                        &lsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="/en">
+                            Home Page
+                        </a>
+                    </div>
+                    <span class="breadcrumb-rsaquo">
+                        &rsaquo;
+                    </span>
+                    <div class="breadcrumb-link">
+                        <a href="~/en/specification">
+                            Technical Specification
+                        </a>
+                    </div>
+                </div>
+                <div class="container">
+
+
+                    <div class="row">
+                        <h2 style="background: url('../../Images/teknikSartname.jpg') no-repeat; background-size: cover; padding: 70px 30px; width: 100%; height: 157px;">Technical Specification</h2>
+
+                        <div class="col-12">
+
+                            @*@if (Model.teknikSartnameModels.Count > 0)
+                            {
+                                <hr style="width: 97%" />
+
+                                foreach (var item in Model.teknikSartnameModels)
+                                {
+                                    <div class="col-md-12">
+                                        @switch (item.dokumanUzanti)
+                                        {
+                                            case "docx":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid = item.Oid  })"><img src="@Url.Content("~/Images/microsoft-word64px.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "doc":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid = item.Oid  })"><img src="@Url.Content("~/Images/microsoft-word64px.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "pdf":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid = item.Oid  })"><img src="@Url.Content("~/Images/pdf.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "xls":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid = item.Oid  })"><img src="@Url.Content("~/Images/excel.png")" style="width: 5%" /></a>
+                                                break;
+                                            case "xlsx":
+                                                <a href="@Url.Action("DownloadTeknikSartname", new { Url = item.url, oid = item.Oid  })"><img src="@Url.Content("~/Images/excel.png")" style="width: 5%" /></a>
+
+                                                break;
+                                        }
+                                        @{ item.EngWebDokumanAdi = item.EngWebDokumanAdi == null ? item.DokumanAdi : item.EngWebDokumanAdi; }
+                                        <span style="padding-left: 10px; font-size: 18px;">
+                                            @Html.ActionLink(item.EngWebDokumanAdi, "DownloadTeknikSartname", new { Url = item.url, oid = item.Oid })
+                                        </span>
+                                        <hr />
+                                    </div>
+                                }
+                            }*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        break;
+    default:
+        break;
+}
+

@@ -1,0 +1,264 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "Videolar";
+            break;
+        case "en":
+            ViewBag.Title = "Videos";
+            break;
+        default:
+            ViewBag.Title = "Videos";
+            break;
+    }
+}
+
+<link href="~/Content/product-group.css" rel="stylesheet" />
+@switch (dil)
+{
+    case "tr":
+
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page container-fluid">
+                    <div class="map-category-page-inner">
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+
+                            <div class="breadcrumb-link">
+                                <a href="/tr">
+                                    Anasayfa
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                            <div class="breadcrumb-link">
+                                <a href="~/tr/video">
+                                    Videolar
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                VİDEOLAR
+                            </h2>
+                        </div>
+
+                        <div class="row mb-5 text-center">
+                            <div id="aBtnGroup" class="btn-group flex-wrap row" style="display:flex; width:100%; justify-content:center;">
+                                @foreach (var itembaslik in Model.videoBaslikModels)
+                                {
+                                    <div>
+                                        <h2 class="col-lg-12 col-sm-12"><strong>@itembaslik.Baslik</strong></h2>
+                                    </div>
+                                    <div>
+                                        @foreach (var itemvideo in Model.videoModels)
+                                        {
+                                            if (itemvideo.VideolarSayfasi1 == itembaslik.Oid)
+                                            {
+                                                <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px 0;text-align:center;">
+                                                    <div style="display: inline-grid;">
+
+                                                        <button type="button" class="btn  zoom" data-toggle="modal" data-target="#modalYT"
+                                                                value="@itemvideo.Value">
+                                                            <img class="img-responsive" src="@itemvideo.ResimLinki" alt="#" style="width:100%;height:auto;">
+                                                        </button>
+
+                                                        <div style="text-align:center">
+                                                            @itemvideo.aciklama
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered" role="document">
+
+                            <div class="modal-content">
+
+                                <div class="modal-body mb-0 p-0" style="background-color:black;">
+
+                                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                        <iframe id="video" width="560" height="315" src=""
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    case "en":
+
+        <div class="content">
+            <form id="contentForm" method="POST">
+                <div class="map-category-page container-fluid">
+                    <div class="map-category-page-inner">
+
+                        <div class="breadcrumb-chain">
+                            <span class="breadcrumb-lsaquo">
+                                &lsaquo;
+                            </span>
+
+                            <div class="breadcrumb-link">
+                                <a href="/en">
+                                    Home Page
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                            <div class="breadcrumb-link">
+                                <a href="~/en/videos">
+                                    Videos
+                                </a>
+                            </div>
+
+                            <span class="breadcrumb-rsaquo">
+                                &rsaquo;
+                            </span>
+
+                        </div>
+
+                        <div class="map-category-page-title">
+                            <h2>
+                                VIDEOS
+                            </h2>
+                        </div>
+
+                        <div class="row mb-5 text-center">
+                            <div id="aBtnGroup" class="btn-group flex-wrap row" style="display:flex; width:100%; justify-content:center;">
+                                @foreach (var itembaslik in Model.videoBaslikModels)
+                                {
+                                    <div>
+                                        <H2 class="col-lg-12 col-sm-12"><strong>@itembaslik.BaslikEng</strong></H2>
+                                    </div>
+                                    <div>
+                                        @foreach (var itemvideo in Model.videoModels)
+                                        {
+                                            if (itemvideo.VideolarSayfasi1 == itembaslik.Oid)
+                                            {
+                                                <div class="col col-xs-12 col-sm-12 col-md-6 col-lg-4" style="padding:15px 0;text-align:center;">
+                                                    <div style="display: inline-grid;">
+
+                                                        <button type="button" class="btn zoom" data-toggle="modal" data-target="#modalYT"
+                                                                value="@itemvideo.Value">
+                                                            <img class="img-responsive" src="@itemvideo.ResimLinki" alt="#" style="width:100%;height:auto;">
+                                                        </button>
+
+                                                        <div style="text-align:center">
+                                                            @itemvideo.EngAciklama
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog modal-dialog-centered" role="document">
+
+                            <div class="modal-content">
+
+                                <div class="modal-body mb-0 p-0" style="background-color:black;">
+
+                                    <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                        <iframe id="video" width="560" height="315" src=""
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        break;
+    default:
+        break;
+}
+
+
+
+<script>
+
+    $('#aBtnGroup button').on('click', function () {
+        var thisBtn = $(this);
+        thisBtn.addClass('active').siblings().removeClass('active');
+        var btnText = thisBtn.text();
+        var btnValue = thisBtn.val();
+        console.log(btnText + ' - ' + btnValue);
+
+        document.getElementById('video').src = "https://www.youtube.com/embed/" + btnValue;
+    });
+    $("#modalYT").on('hidden.bs.modal', function (e) {
+        $("#modalYT iframe").attr("src", $("#modalYT iframe").attr("src"));
+    });
+
+    function openLink(mylink) {
+
+        if (mylink != null) {
+            window.open(mylink);
+        } else {
+            alert('Geçerli bir link yok.', 'Uyarı');
+        }
+    }
+</script>
+
+<style>
+    .zoom {
+        padding: 10px;
+        transition: transform .2s;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+        .zoom:hover {
+            transform: scale(1.1);
+        }
+
+    img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }
+</style>

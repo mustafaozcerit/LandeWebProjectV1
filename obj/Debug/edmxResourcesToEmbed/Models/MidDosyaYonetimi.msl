@@ -1,0 +1,1716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MidDosyaYonetimiStoreContainer" CdmEntityContainer="test2Entities">
+    <EntitySetMapping Name="Address">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Address">
+        <MappingFragment StoreEntitySet="Address">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+          <ScalarProperty Name="ZipPostal" ColumnName="ZipPostal" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aksesuar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Aksesuar">
+        <MappingFragment StoreEntitySet="Aksesuar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="AksesuarAdi" ColumnName="AksesuarAdi" />
+          <ScalarProperty Name="AksesuarKodu" ColumnName="AksesuarKodu" />
+          <ScalarProperty Name="yukseklik" ColumnName="yukseklik" />
+          <ScalarProperty Name="boyut" ColumnName="boyut" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="AksesuarGrubu" ColumnName="AksesuarGrubu" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AksesuarGrubu">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.AksesuarGrubu">
+        <MappingFragment StoreEntitySet="AksesuarGrubu">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="AksesuarGrupAdi" ColumnName="AksesuarGrupAdi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Analysis">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Analysis">
+        <MappingFragment StoreEntitySet="Analysis">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="DimensionPropertiesString" ColumnName="DimensionPropertiesString" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="ObjectTypeName" ColumnName="ObjectTypeName" />
+          <ScalarProperty Name="ChartSettingsContent" ColumnName="ChartSettingsContent" />
+          <ScalarProperty Name="PivotGridSettingsContent" ColumnName="PivotGridSettingsContent" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditDataItemPersistent">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.AuditDataItemPersistent">
+        <MappingFragment StoreEntitySet="AuditDataItemPersistent">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AuditedObject" ColumnName="AuditedObject" />
+          <ScalarProperty Name="OldObject" ColumnName="OldObject" />
+          <ScalarProperty Name="NewObject" ColumnName="NewObject" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuditedObjectWeakReference">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.AuditedObjectWeakReference">
+        <MappingFragment StoreEntitySet="AuditedObjectWeakReference">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="GuidId" ColumnName="GuidId" />
+          <ScalarProperty Name="IntId" ColumnName="IntId" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BasicUser">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.BasicUser">
+        <MappingFragment StoreEntitySet="BasicUser">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+          <ScalarProperty Name="ChangePasswordOnFirstLogon" ColumnName="ChangePasswordOnFirstLogon" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Boyut">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Boyut">
+        <MappingFragment StoreEntitySet="Boyut">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Derinlik" ColumnName="Derinlik" />
+          <ScalarProperty Name="Genislik" ColumnName="Genislik" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currency">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Currencies" ColumnName="Currencies" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DashboardData">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.DashboardData">
+        <MappingFragment StoreEntitySet="DashboardData">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SynchronizeTitle" ColumnName="SynchronizeTitle" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Degerler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Degerler">
+        <MappingFragment StoreEntitySet="Degerler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="DegerAdi" ColumnName="DegerAdi" />
+          <ScalarProperty Name="Deger" ColumnName="Deger" />
+          <ScalarProperty Name="DegerTipi" ColumnName="DegerTipi" />
+          <ScalarProperty Name="ozellikler" ColumnName="ozellikler" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DegerTipleri">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.DegerTipleri">
+        <MappingFragment StoreEntitySet="DegerTipleri">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="DegerTipi" ColumnName="DegerTipi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departmanlar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Departmanlar">
+        <MappingFragment StoreEntitySet="Departmanlar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+          <ScalarProperty Name="DepartmanMuduru" ColumnName="DepartmanMuduru" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DigerDokumanlar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.DigerDokumanlar">
+        <MappingFragment StoreEntitySet="DigerDokumanlar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailListesi">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.EmailListesi">
+        <MappingFragment StoreEntitySet="EmailListesi">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Aktif" ColumnName="Aktif" />
+          <ScalarProperty Name="Pasif" ColumnName="Pasif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Event">
+        <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="ResourceIds" ColumnName="ResourceIds" />
+          <ScalarProperty Name="RecurrencePattern" ColumnName="RecurrencePattern" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartOn" ColumnName="StartOn" />
+          <ScalarProperty Name="EndOn" ColumnName="EndOn" />
+          <ScalarProperty Name="AllDay" ColumnName="AllDay" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="RemindIn" ColumnName="RemindIn" />
+          <ScalarProperty Name="ReminderInfoXml" ColumnName="ReminderInfoXml" />
+          <ScalarProperty Name="AlarmTime" ColumnName="AlarmTime" />
+          <ScalarProperty Name="IsPostponed" ColumnName="IsPostponed" />
+          <ScalarProperty Name="RecurrenceInfoXml" ColumnName="RecurrenceInfoXml" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedSecurityRole">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ExtendedSecurityRole">
+        <MappingFragment StoreEntitySet="ExtendedSecurityRole">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileData">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.FileData">
+        <MappingFragment StoreEntitySet="FileData">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FiyatListesi">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.FiyatListesi">
+        <MappingFragment StoreEntitySet="FiyatListesi">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="ListeFiyati" ColumnName="ListeFiyati" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="fileData" ColumnName="fileData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fotograflar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Fotograflar">
+        <MappingFragment StoreEntitySet="Fotograflar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="kapakOpsiyonlari" ColumnName="kapakOpsiyonlari" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Haberler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Haberler">
+        <MappingFragment StoreEntitySet="Haberler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="HaberBaslik" ColumnName="HaberBaslik" />
+          <ScalarProperty Name="HaberAciklama" ColumnName="HaberAciklama" />
+          <ScalarProperty Name="HaberTarih" ColumnName="HaberTarih" />
+          <ScalarProperty Name="HaberLink" ColumnName="HaberLink" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="HaberFoto" ColumnName="HaberFoto" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HCategory">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.HCategory">
+        <MappingFragment StoreEntitySet="HCategory">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IDGeneratorTable">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.IDGeneratorTable">
+        <MappingFragment StoreEntitySet="IDGeneratorTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KaliteDokumanlari">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KaliteDokumanlari">
+        <MappingFragment StoreEntitySet="KaliteDokumanlari">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="conString" ColumnName="conString" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KapakOpsiyonDoc">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KapakOpsiyonDoc">
+        <MappingFragment StoreEntitySet="KapakOpsiyonDoc">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="KapakOpsiyonlari" ColumnName="KapakOpsiyonlari" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KapakOpsiyonlari">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KapakOpsiyonlari">
+        <MappingFragment StoreEntitySet="KapakOpsiyonlari">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Opsiyon" ColumnName="Opsiyon" />
+          <ScalarProperty Name="OpsiyonKodu" ColumnName="OpsiyonKodu" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kataloglar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Kataloglar">
+        <MappingFragment StoreEntitySet="Kataloglar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="KatalogAdi" ColumnName="KatalogAdi" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KlasorDokumanlari">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KlasorDokumanlari">
+        <MappingFragment StoreEntitySet="KlasorDokumanlari">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="klasorler" ColumnName="klasorler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klasorler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Klasorler">
+        <MappingFragment StoreEntitySet="Klasorler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="KlasorAdi" ColumnName="KlasorAdi" />
+          <ScalarProperty Name="KlasorKodu" ColumnName="KlasorKodu" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="klasorTipiEnum" ColumnName="klasorTipiEnum" />
+          <ScalarProperty Name="parentKlasor" ColumnName="parentKlasor" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ParentKlasorName" ColumnName="ParentKlasorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KpiDefinition">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KpiDefinition">
+        <MappingFragment StoreEntitySet="KpiDefinition">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="TargetObjectType" ColumnName="TargetObjectType" />
+          <ScalarProperty Name="Changed" ColumnName="Changed" />
+          <ScalarProperty Name="KpiInstance" ColumnName="KpiInstance" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+          <ScalarProperty Name="GreenZone" ColumnName="GreenZone" />
+          <ScalarProperty Name="RedZone" ColumnName="RedZone" />
+          <ScalarProperty Name="Range" ColumnName="Range" />
+          <ScalarProperty Name="Compare" ColumnName="Compare" />
+          <ScalarProperty Name="RangeToCompare" ColumnName="RangeToCompare" />
+          <ScalarProperty Name="MeasurementFrequency" ColumnName="MeasurementFrequency" />
+          <ScalarProperty Name="MeasurementMode" ColumnName="MeasurementMode" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+          <ScalarProperty Name="SuppressedSeries" ColumnName="SuppressedSeries" />
+          <ScalarProperty Name="EnableCustomizeRepresentation" ColumnName="EnableCustomizeRepresentation" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KpiHistoryItem">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KpiHistoryItem">
+        <MappingFragment StoreEntitySet="KpiHistoryItem">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="KpiInstance" ColumnName="KpiInstance" />
+          <ScalarProperty Name="RangeStart" ColumnName="RangeStart" />
+          <ScalarProperty Name="RangeEnd" ColumnName="RangeEnd" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KpiInstance">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KpiInstance">
+        <MappingFragment StoreEntitySet="KpiInstance">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="ForceMeasurementDateTime" ColumnName="ForceMeasurementDateTime" />
+          <ScalarProperty Name="KpiDefinition" ColumnName="KpiDefinition" />
+          <ScalarProperty Name="Settings" ColumnName="Settings" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KpiScorecard">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KpiScorecard">
+        <MappingFragment StoreEntitySet="KpiScorecard">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KpiScorecardScorecards_KpiInstanceIndicators">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.KpiScorecardScorecards_KpiInstanceIndicators">
+        <MappingFragment StoreEntitySet="KpiScorecardScorecards_KpiInstanceIndicators">
+          <ScalarProperty Name="Indicators" ColumnName="Indicators" />
+          <ScalarProperty Name="Scorecards" ColumnName="Scorecards" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logolar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Logolar">
+        <MappingFragment StoreEntitySet="Logolar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="kaliteDokumanlari" ColumnName="kaliteDokumanlari" />
+          <ScalarProperty Name="LogoResmi" ColumnName="LogoResmi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Material">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Malzeme" ColumnName="Malzeme" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediaDataObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.MediaDataObject">
+        <MappingFragment StoreEntitySet="MediaDataObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="MediaData" ColumnName="MediaData" />
+          <ScalarProperty Name="MediaDataKey" ColumnName="MediaDataKey" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelDifference">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ModelDifference">
+        <MappingFragment StoreEntitySet="ModelDifference">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ContextId" ColumnName="ContextId" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelDifferenceAspect">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ModelDifferenceAspect">
+        <MappingFragment StoreEntitySet="ModelDifferenceAspect">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Xml" ColumnName="Xml" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MontajKlavuzlari">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.MontajKlavuzlari">
+        <MappingFragment StoreEntitySet="MontajKlavuzlari">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Note">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Note">
+        <MappingFragment StoreEntitySet="Note">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OnayBekleyenDokumanlar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.OnayBekleyenDokumanlar">
+        <MappingFragment StoreEntitySet="OnayBekleyenDokumanlar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="UserMid2" ColumnName="UserMid2" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="DokumanOlusturanKisi" ColumnName="DokumanOlusturanKisi" />
+          <ScalarProperty Name="DokumanOlusturulmaTarihi" ColumnName="DokumanOlusturulmaTarihi" />
+          <ScalarProperty Name="DokumanOnaylanmaTarihi" ColumnName="DokumanOnaylanmaTarihi" />
+          <ScalarProperty Name="FileOid" ColumnName="FileOid" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="yetkilendirme" ColumnName="yetkilendirme" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organization">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Organization">
+        <MappingFragment StoreEntitySet="Organization">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Profile" ColumnName="Profile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OtoKodTanim">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.OtoKodTanim">
+        <MappingFragment StoreEntitySet="OtoKodTanim">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="obje_adi" ColumnName="obje_adi" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="kod_on_tanim" ColumnName="kod_on_tanim" />
+          <ScalarProperty Name="uzunluk" ColumnName="uzunluk" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ozellikler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Ozellikler">
+        <MappingFragment StoreEntitySet="Ozellikler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OzellikAdi" ColumnName="OzellikAdi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parcalar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Parcalar">
+        <MappingFragment StoreEntitySet="Parcalar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="ParcaKodu" ColumnName="ParcaKodu" />
+          <ScalarProperty Name="ParcaAdi" ColumnName="ParcaAdi" />
+          <ScalarProperty Name="SeriKisaKodu" ColumnName="SeriKisaKodu" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Party">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Party">
+        <MappingFragment StoreEntitySet="Party">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyMemberPermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyMemberPermissionsObject">
+        <MappingFragment StoreEntitySet="PermissionPolicyMemberPermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="ReadState" ColumnName="ReadState" />
+          <ScalarProperty Name="WriteState" ColumnName="WriteState" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="TypePermissionObject" ColumnName="TypePermissionObject" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyNavigationPermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyNavigationPermissionsObject">
+        <MappingFragment StoreEntitySet="PermissionPolicyNavigationPermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="ItemPath" ColumnName="ItemPath" />
+          <ScalarProperty Name="NavigateState" ColumnName="NavigateState" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyObjectPermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyObjectPermissionsObject">
+        <MappingFragment StoreEntitySet="PermissionPolicyObjectPermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="ReadState" ColumnName="ReadState" />
+          <ScalarProperty Name="WriteState" ColumnName="WriteState" />
+          <ScalarProperty Name="DeleteState" ColumnName="DeleteState" />
+          <ScalarProperty Name="NavigateState" ColumnName="NavigateState" />
+          <ScalarProperty Name="TypePermissionObject" ColumnName="TypePermissionObject" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyRole">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyRole">
+        <MappingFragment StoreEntitySet="PermissionPolicyRole">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsAdministrative" ColumnName="IsAdministrative" />
+          <ScalarProperty Name="CanEditModel" ColumnName="CanEditModel" />
+          <ScalarProperty Name="PermissionPolicy" ColumnName="PermissionPolicy" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyTypePermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyTypePermissionsObject">
+        <MappingFragment StoreEntitySet="PermissionPolicyTypePermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="TargetType" ColumnName="TargetType" />
+          <ScalarProperty Name="ReadState" ColumnName="ReadState" />
+          <ScalarProperty Name="WriteState" ColumnName="WriteState" />
+          <ScalarProperty Name="CreateState" ColumnName="CreateState" />
+          <ScalarProperty Name="DeleteState" ColumnName="DeleteState" />
+          <ScalarProperty Name="NavigateState" ColumnName="NavigateState" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyUser">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyUser">
+        <MappingFragment StoreEntitySet="PermissionPolicyUser">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="StoredPassword" ColumnName="StoredPassword" />
+          <ScalarProperty Name="ChangePasswordOnFirstLogon" ColumnName="ChangePasswordOnFirstLogon" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionPolicyUserUsers_PermissionPolicyRoleRoles">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PermissionPolicyUserUsers_PermissionPolicyRoleRoles">
+        <MappingFragment StoreEntitySet="PermissionPolicyUserUsers_PermissionPolicyRoleRoles">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Users" ColumnName="Users" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersistentPermission">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PersistentPermission">
+        <MappingFragment StoreEntitySet="PersistentPermission">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="SerializedPermission" ColumnName="SerializedPermission" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneNumber">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PhoneNumber">
+        <MappingFragment StoreEntitySet="PhoneNumber">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Party" ColumnName="Party" />
+          <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhoneType">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PhoneType">
+        <MappingFragment StoreEntitySet="PhoneType">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyBag">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PropertyBag">
+        <MappingFragment StoreEntitySet="PropertyBag">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyBagDescriptor">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PropertyBagDescriptor">
+        <MappingFragment StoreEntitySet="PropertyBagDescriptor">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyDescriptor">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PropertyDescriptor">
+        <MappingFragment StoreEntitySet="PropertyDescriptor">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyDescriptorPropertyDescriptors_PropertyBagDescriptorPropertyBags">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PropertyDescriptorPropertyDescriptors_PropertyBagDescriptorPropertyBags">
+        <MappingFragment StoreEntitySet="PropertyDescriptorPropertyDescriptors_PropertyBagDescriptorPropertyBags">
+          <ScalarProperty Name="PropertyBags" ColumnName="PropertyBags" />
+          <ScalarProperty Name="PropertyDescriptors" ColumnName="PropertyDescriptors" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyValue">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.PropertyValue">
+        <MappingFragment StoreEntitySet="PropertyValue">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Descriptor" ColumnName="Descriptor" />
+          <ScalarProperty Name="Bag" ColumnName="Bag" />
+          <ScalarProperty Name="StrValue" ColumnName="StrValue" />
+          <ScalarProperty Name="WeakReference" ColumnName="WeakReference" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Renk">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Renk">
+        <MappingFragment StoreEntitySet="Renk">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="renk1" ColumnName="renk" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportData">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ReportData">
+        <MappingFragment StoreEntitySet="ReportData">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="ObjectTypeName" ColumnName="ObjectTypeName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsInplaceReport" ColumnName="IsInplaceReport" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportDataV2">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ReportDataV2">
+        <MappingFragment StoreEntitySet="ReportDataV2">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="ObjectTypeName" ColumnName="ObjectTypeName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParametersObjectTypeName" ColumnName="ParametersObjectTypeName" />
+          <ScalarProperty Name="IsInplaceReport" ColumnName="IsInplaceReport" />
+          <ScalarProperty Name="PredefinedReportType" ColumnName="PredefinedReportType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resource">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Resource">
+        <MappingFragment StoreEntitySet="Resource">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResourceResources_EventEvents">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ResourceResources_EventEvents">
+        <MappingFragment StoreEntitySet="ResourceResources_EventEvents">
+          <ScalarProperty Name="Events" ColumnName="Events" />
+          <ScalarProperty Name="Resources" ColumnName="Resources" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Revizeler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Revizeler">
+        <MappingFragment StoreEntitySet="Revizeler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="teknikCizimler" ColumnName="teknikCizimler" />
+          <ScalarProperty Name="uretimDokumanlari" ColumnName="uretimDokumanlari" />
+          <ScalarProperty Name="fotograflar" ColumnName="fotograflar" />
+          <ScalarProperty Name="kaliteDokumanlari" ColumnName="kaliteDokumanlari" />
+          <ScalarProperty Name="klasorDokumanlari" ColumnName="klasorDokumanlari" />
+          <ScalarProperty Name="RevizeEdenKisi" ColumnName="RevizeEdenKisi" />
+          <ScalarProperty Name="RevizeNedeni" ColumnName="RevizeNedeni" />
+          <ScalarProperty Name="RevizeDokuman" ColumnName="RevizeDokuman" />
+          <ScalarProperty Name="YeniDokuman" ColumnName="YeniDokuman" />
+          <ScalarProperty Name="digerDokumanlar" ColumnName="digerDokumanlar" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="MontajKlavuzlari" ColumnName="MontajKlavuzlari" />
+          <ScalarProperty Name="RevizeTarihi" ColumnName="RevizeTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="RevizeNedenleri" ColumnName="RevizeNedenleri" />
+          <ScalarProperty Name="sertifikaDoc" ColumnName="sertifikaDoc" />
+          <ScalarProperty Name="sertifikaDokumanlari" ColumnName="sertifikaDokumanlari" />
+          <ScalarProperty Name="MakineyeIslendi" ColumnName="MakineyeIslendi" />
+          <ScalarProperty Name="teknikSartname" ColumnName="teknikSartname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RevizeNedenleri">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.RevizeNedenleri">
+        <MappingFragment StoreEntitySet="RevizeNedenleri">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="RevizeNedeni" ColumnName="RevizeNedeni" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RichTextMailMergeData">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.RichTextMailMergeData">
+        <MappingFragment StoreEntitySet="RichTextMailMergeData">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DataType" ColumnName="DataType" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleBase">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.RoleBase">
+        <MappingFragment StoreEntitySet="RoleBase">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemMemberPermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemMemberPermissionsObject">
+        <MappingFragment StoreEntitySet="SecuritySystemMemberPermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Members" ColumnName="Members" />
+          <ScalarProperty Name="AllowRead" ColumnName="AllowRead" />
+          <ScalarProperty Name="AllowWrite" ColumnName="AllowWrite" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemObjectPermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemObjectPermissionsObject">
+        <MappingFragment StoreEntitySet="SecuritySystemObjectPermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="AllowRead" ColumnName="AllowRead" />
+          <ScalarProperty Name="AllowWrite" ColumnName="AllowWrite" />
+          <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+          <ScalarProperty Name="AllowNavigate" ColumnName="AllowNavigate" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemRole">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemRole">
+        <MappingFragment StoreEntitySet="SecuritySystemRole">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsAdministrative" ColumnName="IsAdministrative" />
+          <ScalarProperty Name="CanEditModel" ColumnName="CanEditModel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles">
+        <MappingFragment StoreEntitySet="SecuritySystemRoleParentRoles_SecuritySystemRoleChildRoles">
+          <ScalarProperty Name="ChildRoles" ColumnName="ChildRoles" />
+          <ScalarProperty Name="ParentRoles" ColumnName="ParentRoles" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemTypePermissionsObject">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemTypePermissionsObject">
+        <MappingFragment StoreEntitySet="SecuritySystemTypePermissionsObject">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="TargetType" ColumnName="TargetType" />
+          <ScalarProperty Name="AllowRead" ColumnName="AllowRead" />
+          <ScalarProperty Name="AllowWrite" ColumnName="AllowWrite" />
+          <ScalarProperty Name="AllowCreate" ColumnName="AllowCreate" />
+          <ScalarProperty Name="AllowDelete" ColumnName="AllowDelete" />
+          <ScalarProperty Name="AllowNavigate" ColumnName="AllowNavigate" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemUser">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemUser">
+        <MappingFragment StoreEntitySet="SecuritySystemUser">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="StoredPassword" ColumnName="StoredPassword" />
+          <ScalarProperty Name="ChangePasswordOnFirstLogon" ColumnName="ChangePasswordOnFirstLogon" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecuritySystemUserUsers_SecuritySystemRoleRoles">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SecuritySystemUserUsers_SecuritySystemRoleRoles">
+        <MappingFragment StoreEntitySet="SecuritySystemUserUsers_SecuritySystemRoleRoles">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Users" ColumnName="Users" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sertifikalar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Sertifikalar">
+        <MappingFragment StoreEntitySet="Sertifikalar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="fotograf" ColumnName="fotograf" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServerPrefix">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.ServerPrefix">
+        <MappingFragment StoreEntitySet="ServerPrefix">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SimpleUser">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.SimpleUser">
+        <MappingFragment StoreEntitySet="SimpleUser">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsAdministrator" ColumnName="IsAdministrator" />
+          <ScalarProperty Name="ChangePasswordOnFirstLogon" ColumnName="ChangePasswordOnFirstLogon" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taglar">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Taglar">
+        <MappingFragment StoreEntitySet="Taglar">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="teknikCizimler" ColumnName="teknikCizimler" />
+          <ScalarProperty Name="uretimDokumanlari" ColumnName="uretimDokumanlari" />
+          <ScalarProperty Name="fotograflar" ColumnName="fotograflar" />
+          <ScalarProperty Name="kaliteDokumanlari" ColumnName="kaliteDokumanlari" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="digerDokumanlar" ColumnName="digerDokumanlar" />
+          <ScalarProperty Name="kapakOpsiyonlari" ColumnName="kapakOpsiyonlari" />
+          <ScalarProperty Name="montajKlavuzlari" ColumnName="montajKlavuzlari" />
+          <ScalarProperty Name="klasorDokumanlari" ColumnName="klasorDokumanlari" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="sertifikaDoc" ColumnName="sertifikaDoc" />
+          <ScalarProperty Name="sertifikaDokumanlari" ColumnName="sertifikaDokumanlari" />
+          <ScalarProperty Name="teknikSartname" ColumnName="teknikSartname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PercentCompleted" ColumnName="PercentCompleted" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeknikCizimler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.TeknikCizimler">
+        <MappingFragment StoreEntitySet="TeknikCizimler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeknikSartname">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.TeknikSartname">
+        <MappingFragment StoreEntitySet="TeknikSartname">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UretimDokumanlari">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UretimDokumanlari">
+        <MappingFragment StoreEntitySet="UretimDokumanlari">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="aksesuar" ColumnName="aksesuar" />
+          <ScalarProperty Name="parcalar" ColumnName="parcalar" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="DokumanAdi" ColumnName="DokumanAdi" />
+          <ScalarProperty Name="dokumanUzanti" ColumnName="dokumanUzanti" />
+          <ScalarProperty Name="DokumanType" ColumnName="DokumanType" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="red" ColumnName="red" />
+          <ScalarProperty Name="OcrText" ColumnName="OcrText" />
+          <ScalarProperty Name="WebDokumanAdi" ColumnName="WebDokumanAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunAilesi">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UrunAilesi">
+        <MappingFragment StoreEntitySet="UrunAilesi">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="UrunAilesiAdi" ColumnName="UrunAilesiAdi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunDegerler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UrunDegerler">
+        <MappingFragment StoreEntitySet="UrunDegerler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Deger" ColumnName="Deger" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="urunler" ColumnName="urunler" />
+          <ScalarProperty Name="degerler" ColumnName="degerler" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunGrubu">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UrunGrubu">
+        <MappingFragment StoreEntitySet="UrunGrubu">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="UrunGrubuAdi" ColumnName="UrunGrubuAdi" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="boyut" ColumnName="boyut" />
+          <ScalarProperty Name="yukseklik" ColumnName="yukseklik" />
+          <ScalarProperty Name="renk" ColumnName="renk" />
+          <ScalarProperty Name="StokKodu" ColumnName="StokKodu" />
+          <ScalarProperty Name="StokAdi" ColumnName="StokAdi" />
+          <ScalarProperty Name="KatalogKodu" ColumnName="KatalogKodu" />
+          <ScalarProperty Name="IngStokAdi" ColumnName="IngStokAdi" />
+          <ScalarProperty Name="Birim" ColumnName="Birim" />
+          <ScalarProperty Name="Uretim" ColumnName="Uretim" />
+          <ScalarProperty Name="Satis" ColumnName="Satis" />
+          <ScalarProperty Name="SatinAlma" ColumnName="SatinAlma" />
+          <ScalarProperty Name="AnaUrunGrubu" ColumnName="AnaUrunGrubu" />
+          <ScalarProperty Name="AltUrunTipi" ColumnName="AltUrunTipi" />
+          <ScalarProperty Name="SatisAnalizGrubu" ColumnName="SatisAnalizGrubu" />
+          <ScalarProperty Name="AltUrunGrubu" ColumnName="AltUrunGrubu" />
+          <ScalarProperty Name="UrunCinsi" ColumnName="UrunCinsi" />
+          <ScalarProperty Name="UrunTuru" ColumnName="UrunTuru" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunSerisi" ColumnName="urunSerisi" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrunSerisi">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UrunSerisi">
+        <MappingFragment StoreEntitySet="UrunSerisi">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="UrunSerisiAdi" ColumnName="UrunSerisiAdi" />
+          <ScalarProperty Name="urunAilesi" ColumnName="urunAilesi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="urunGrubu" ColumnName="urunGrubu" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="StoredPassword" ColumnName="StoredPassword" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ChangePasswordOnFirstLogon" ColumnName="ChangePasswordOnFirstLogon" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMid2">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UserMid2">
+        <MappingFragment StoreEntitySet="UserMid2">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="AdiSoyadi" ColumnName="AdiSoyadi" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="departmanlar" ColumnName="departmanlar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserUsers_RoleRoles">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.UserUsers_RoleRoles">
+        <MappingFragment StoreEntitySet="UserUsers_RoleRoles">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
+          <ScalarProperty Name="Users" ColumnName="Users" />
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XPObjectType">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XPObjectType">
+        <MappingFragment StoreEntitySet="XPObjectType">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="AssemblyName" ColumnName="AssemblyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoInstanceKey">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoInstanceKey">
+        <MappingFragment StoreEntitySet="XpoInstanceKey">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+          <ScalarProperty Name="Properties" ColumnName="Properties" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoRunningWorkflowInstanceInfo">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoRunningWorkflowInstanceInfo">
+        <MappingFragment StoreEntitySet="XpoRunningWorkflowInstanceInfo">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="WorkflowName" ColumnName="WorkflowName" />
+          <ScalarProperty Name="WorkflowUniqueId" ColumnName="WorkflowUniqueId" />
+          <ScalarProperty Name="TargetObjectHandle" ColumnName="TargetObjectHandle" />
+          <ScalarProperty Name="ActivityInstanceId" ColumnName="ActivityInstanceId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoStartWorkflowRequest">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoStartWorkflowRequest">
+        <MappingFragment StoreEntitySet="XpoStartWorkflowRequest">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="TargetWorkflowUniqueId" ColumnName="TargetWorkflowUniqueId" />
+          <ScalarProperty Name="TargetObjectKey" ColumnName="TargetObjectKey" />
+          <ScalarProperty Name="TargetObjectType" ColumnName="TargetObjectType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoState">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoState">
+        <MappingFragment StoreEntitySet="XpoState">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="StateMachine" ColumnName="StateMachine" />
+          <ScalarProperty Name="MarkerValue" ColumnName="MarkerValue" />
+          <ScalarProperty Name="TargetObjectCriteria" ColumnName="TargetObjectCriteria" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoStateAppearance">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoStateAppearance">
+        <MappingFragment StoreEntitySet="XpoStateAppearance">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AppearanceItemType" ColumnName="AppearanceItemType" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="TargetItems" ColumnName="TargetItems" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="FontColor" ColumnName="FontColor" />
+          <ScalarProperty Name="BackColor" ColumnName="BackColor" />
+          <ScalarProperty Name="FontStyle" ColumnName="FontStyle" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Visibility" ColumnName="Visibility" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoStateMachine">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoStateMachine">
+        <MappingFragment StoreEntitySet="XpoStateMachine">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="TargetObjectType" ColumnName="TargetObjectType" />
+          <ScalarProperty Name="StatePropertyName" ColumnName="StatePropertyName" />
+          <ScalarProperty Name="StartState" ColumnName="StartState" />
+          <ScalarProperty Name="ExpandActionsInDetailView" ColumnName="ExpandActionsInDetailView" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoTrackingRecord">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoTrackingRecord">
+        <MappingFragment StoreEntitySet="XpoTrackingRecord">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoTransition">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoTransition">
+        <MappingFragment StoreEntitySet="XpoTransition">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="SourceState" ColumnName="SourceState" />
+          <ScalarProperty Name="TargetState" ColumnName="TargetState" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="SaveAndCloseView" ColumnName="SaveAndCloseView" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoUserActivityVersion">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoUserActivityVersion">
+        <MappingFragment StoreEntitySet="XpoUserActivityVersion">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="WorkflowUniqueId" ColumnName="WorkflowUniqueId" />
+          <ScalarProperty Name="Xaml" ColumnName="Xaml" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoWorkflowDefinition">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoWorkflowDefinition">
+        <MappingFragment StoreEntitySet="XpoWorkflowDefinition">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Xaml" ColumnName="Xaml" />
+          <ScalarProperty Name="TargetObjectType" ColumnName="TargetObjectType" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AutoStartWhenObjectIsCreated" ColumnName="AutoStartWhenObjectIsCreated" />
+          <ScalarProperty Name="AutoStartWhenObjectFitsCriteria" ColumnName="AutoStartWhenObjectFitsCriteria" />
+          <ScalarProperty Name="AllowMultipleRuns" ColumnName="AllowMultipleRuns" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoWorkflowInstance">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoWorkflowInstance">
+        <MappingFragment StoreEntitySet="XpoWorkflowInstance">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Metadata" ColumnName="Metadata" />
+          <ScalarProperty Name="ExpirationDateTime" ColumnName="ExpirationDateTime" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XpoWorkflowInstanceControlCommandRequest">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XpoWorkflowInstanceControlCommandRequest">
+        <MappingFragment StoreEntitySet="XpoWorkflowInstanceControlCommandRequest">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="TargetWorkflowUniqueId" ColumnName="TargetWorkflowUniqueId" />
+          <ScalarProperty Name="TargetActivityInstanceId" ColumnName="TargetActivityInstanceId" />
+          <ScalarProperty Name="Command" ColumnName="Command" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XPWeakReference">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XPWeakReference">
+        <MappingFragment StoreEntitySet="XPWeakReference">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="TargetType" ColumnName="TargetType" />
+          <ScalarProperty Name="TargetKey" ColumnName="TargetKey" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XtraReportData">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.XtraReportData">
+        <MappingFragment StoreEntitySet="XtraReportData">
+          <ScalarProperty Name="OID" ColumnName="OID" />
+          <ScalarProperty Name="ObjectTypeName" ColumnName="ObjectTypeName" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParametersObjectTypeName" ColumnName="ParametersObjectTypeName" />
+          <ScalarProperty Name="IsInplaceReport" ColumnName="IsInplaceReport" />
+          <ScalarProperty Name="PredefinedReportType" ColumnName="PredefinedReportType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetkilendirme">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Yetkilendirme">
+        <MappingFragment StoreEntitySet="Yetkilendirme">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="departmanlar" ColumnName="departmanlar" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="yetkili" ColumnName="yetkili" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YoutubeVideo">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.YoutubeVideo">
+        <MappingFragment StoreEntitySet="YoutubeVideo">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="OlusturmaTarihi" ColumnName="OlusturmaTarihi" />
+          <ScalarProperty Name="OlusturanKisi" ColumnName="OlusturanKisi" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+          <ScalarProperty Name="ResimLinki" ColumnName="ResimLinki" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="AnasayfadaGoster" ColumnName="AnasayfadaGoster" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yukseklik">
+      <EntityTypeMapping TypeName="MidDosyaYonetimi.Yukseklik">
+        <MappingFragment StoreEntitySet="Yukseklik">
+          <ScalarProperty Name="Oid" ColumnName="Oid" />
+          <ScalarProperty Name="Yuksek" ColumnName="Yuksek" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="OptimisticLockField" ColumnName="OptimisticLockField" />
+          <ScalarProperty Name="GCRecord" ColumnName="GCRecord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

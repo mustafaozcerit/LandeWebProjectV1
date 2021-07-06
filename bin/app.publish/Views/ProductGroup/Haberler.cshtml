@@ -1,0 +1,50 @@
+﻿@{
+    var news = (List<LandeWebProjectV1.Models.Haberler>)ViewData["HaberlerList"]; // Cast the list
+    var dil = ViewBag.dil;
+}
+
+@if (news != null)
+{
+    int i = 0;
+    foreach (var item in news)
+    {
+        if (i == 0)
+        {
+            <div class="item active" >
+                <img class="img-responsive haberler-Img" src="data:image;base64,@System.Convert.ToBase64String(item.HaberFoto)"  alt="#" onclick="openLink('@item.HaberLink')" />
+                <div class="carousel-caption">
+                    @*<h3>@item.HaberBaslik</h3>
+                        <h4> @item.HaberAciklama</h4>
+                        <h5>@item.HaberTarih</h5>*@
+                    <a href="@item.HaberLink" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="item " >
+                <img class="img-responsive haberler-Img"  src="data:image;base64,@System.Convert.ToBase64String(item.HaberFoto) " alt="#" onclick="openLink('@item.HaberLink') " />
+                <div class="carousel-caption">
+                    @*<h3>@item.HaberBaslik</h3>
+                        <h4> @item.HaberAciklama</h4>
+                        <h5>@item.HaberTarih</h5>*@
+                    <a href="@item.HaberLink" class="full-screen-photo-carousel-slide-link" style="color: #25bfd0;"></a>
+                </div>
+            </div>
+        }
+        i++;
+    }
+}
+
+<script>
+
+    function openLink(mylink) {
+
+        if (mylink != null) {
+            window.open(mylink);
+        } else {
+            alert('Geçerli bir link yok.', 'Uyarı');
+        }
+    }
+
+</script>

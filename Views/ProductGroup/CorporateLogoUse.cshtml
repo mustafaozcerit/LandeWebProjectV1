@@ -1,0 +1,32 @@
+﻿@model LandeWebProjectV1.Models.ViewModels.BaseModel
+@{
+    ViewBag.Title = "CorporateLogoUse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@{
+    var dil = ViewBag.dil;
+    switch (dil)
+    {
+        case "tr":
+            ViewBag.Title = "KurumsaLogoKullanimi";
+            break;
+        case "en":
+            ViewBag.Title = "KurumsaLogoKullanimiEN";
+            break;
+        default:
+            ViewBag.Title = "KurumsaLogoKullanimiEN";
+            break;
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>CorporateLogoUse</h2>
+</body>
+</html>
+
+
